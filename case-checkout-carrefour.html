@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout Carrefour · Case Study · Gisela Ramos</title>
+<meta name="description" content="Cómo redujimos la fuga de usuarios en el checkout de Carrefour Argentina: research con GetFeedback, fast fixes y rediseño de pantallas.">
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a href="index.html" class="nav__mark">Gisela Ramos</a>
+  <div class="nav__right">
+    <div class="nav__links">
+      <a href="index.html#casos">Casos</a>
+      <a href="index.html#proceso">Cómo trabajo</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro"><span class="theme-toggle__dot"></span></button>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <a href="index.html" class="case-hero__back">← Volver a casos</a>
+  <div class="eyebrow">Optimización · E-commerce · Carrefour Argentina</div>
+  <h1>Checkout: disminuir la fuga de usuarios en el paso final de compra</h1>
+  <p class="case-hero__sub">Cómo pasamos de saber que los usuarios abandonaban el checkout a saber por qué, y atacamos las causas con tres frentes de trabajo: rediseño de pantallas, mejor información de errores y un pop-up de ayuda para quienes estaban por irse.</p>
+
+  <dl class="case-hero__specs">
+    <div><dt>Rol</dt><dd>UX/UI Designer (equipo UXUI interno)</dd></div>
+    <div><dt>Alcance</dt><dd>Research, fast fixes, rediseño del checkout</dd></div>
+    <div><dt>Empresa</dt><dd>Carrefour Argentina (carrefour.com.ar)</dd></div>
+    <div><dt>Herramientas</dt><dd>Figma · GetFeedback</dd></div>
+  </dl>
+</header>
+
+<div class="case-body">
+  <aside class="rail">
+    <div class="rail__line">
+      <a href="#resumen">Resumen</a>
+      <a href="#problema">Problema</a>
+      <a href="#research">Research</a>
+      <a href="#definicion">Definición</a>
+      <a href="#solucion">Qué hicimos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#aprendizajes">Aprendizajes</a>
+    </div>
+  </aside>
+
+  <main class="case-content" id="main">
+
+    <section id="resumen">
+      <h2>Resumen</h2>
+      <p>El checkout de carrefour.com.ar perdía usuarios en el proceso final de pago, el momento más caro para perderlos. Desde el equipo UXUI nos propusimos <strong>disminuir esa fuga</strong>, con tres desafíos encadenados: identificar los problemas funcionales y de usabilidad, resolver lo urgente con fast fixes y encarar un rediseño de pantallas. El resultado: <strong>-11% en el porcentaje de salida y -2% en la tasa de rebote</strong>.</p>
+    </section>
+
+    <section id="problema">
+      <h2>Problem statement</h2>
+      <p><strong>Dolor de negocio.</strong> Un usuario que abandona en el checkout ya eligió sus productos y decidió comprar: cada fuga en ese paso es una venta prácticamente cerrada que se pierde. La analítica mostraba el abandono, pero no explicaba sus causas.</p>
+      <p><strong>Dolor del usuario.</strong> El proceso acumulaba fricciones de distinto tipo: errores funcionales, información confusa y rechazos de pago sin explicación.</p>
+      <blockquote class="pull-quote">Sabíamos cuántos usuarios se iban del checkout, pero no por qué. Sin las causas, no había forma de priorizar qué arreglar primero.</blockquote>
+    </section>
+
+    <section id="research">
+      <h2>Research &amp; Discovery</h2>
+      <p>A través de <strong>GetFeedback</strong> se realizó una investigación con los usuarios que mostraban intención de fuga: una encuesta en el momento del abandono ("¿Tuviste algún problema?") que permitió cuantificar los motivos reales:</p>
+      <ul>
+        <li><strong>Problemas al pagar</strong>, el grupo más crítico: rechazo de tarjeta, no tiene tarjeta de débito, no puede pagar en efectivo, no puede generar factura A.</li>
+        <li><strong>El botón de finalizar no funciona</strong>, falla funcional directa.</li>
+        <li><strong>Problemas al ingresar la dirección</strong> y <strong>no está el método de pago deseado</strong>.</li>
+        <li><strong>Sucursal de retiro lejos o inexistente</strong> y <strong>cupos de entrega no convenientes</strong>.</li>
+        <li><strong>No se ven los descuentos</strong> y <strong>productos sin disponibilidad</strong>.</li>
+      </ul>
+
+      <figure class="figure">
+        <img src="assets/checkout-research.jpg" alt="Resultados de la encuesta GetFeedback ¿Tuviste algún problema?: barras con la frecuencia relativa de cada problema, encabezadas por el botón de finalizar que no funciona, con desglose de los problemas al pagar y citas de entrevistas con usuarios frecuentes">
+        <figcaption>Encuesta a usuarios con intención de fuga: distribución de los motivos de abandono.</figcaption>
+      </figure>
+
+      <h3>Entrevistas con usuarios frecuentes</h3>
+      <p>Para complementar el dato cuantitativo, se hicieron entrevistas con usuarios frecuentes que permitieron identificar puntos de dolor con más matices:</p>
+      <ul>
+        <li>"…es difícil de entender lo que ya completé…"</li>
+        <li>"…una vez quise cambiar de sucursal y no entendí cómo hacerlo…"</li>
+        <li>"…a veces aparecen productos sin disponibilidad, tengo que volver atrás y adelante…"</li>
+        <li>"…no entiendo por qué a veces me rebota la tarjeta, a la tercera vez pasa…"</li>
+        <li>"…yo entiendo, pero el otro día le enseñé a mi mamá de 60 años y se trabó acá…"</li>
+      </ul>
+
+      <div class="callout">
+        <strong>De research a decisión de producto</strong>
+        Los dos métodos convergían: la encuesta señalaba al pago como el mayor bloqueo y las entrevistas mostraban que el problema no era solo funcional, era de comunicación. El usuario no entendía qué había pasado ni qué hacer después. Eso definió los tres frentes de trabajo.
+      </div>
+    </section>
+
+    <section id="definicion">
+      <h2>Definición: How Might We</h2>
+      <ul>
+        <li><strong>¿Cómo podríamos hacer que el usuario entienda en todo momento dónde está parado dentro del checkout y qué le falta completar?</strong></li>
+        <li><strong>¿Cómo podríamos convertir un rechazo de pago (que hoy es un callejón sin salida) en un paso recuperable?</strong></li>
+        <li><strong>¿Cómo podríamos intervenir antes de que un usuario con problemas abandone, en lugar de enterarnos después?</strong></li>
+      </ul>
+
+      <h3>Objetivo de negocio</h3>
+      <table class="spec-table">
+        <thead><tr><th>Objetivo</th><th>Métrica</th><th>Meta</th></tr></thead>
+        <tbody>
+          <tr><td>Disminuir la fuga en el proceso final de pago</td><td>% de salida (exit rate)</td><td>Reducir</td></tr>
+          <tr><td>Mejorar la retención en el flujo</td><td>Tasa de rebote (bounce rate)</td><td>Reducir</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="solucion">
+      <h2>Qué hicimos: tres frentes de trabajo</h2>
+
+      <h3>1 · Rediseño de pantallas</h3>
+      <p>Ajustamos los estilos de los componentes, intensificamos la separación de información y cambiamos la estructura del checkout, respondiendo directamente al "no entiendo lo que ya completé" de las entrevistas: pasos más legibles, resumen de compra siempre visible y jerarquía clara entre datos personales, entrega y pago.</p>
+
+      <figure class="figure">
+        <img src="assets/checkout-antes-ahora.jpg" alt="Comparativa antes y ahora del checkout de Carrefour: nueva estructura con pasos más legibles y resumen de compra visible">
+        <figcaption>Antes / Ahora: nueva estructura, componentes actualizados y separación clara de la información.</figcaption>
+      </figure>
+
+      <h3>2 · Información ante el rechazo de pago</h3>
+      <p>Muchos de los problemas se situaban en el rechazo de las tarjetas de crédito, y el mensaje existente solo decía "La tarjeta fue denegada" con un botón de volver. Se propuso <strong>darle al usuario información sobre la posible causa</strong>: revisar los datos ingresados, contactar a la entidad emisora, o cómo pagar con débito. Un fast fix de comunicación, sin tocar el motor de pagos.</p>
+
+      <figure class="figure">
+        <img src="assets/checkout-tarjeta-denegada.jpg" alt="Antes y ahora del mensaje de tarjeta denegada: de un aviso sin contexto a una explicación con posibles causas y próximos pasos">
+        <figcaption>Antes / Ahora: el rechazo de tarjeta pasa de callejón sin salida a paso recuperable.</figcaption>
+      </figure>
+
+      <h3>3 · Potentially leaving</h3>
+      <p>Con GetFeedback identificamos en tiempo real a los usuarios con intención de salida o inactividad dentro del checkout, y sumamos un <strong>pop-up de ayuda</strong> ("¿Problemas con el pago?") que ofrece las respuestas a los bloqueos más frecuentes justo en el momento en que el usuario está por abandonar.</p>
+
+      <figure class="figure">
+        <img src="assets/checkout-popup-ayuda.jpg" alt="Pop-up de ayuda en el checkout que se activa ante intención de salida o inactividad del usuario">
+        <figcaption>Pop-up de ayuda: se activa ante intención de salida o inactividad, con respuestas a los bloqueos más frecuentes.</figcaption>
+      </figure>
+    </section>
+
+    <section id="resultados">
+      <h2>Resultados e impacto</h2>
+      <table class="spec-table">
+        <thead><tr><th>Métrica</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>% de salida (exit rate)</td><td><strong>-11%</strong></td></tr>
+          <tr><td>Tasa de rebote (bounce rate)</td><td><strong>-2%</strong></td></tr>
+        </tbody>
+      </table>
+      <p>La combinación de los tres frentes (estructura más clara, errores que explican qué hacer y ayuda proactiva antes del abandono) se tradujo en una caída del 11% en el porcentaje de salida del checkout y del 2% en la tasa de rebote.</p>
+    </section>
+
+    <section id="aprendizajes">
+      <h2>Aprendizajes</h2>
+      <div class="learnings">
+        <article class="learning">
+          <span class="learning__num">01</span>
+          <div>
+            <h3>Instrumentar el research en el momento del dolor</h3>
+            <p>Preguntarle al usuario "¿tuviste algún problema?" justo cuando está por abandonar dio datos mucho más accionables que cualquier analítica retrospectiva, y permitió priorizar con evidencia, no con intuición.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">02</span>
+          <div>
+            <h3>Los fast fixes de comunicación rinden</h3>
+            <p>El cambio del mensaje de tarjeta denegada no tocó una línea del motor de pagos y atacó el motivo de fuga más reportado. No todo problema de checkout se resuelve rediseñando pantallas.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">03</span>
+          <div>
+            <h3>Cuanti y cuali se necesitan mutuamente</h3>
+            <p>La encuesta dijo dónde estaba el problema; las entrevistas explicaron por qué. Sin las dos fuentes, los tres frentes de trabajo no se hubieran definido igual.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Volver a todos los casos</a>
+      <a href="case-rediseno-b2b.html">Ver el siguiente caso →</a>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <h2>Estoy buscando mi próximo equipo.</h2>
+    <div class="footer__links">
+      <a href="mailto:giselamramos@gmail.com">giselamramos@gmail.com</a>
+      <a href="https://linkedin.com/in/giselamr" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://behance.net/gmramos" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <div class="footer__bottom">
+      <span>Gisela Ramos · Product Designer</span>
+      <span>Buenos Aires, AR · Montevideo, UY</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('themeToggle');
+  function syncThemeToggle() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
+  }
+  syncThemeToggle();
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeToggle();
+  });
+
+  var links = document.querySelectorAll('.rail a');
+  var sections = Array.from(links).map(function(l) { return document.querySelector(l.getAttribute('href')); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var id = '#' + entry.target.id;
+      var link = document.querySelector('.rail a[href="' + id + '"]');
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(function(s) { if (s) observer.observe(s); });
+</script>
+
+<script src="lens.js"></script>
+</body>
+</html>

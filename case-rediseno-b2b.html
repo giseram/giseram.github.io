@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rediseño e-commerce B2B · Case Study · Gisela Ramos</title>
+<meta name="description" content="Propuesta de rediseño para el e-commerce B2B de una distribuidora ferretera líder en Ecuador: de outlet online a socio estratégico del comprador profesional.">
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a href="index.html" class="nav__mark">Gisela Ramos</a>
+  <div class="nav__right">
+    <div class="nav__links">
+      <a href="index.html#casos">Casos</a>
+      <a href="index.html#proceso">Cómo trabajo</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro"><span class="theme-toggle__dot"></span></button>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <a href="index.html" class="case-hero__back">← Volver a casos</a>
+  <div class="eyebrow">Propuesta · Rediseño · E-commerce B2B · Qubik</div>
+  <h1>Rediseño B2B: de outlet online a socio estratégico</h1>
+  <p class="case-hero__sub">Propuesta de rediseño integral (home, header, navegación, buscador y cuenta) para el e-commerce B2B de una distribuidora ferretera líder en Ecuador, con tres unidades de negocio: ferretería, automotriz y agroforestal.</p>
+
+  <dl class="case-hero__specs">
+    <div><dt>Rol</dt><dd>Product Designer (análisis y propuesta end-to-end)</dd></div>
+    <div><dt>Alcance</dt><dd>UX audit, benchmark, rediseño desktop y mobile</dd></div>
+    <div><dt>Cliente</dt><dd>Confidencial (distribución ferretera, Ecuador) · vía Qubik</dd></div>
+    <div><dt>Estado</dt><dd>Propuesta presentada al cliente</dd></div>
+  </dl>
+</header>
+
+<div class="case-body">
+  <aside class="rail">
+    <div class="rail__line">
+      <a href="#resumen">Resumen</a>
+      <a href="#problema">Problema</a>
+      <a href="#analisis">Análisis y research</a>
+      <a href="#definicion">Definición</a>
+      <a href="#solucion">Solución propuesta</a>
+      <a href="#estado">Estado y next steps</a>
+      <a href="#aprendizajes">Aprendizajes</a>
+    </div>
+  </aside>
+
+  <main class="case-content" id="main">
+
+    <section id="resumen">
+      <h2>Resumen</h2>
+      <p>El sitio del cliente vendía a profesionales (jefes de obra, mecánicos, productores agropecuarios) con el lenguaje de un outlet minorista: "más barato en web", "zona outlet", promos del día. La propuesta partió de un <strong>audit heurístico completo</strong> del sitio actual (desktop y mobile) y un benchmark de e-commerce B2B internacional, y rediseñó las piezas donde el comprador profesional trabaja: home, header, navegación, buscador y el panel de su cuenta. El principio rector: <strong>el encargado de compras no navega: opera</strong>.</p>
+    </section>
+
+    <section id="problema">
+      <h2>Problem statement</h2>
+      <p><strong>Dolor de negocio.</strong> La primera impresión del sitio definía la confianza en la marca, y el home actual, enfocado en promociones temporales, se percibía anticuado y desordenado. Los diferenciales B2B reales (línea de crédito, gestión de facturas) competían en igualdad de peso visual con banners promocionales.</p>
+      <p><strong>Dolor del usuario.</strong> El comprador profesional necesitaba eficiencia y encontraba fricción: un header móvil con tres niveles de navegación en conflicto, el cupo de crédito (su dato más crítico) oculto en un desplegable, y una cuenta que era una lista plana de enlaces sin jerarquía.</p>
+      <blockquote class="pull-quote">El comprador B2B no busca "ofertas del día": busca stock garantizado, entrega a tiempo y un socio que le simplifique la gestión.</blockquote>
+    </section>
+
+    <section id="analisis">
+      <h2>Análisis y research</h2>
+      <h3>Audit heurístico del sitio actual</h3>
+      <p>Se evaluaron las tres homes (ferretería, automotriz, agroforestal), el header mobile, el buscador y la experiencia logueada contra las heurísticas de Nielsen y criterios WCAG 2.1 AA. Hallazgos principales:</p>
+      <ul>
+        <li><strong>Slider desproporcionado</strong>: ocupaba casi todo el above-the-fold, con rotación automática rápida y indicadores casi invisibles, el usuario como espectador pasivo.</li>
+        <li><strong>CTAs sin jerarquía</strong>: los tres accesos principales (ofertas, facturas, crédito) tenían idéntico peso visual; sin guía clara de la acción esperada.</li>
+        <li><strong>Header móvil en conflicto</strong>: tres niveles de navegación compitiendo, íconos ambiguos y tap targets fuera de estándar WCAG.</li>
+        <li><strong>Contraste insuficiente</strong>: títulos y datos de producto en grises que fallaban el ratio 4.5:1, crítico para un usuario que compra desde un taller con mala iluminación.</li>
+        <li><strong>Un acierto a conservar</strong>: el flujo del buscador (sugerencias, SKU, productos recomendados con "agregar" directo) estaba validado y no debía rediseñarse, solo potenciarse.</li>
+      </ul>
+
+      <figure class="figure">
+        <img src="assets/rediseno-b2b-analisis.jpg" alt="Relevamiento del sitio auditado: home desktop, categorías, buscador, mi cupo, mi cuenta y navegación mobile, con la marca del cliente difuminada">
+        <figcaption>Audit del sitio actual: home, buscador, cuenta y navegación mobile de las tres unidades de negocio.</figcaption>
+      </figure>
+
+      <h3>Benchmark B2B</h3>
+      <p>Se relevaron distribuidores industriales y retailers de mejora del hogar (Grainger, Home Depot, CPO Outlets, Construrama, entre otros) para identificar los patrones que un comprador profesional ya espera: buscador protagonista con búsqueda por SKU, navegación dual por categoría y por marca, bloques de servicios financieros para empresas y segmentación por sector desde la home.</p>
+
+      <figure class="figure">
+        <img src="assets/rediseno-b2b-benchmark.jpg" alt="Benchmark de e-commerce B2B e industrial: Grainger, Walmart, Ace Hardware, OBI, Ikea y otros distribuidores, relevados con anotaciones">
+        <figcaption>Benchmark: distribuidores industriales y retailers de mejora del hogar.</figcaption>
+      </figure>
+    </section>
+
+    <section id="definicion">
+      <h2>Definición: principios del rediseño</h2>
+      <ul>
+        <li><strong>Hablar el idioma B2B.</strong> Reemplazar el lenguaje de outlet por propuesta de valor profesional: stock garantizado, entrega en 24/72hs, asesoría técnica.</li>
+        <li><strong>Eficiencia sobre inspiración.</strong> El sitio como herramienta de trabajo: menos clics, aceleradores para el usuario experto, experiencia "estilo app" en móvil.</li>
+        <li><strong>Modernizar sin perder reconocimiento.</strong> Mantener el azul corporativo como protagonista, ajustando tono, jerarquía y contraste para cumplir WCAG 2.1 AA.</li>
+        <li><strong>La IA donde suma.</strong> Búsqueda por voz y por imagen para el usuario que está en la obra o el taller con las manos ocupadas, no como gimmick de portada.</li>
+      </ul>
+    </section>
+
+    <section id="solucion">
+      <h2>Solución propuesta</h2>
+
+      <h3>1 · Header de tres niveles + versión sticky</h3>
+      <p>Un topbar de segmentación por unidad de negocio (ferretería / automotriz / agroforestal) con la promesa logística siempre visible; una barra principal con el buscador como héroe (placeholder "Buscar por marca, producto, SKU o N° de parte", el cambio de UX writing más importante) junto al <strong>cupo disponible</strong> visible en todo momento; y una barra de navegación dual: comprar por categoría o por marca, más accesos rápidos. Al scrollear, un header sticky simplificado mantiene búsqueda y carrito a mano.</p>
+
+      <figure class="figure">
+        <img src="assets/rediseno-b2b-header.jpg" alt="Header rediseñado de tres niveles con buscador protagonista, cupo visible y versión sticky, en desktop y mobile">
+        <figcaption>Header propuesto: tres niveles, cupo siempre visible y versión sticky.</figcaption>
+      </figure>
+
+      <h3>2 · Home orientada a soluciones</h3>
+      <p>Hero con lenguaje B2B ("Tu obra no puede esperar", con CTAs "Cotizar mi proyecto" y "Ver catálogo profesional") seguido de la <strong>segmentación por sector</strong> (construcción, industria, mantenimiento, agro y campo) para que cada perfil entre a su funnel sin ruido. Después: marcas que generan confianza, servicios financieros del "socio" (crédito y facturas, ahora accionables), ofertas de la semana y un acelerador de recompra: "tu pedido habitual está cargado: repetir ahora".</p>
+
+      <figure class="figure">
+        <img src="assets/rediseno-b2b-home.jpg" alt="Home rediseñada: hero con propuesta de valor B2B, segmentación por sector, marcas, servicios financieros y pedido habitual, en desktop y mobile">
+        <figcaption>Home propuesta: de outlet de promociones a herramienta de trabajo del comprador profesional.</figcaption>
+      </figure>
+
+      <h3>3 · Buscador potenciado: voz e imagen</h3>
+      <p>El flujo actual del buscador se conserva: estaba validado. Se suman dos capacidades para el usuario en campo: <strong>búsqueda por voz</strong> ("buscar llave de tubo de 12 pulgadas") para quien tiene las manos ocupadas, y <strong>búsqueda por imagen</strong> (fotografiar la pieza y encontrar el repuesto sin conocer el SKU), especialmente valiosa en móvil, desde la obra o el taller.</p>
+
+      <figure class="figure">
+        <img src="assets/rediseno-b2b-buscador.jpg" alt="Buscador potenciado con búsqueda por imagen: modal para subir la foto de una pieza e identificarla, en desktop y mobile">
+        <figcaption>Búsqueda por imagen y voz: para el usuario que tiene la pieza en la mano pero no el SKU.</figcaption>
+      </figure>
+
+      <h3>4 · Mi Cuenta como panel de control</h3>
+      <p>La lista plana de enlaces se transformó en un panel B2B: pedidos y configuraciones agrupados según el modelo mental del usuario, iconografía clara, y el <strong>cupo de crédito con pantalla propia</strong>: resumen visual del saldo, cupo utilizado y un CTA de "solicitar ampliación". La información que antes había que cazar, ahora empodera.</p>
+
+      <figure class="figure">
+        <img src="assets/rediseno-b2b-micuenta.jpg" alt="Mi cuenta rediseñada como panel de control B2B, con pantalla propia para el cupo de crédito y CTA de solicitar ampliación">
+        <figcaption>Mi Cuenta y Mi Cupo: de lista de enlaces a panel de control del negocio.</figcaption>
+      </figure>
+
+      <div class="callout">
+        <strong>Conservar también es diseñar</strong>
+        La propuesta identifica explícitamente qué no tocar: el flujo del buscador con sugerencias y agregado directo al carrito ya era un acelerador validado. Rediseñarlo habría roto la consistencia para el usuario actual sin agregar valor: se potenció con voz e imagen en lugar de reemplazarlo.
+      </div>
+    </section>
+
+    <section id="estado">
+      <h2>Estado y next steps</h2>
+      <p>La propuesta fue presentada al cliente y está pendiente de implementación. Los próximos pasos definidos:</p>
+      <ul>
+        <li><strong>Validación con encargados de compra reales</strong>: test de comprensión del nuevo home y de los flujos de cuenta y cupo.</li>
+        <li><strong>Priorización con desarrollo</strong>: separar quick wins (contraste, jerarquía de CTAs, header sticky) de las apuestas mayores (búsqueda por imagen y voz).</li>
+        <li><strong>Métricas de éxito</strong>: tiempo hasta encontrar producto, conversión de home a catálogo, adopción del buscador potenciado y uso del panel de cupo.</li>
+      </ul>
+      <div class="callout">
+        <strong>Nota de transparencia</strong>
+        Al tratarse de una propuesta no implementada, este caso documenta el análisis y las decisiones de diseño, no resultados en producción.
+      </div>
+    </section>
+
+    <section id="aprendizajes">
+      <h2>Aprendizajes</h2>
+      <div class="learnings">
+        <article class="learning">
+          <span class="learning__num">01</span>
+          <div>
+            <h3>El audit es el argumento</h3>
+            <p>Anclar cada decisión del rediseño a una heurística violada o a un criterio WCAG concreto convirtió la propuesta en un diagnóstico defendible, no en una opinión estética.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">02</span>
+          <div>
+            <h3>B2B es un idioma, no un segmento</h3>
+            <p>El mismo catálogo comunicado como "más barato en web" o como "stock garantizado para tu obra" produce percepciones de marca opuestas: el rediseño más profundo fue de lenguaje.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">03</span>
+          <div>
+            <h3>Auditar también es reconocer aciertos</h3>
+            <p>Señalar qué conservar (el flujo del buscador) le dio credibilidad al análisis y redujo el costo percibido de la propuesta.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Volver a todos los casos</a>
+      <a href="case-pedidos-ia.html">Ver el siguiente caso →</a>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <h2>Estoy buscando mi próximo equipo.</h2>
+    <div class="footer__links">
+      <a href="mailto:giselamramos@gmail.com">giselamramos@gmail.com</a>
+      <a href="https://linkedin.com/in/giselamr" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://behance.net/gmramos" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <div class="footer__bottom">
+      <span>Gisela Ramos · Product Designer</span>
+      <span>Buenos Aires, AR · Montevideo, UY</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('themeToggle');
+  function syncThemeToggle() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
+  }
+  syncThemeToggle();
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeToggle();
+  });
+
+  var links = document.querySelectorAll('.rail a');
+  var sections = Array.from(links).map(function(l) { return document.querySelector(l.getAttribute('href')); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var id = '#' + entry.target.id;
+      var link = document.querySelector('.rail a[href="' + id + '"]');
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(function(s) { if (s) observer.observe(s); });
+</script>
+
+<script src="lens.js"></script>
+</body>
+</html>

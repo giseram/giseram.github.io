@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te corresponde · Case Study · Gisela Ramos</title>
+<meta name="description" content="Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina.">
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a href="index.html" class="nav__mark">Gisela Ramos</a>
+  <div class="nav__right">
+    <div class="nav__links">
+      <a href="index.html#casos">Casos</a>
+      <a href="index.html#proceso">Cómo trabajo</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro"><span class="theme-toggle__dot"></span></button>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <a href="index.html" class="case-hero__back">← Volver a casos</a>
+  <div class="eyebrow">0 → 1 · Legal-tech · Qubik</div>
+  <h1>Te corresponde: de vacío regulatorio a producto en producción</h1>
+  <p class="case-hero__sub">Cómo diseñé end-to-end una plataforma que reemplaza el trámite presencial de reclamos de consumo por un proceso 100% online, en una ventana de oportunidad regulatoria en Argentina.</p>
+
+  <dl class="case-hero__specs">
+    <div><dt>Rol</dt><dd>Product Designer (ownership end-to-end)</dd></div>
+    <div><dt>Alcance</dt><dd>Branding, research, UX/UI, mailings, back office</dd></div>
+    <div><dt>Cliente</dt><dd>Qubik</dd></div>
+    <div><dt>Sitio</dt><dd>tecorresponde.com.ar</dd></div>
+  </dl>
+</header>
+
+<div class="case-body">
+  <aside class="rail">
+    <div class="rail__line">
+      <a href="#resumen">Resumen</a>
+      <a href="#problema">Problema</a>
+      <a href="#research">Research</a>
+      <a href="#definicion">Definición · HMW</a>
+      <a href="#arquitectura">Arquitectura</a>
+      <a href="#proceso">Proceso de diseño</a>
+      <a href="#solucion">Solución final</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#aprendizajes">Aprendizajes</a>
+    </div>
+  </aside>
+
+  <main class="case-content" id="main">
+
+    <section id="resumen">
+      <h2>Resumen</h2>
+      <p>Con la desregulación de la defensa del consumidor en el horizonte y sin un producto equivalente en el mercado argentino, Qubik vio la oportunidad de construir una plataforma que resolviera de punta a punta la gestión de reclamos de consumo. Diseñé de 0→1 <strong>Te corresponde</strong>, desde el branding hasta el producto final (research, arquitectura de información, UI y mailings), colaborando con desarrollo y el equipo legal para llevarlo a producción y, una vez lanzado, seguir iterando el flujo en base a uso real.</p>
+    </section>
+
+    <section id="problema">
+      <h2>Problem statement</h2>
+      <p><strong>Dolor de negocio.</strong> Con el retiro anunciado del Estado de su rol en defensa del consumidor, se abría un vacío de mercado en Argentina: no existía un producto que resolviera la gestión de reclamos de consumo de forma privada y ágil. Qubik identificó la oportunidad de ser first-mover.</p>
+      <p><strong>Dolor del usuario.</strong> Quien tenía un reclamo de consumo no contaba con un camino claro para resolverlo: debía buscar un abogado por su cuenta, averiguar el proceso por distintos canales y gestionar todo de forma fragmentada.</p>
+      <blockquote class="pull-quote">Las personas con un reclamo de consumo en Argentina no tenían un camino claro para resolverlo, justo cuando el Estado se retiraba de su rol en defensa del consumidor.</blockquote>
+      <p>"Te corresponde" resuelve esto centralizando todo el proceso (carga del reclamo, contacto directo con el abogado, seguimiento) en una sola plataforma online.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research &amp; Discovery</h2>
+      <p>Al no existir competencia directa en Argentina, el research arrancó con un benchmark de tres tipos de referencia distintos: especialistas de nicho (AirHelp, refundmore, SkyRefund), plataformas de reclamos genéricos (ReclamoSeguro, tuQuejaSuma) y el canal oficial (Argentina.gob.ar).</p>
+
+      <figure class="figure">
+        <img src="assets/benchmark.jpg" alt="Benchmark competitivo: AirHelp, ReclamoSeguro, tuQuejaSuma, Argentina.gob.ar, refundmore, SkyRefund, JustAnswer">
+        <figcaption>Benchmark competitivo: ocho referencias evaluadas en tres categorías distintas.</figcaption>
+      </figure>
+
+      <h3>Insights clave</h3>
+      <ul>
+        <li><strong>Flujo simple gana conversión.</strong> Los productos con mejor experiencia (AirHelp) reducen el proceso a un único foco: el formulario de reclamo, sin distracciones. Se descartó la complejidad de plataformas más genéricas a favor de un flujo lineal.</li>
+        <li><strong>El target buscaba confianza legal, no "app ágil".</strong> A diferencia de la estética consumer-friendly de AirHelp o ReclamoSeguro, se optó por un look corporativo tradicional, alineado a un público de 25 a 50 años con nivel educativo terciario/universitario.</li>
+        <li><strong>Transparencia como diferencial.</strong> Ningún competidor directo ofrecía seguimiento en tiempo real + comunicación directa con quien gestiona el caso.</li>
+      </ul>
+
+      <h3>User journey: validación del problema</h3>
+      <p>Se mapeó el recorrido de una usuaria con un reclamo real (reembolso de un paquete de vacaciones rechazado) para entender el arco emocional completo, no solo el flujo funcional.</p>
+
+      <div class="emotion-strip">
+        <div class="emotion-strip__stage">
+          <div class="stage-label">Trigger</div>
+          <div class="stage-emotion">Enojada</div>
+          <div class="stage-note">Su solicitud de reembolso fue rechazada.</div>
+        </div>
+        <div class="emotion-strip__arrow" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.25 8A.75.75 0 0 1 2 7.25h10.19L9.47 4.53a.75.75 0 0 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 1 1-1.06-1.06l2.72-2.72H2A.75.75 0 0 1 1.25 8" clip-rule="evenodd"/></svg>
+        </div>
+        <div class="emotion-strip__stage">
+          <div class="stage-label">Research</div>
+          <div class="stage-emotion">Confundida</div>
+          <div class="stage-note">No conoce a nadie que haya reclamado antes; no sabe a quién recurrir.</div>
+        </div>
+        <div class="emotion-strip__arrow" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.25 8A.75.75 0 0 1 2 7.25h10.19L9.47 4.53a.75.75 0 0 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 1 1-1.06-1.06l2.72-2.72H2A.75.75 0 0 1 1.25 8" clip-rule="evenodd"/></svg>
+        </div>
+        <div class="emotion-strip__stage">
+          <div class="stage-label">Discovery</div>
+          <div class="stage-emotion">Neutral</div>
+          <div class="stage-note">Encuentra el sitio en redes sociales.</div>
+        </div>
+        <div class="emotion-strip__arrow" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.25 8A.75.75 0 0 1 2 7.25h10.19L9.47 4.53a.75.75 0 0 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 1 1-1.06-1.06l2.72-2.72H2A.75.75 0 0 1 1.25 8" clip-rule="evenodd"/></svg>
+        </div>
+        <div class="emotion-strip__stage">
+          <div class="stage-label">Exploration</div>
+          <div class="stage-emotion">Confía</div>
+          <div class="stage-note">La propuesta de valor le da confianza para escribir.</div>
+        </div>
+        <div class="emotion-strip__arrow" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.25 8A.75.75 0 0 1 2 7.25h10.19L9.47 4.53a.75.75 0 0 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 1 1-1.06-1.06l2.72-2.72H2A.75.75 0 0 1 1.25 8" clip-rule="evenodd"/></svg>
+        </div>
+        <div class="emotion-strip__stage">
+          <div class="stage-label">Goal</div>
+          <div class="stage-emotion">En espera</div>
+          <div class="stage-note">Completa el formulario y espera respuesta.</div>
+        </div>
+      </div>
+
+      <figure class="figure">
+        <img src="assets/user-journey.jpg" alt="Mapa de user journey de una usuaria realizando un reclamo">
+        <figcaption>User journey completo: trigger, research, discovery, exploration y goal.</figcaption>
+      </figure>
+
+      <div class="callout">
+        <strong>De research a decisión de producto</strong>
+        El tramo de mayor fricción emocional (Research → "confundida") valida el problem statement: no había un camino claro. La necesidad de un sistema de comunicación sólido, identificada en este journey, se tradujo directamente en el chat integrado dentro de "Mis reclamos" (ver sección Solución).
+      </div>
+    </section>
+
+    <section id="definicion">
+      <h2>Definición: How Might We</h2>
+      <ul>
+        <li><strong>¿Cómo podríamos simplificar la carga del reclamo sin perder la seriedad legal del servicio?</strong></li>
+        <li><strong>¿Cómo podríamos darle al usuario visibilidad total del estado de su reclamo, sin que tenga que preguntar o esperar una respuesta del abogado?</strong></li>
+      </ul>
+
+      <h3>Objetivo de negocio</h3>
+      <table class="spec-table">
+        <thead><tr><th>Objetivo</th><th>Métrica</th><th>Baseline</th><th>Meta</th></tr></thead>
+        <tbody>
+          <tr><td>Validar el modelo de reclamos gestionados</td><td>Reclamos / mes</td><td>0 (0→1)</td><td>100 / mes</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="arquitectura">
+      <h2>Arquitectura de la información</h2>
+      <p>El flujo principal: Home con dos CTAs (Reclamar / Seguir reclamo) → formulario dinámico según categoría → verificación de identidad por OTP → confirmación y derivación al abogado → seguimiento en "Mis reclamos" con chat integrado.</p>
+
+      <figure class="figure">
+        <img src="assets/arquitectura.jpg" alt="Propuesta de arquitectura de información de Te corresponde">
+        <figcaption>Propuesta de arquitectura de información, primera versión evaluada.</figcaption>
+      </figure>
+
+      <div class="callout">
+        <strong>Por qué OTP y no login tradicional</strong>
+        El patrón de uso esperado es de baja frecuencia: un usuario gestiona uno o dos reclamos, no docenas como en un e-commerce. Pedirle que cree y recuerde una contraseña para un uso tan esporádico generaba fricción innecesaria frente al costo/beneficio de un código de verificación.
+      </div>
+
+      <h3>Alternativas descartadas</h3>
+      <p>Se evaluó una arquitectura más amplia, tipo sitio institucional (blog, "tus derechos", dashboard de gestión avanzado con filtros y mensajería interna). Se simplificó a un flujo lineal centrado en conversión (reclamo primero, contenido de soporte después), siguiendo el patrón validado en el benchmark. Decisión de diseño propia, priorizando velocidad de lanzamiento.</p>
+    </section>
+
+    <section id="proceso">
+      <h2>Proceso de diseño: ideación y wireframes</h2>
+      <p>Se mapearon múltiples escenarios de flujo (registro, formulario, envío, pago) contemplando estados de error, validaciones y variantes mobile/desktop, no solo el happy path.</p>
+
+      <figure class="figure">
+        <img src="assets/flujo-completo.jpg" alt="Síntesis del flujo completo en cinco etapas: ingreso, formulario, documentación, envío, y seguimiento y pago">
+        <figcaption>El flujo completo, sintetizado en cinco etapas, cada una con sus variantes y estados de error contemplados.</figcaption>
+      </figure>
+
+      <h3>Iteración clave: momento de autenticación</h3>
+      <p>En las primeras versiones se evaluaron distintos puntos del flujo para pedir la verificación OTP. Se decidió moverla al final, después de que el usuario completa el formulario de reclamo, para evitar fricción y abandono en el primer contacto con el producto, capturando primero el compromiso del usuario antes de pedirle el paso de autenticación.</p>
+
+      <div class="showcase" data-interval="4500" aria-label="Recorrido por los pasos del formulario de reclamo">
+        <div class="showcase__viewport">
+          <figure class="showcase__slide" data-caption="Paso 1 · Iniciá tu reclamo: empieza por el problema, no por los datos personales.">
+            <img src="assets/formulario-paso-1.jpg" alt="Paso 1 del formulario: iniciá tu reclamo, elección de rubro y empresa a reclamar">
+          </figure>
+          <figure class="showcase__slide" data-caption="Paso 2 · Contanos el problema: descripción guiada y datos adicionales opcionales.">
+            <img src="assets/formulario-paso-2.jpg" alt="Paso 2 del formulario: contanos el problema, descripción y datos adicionales">
+          </figure>
+          <figure class="showcase__slide" data-caption="Paso 3 · Verificá tu cuenta: teléfono o e-mail, sin contraseña.">
+            <img src="assets/formulario-paso-3.jpg" alt="Paso 3 del formulario: verificación de cuenta con teléfono o e-mail, sin contraseña">
+          </figure>
+          <figure class="showcase__slide" data-caption="Paso 4 · ¡Listo! Confirmación con número de reclamo y acceso al seguimiento.">
+            <img src="assets/formulario-paso-4.jpg" alt="Paso 4 del formulario: confirmación de reclamo enviado con número de seguimiento">
+          </figure>
+        </div>
+        <div class="showcase__bar">
+          <span class="showcase__caption"></span>
+          <div class="showcase__dots"></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Colaboración con desarrollo</strong>
+        La elección de OTP sobre login tradicional fue una decisión conjunta con el equipo técnico, validada también desde UX por el patrón de uso esperado. El back office, en cambio, no pudo pasar por un proceso de diseño UX completo por restricciones de roadmap: se adaptó una base ya existente de otro producto de Qubik, con participación de diseño para ajustes puntuales.
+      </div>
+    </section>
+
+    <section id="solucion">
+      <h2>Solución final</h2>
+      <ul>
+        <li><strong>Formulario de reclamo dinámico</strong> por categoría, con verificación de identidad al cierre del flujo.</li>
+        <li><strong>"Mis reclamos"</strong>: seguimiento del estado de cada caso.</li>
+        <li><strong>Chat integrado</strong> con el abogado asignado, activo cuando necesita información adicional.</li>
+        <li><strong>Sistema de comunicaciones transaccionales multicanal</strong> (email + WhatsApp, diseñado en espejo), cubriendo todo el ciclo de vida del reclamo.</li>
+      </ul>
+
+      <div class="showcase" data-interval="4500" aria-label="Recorrido por el seguimiento de reclamo">
+        <div class="showcase__viewport">
+          <figure class="showcase__slide" data-caption="Home: el acceso &quot;Seguir reclamo&quot; siempre visible junto al inicio de un reclamo nuevo.">
+            <img src="assets/seguimiento-mvp-1.jpg" alt="Home de Te corresponde con los accesos Seguir reclamo y Reclamar ahora">
+          </figure>
+          <figure class="showcase__slide" data-caption="Seguimiento de reclamo: consulta del estado con el número de reclamo, sin login.">
+            <img src="assets/seguimiento-mvp-2.jpg" alt="Pantalla de seguimiento de reclamo: búsqueda por número de reclamo">
+          </figure>
+          <figure class="showcase__slide" data-caption="Mis reclamos: estado de cada caso y detalle con datos, montos y documentación adjunta.">
+            <img src="assets/seguimiento-mvp-3.jpg" alt="Mis reclamos: tabla de estados y detalle del reclamo con documentación adjunta">
+          </figure>
+        </div>
+        <div class="showcase__bar">
+          <span class="showcase__caption"></span>
+          <div class="showcase__dots"></div>
+        </div>
+      </div>
+
+      <figure class="figure">
+        <img src="assets/mailings.jpg" alt="Sistema de mailings transaccionales: OTP, reclamo recibido, rechazado, aprobado, pago, finalizado, en email y WhatsApp">
+        <figcaption>Sistema de comunicaciones transaccionales: email y WhatsApp en espejo.</figcaption>
+      </figure>
+
+      <p>Esta solución responde directamente al problem statement: centraliza en un solo lugar online lo que antes requería buscar un abogado por cuenta propia y gestionar el proceso de forma fragmentada. El sistema de comunicaciones multicanal, sumado a "Mis reclamos" y el chat, materializa de punta a punta el valor de marca de transparencia definido desde el research inicial.</p>
+    </section>
+
+    <section id="resultados">
+      <h2>Resultados e impacto</h2>
+      <p>El producto generó tracción desde el lanzamiento, con reclamos ingresando de forma sostenida y acercándose a la meta de 100/mes, sin llegar a alcanzarla en el período en que participé del proyecto. Se identificó un patrón relevante: una porción de los reclamos se rebotaba por no cumplir los requisitos que el equipo legal necesitaba para tomar el caso. El volumen también estuvo condicionado por un nivel de inversión en adquisición menor al proyectado.</p>
+      <div class="callout">
+        <strong>Nota de transparencia</strong>
+        No se compartieron métricas exactas post-lanzamiento; el proyecto quedó en medición al momento del cierre de mi participación.
+      </div>
+    </section>
+
+    <section id="aprendizajes">
+      <h2>Aprendizajes y next steps</h2>
+      <h3>Qué haría diferente</h3>
+      <div class="learnings">
+        <article class="learning">
+          <span class="learning__num">01</span>
+          <div>
+            <h3>Categorización del formulario</h3>
+            <p>Las distintas categorías de reclamo estaban unificadas en un mismo formulario. Abrirlo en preguntas específicas por categoría (capturando desde el inicio los requisitos que el equipo legal necesita para calificar un caso) habría reducido la tasa de reclamos rebotados.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">02</span>
+          <div>
+            <h3>Documentación adjunta en el flujo</h3>
+            <p>Había propuesto que el usuario suba documentación como parte de los steps del formulario. Se descartó por tiempos de roadmap, una decisión de negocio que primó sobre una recomendación de diseño.</p>
+          </div>
+        </article>
+      </div>
+      <h3>Mi rol en la toma de decisiones</h3>
+      <p>Diseñé la identidad de marca desde cero (logo, paleta, estética de comunicación), todas las pantallas del producto de punta a punta y los mailings transaccionales. Participé también en el diseño del back office, adaptando una base ya existente por restricciones de roadmap. Una vez el producto en producción, pasé a un rol de mejora continua: identifiqué e indiqué cambios de flujo para optimizar la experiencia del abogado y del usuario, en base al uso real.</p>
+    </section>
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Volver a todos los casos</a>
+      <a href="case-checkout-carrefour.html">Ver el siguiente caso →</a>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <h2>Estoy buscando mi próximo equipo.</h2>
+    <div class="footer__links">
+      <a href="mailto:giselamramos@gmail.com">giselamramos@gmail.com</a>
+      <a href="https://linkedin.com/in/giselamr" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://behance.net/gmramos" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <div class="footer__bottom">
+      <span>Gisela Ramos · Product Designer</span>
+      <span>Buenos Aires, AR · Montevideo, UY</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('themeToggle');
+  function syncThemeToggle() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
+  }
+  syncThemeToggle();
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeToggle();
+  });
+
+  var links = document.querySelectorAll('.rail a');
+  var sections = Array.from(links).map(function(l) { return document.querySelector(l.getAttribute('href')); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var id = '#' + entry.target.id;
+      var link = document.querySelector('.rail a[href="' + id + '"]');
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(function(s) { if (s) observer.observe(s); });
+</script>
+
+<script src="lens.js"></script>
+<script src="showcase.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedidos por IA · Case Study · Gisela Ramos</title>
+<meta name="description" content="Propuesta de alta de pedido desde un prompt para el e-commerce B2B de una empresa líder de alimentos en Argentina: del lenguaje natural al carrito listo para confirmar.">
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a href="index.html" class="nav__mark">Gisela Ramos</a>
+  <div class="nav__right">
+    <div class="nav__links">
+      <a href="index.html#casos">Casos</a>
+      <a href="index.html#proceso">Cómo trabajo</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro"><span class="theme-toggle__dot"></span></button>
+  </div>
+</nav>
+
+<header class="case-hero">
+  <a href="index.html" class="case-hero__back">← Volver a casos</a>
+  <div class="eyebrow">Propuesta · B2B · IA aplicada · Qubik</div>
+  <h1>Pedidos por IA: del prompt al carrito en un e-commerce B2B</h1>
+  <p class="case-hero__sub">Propuesta para la tienda B2B de una empresa líder de alimentos en Argentina: que el comerciante escriba lo que necesita en lenguaje natural y un asesor inteligente lo convierta en un pedido optimizado, listo para confirmar en el checkout de siempre.</p>
+
+  <dl class="case-hero__specs">
+    <div><dt>Rol</dt><dd>Product Designer (propuesta end-to-end)</dd></div>
+    <div><dt>Alcance</dt><dd>Benchmark, exploración de opciones, flujo y UI</dd></div>
+    <div><dt>Cliente</dt><dd>Confidencial (alimentos, Argentina) · vía Qubik</dd></div>
+    <div><dt>Estado</dt><dd>Propuesta presentada al cliente</dd></div>
+  </dl>
+</header>
+
+<div class="case-body">
+  <aside class="rail">
+    <div class="rail__line">
+      <a href="#resumen">Resumen</a>
+      <a href="#problema">Problema</a>
+      <a href="#referencias">Referencias</a>
+      <a href="#exploracion">Exploración</a>
+      <a href="#solucion">Solución propuesta</a>
+      <a href="#estado">Estado y next steps</a>
+      <a href="#aprendizajes">Aprendizajes</a>
+    </div>
+  </aside>
+
+  <main class="case-content" id="main">
+
+    <section id="resumen">
+      <h2>Resumen</h2>
+      <p>El e-commerce B2B del cliente atiende a comercios que hacen pedidos grandes y recurrentes, y los cargan ítem por ítem. La propuesta: un flujo de <strong>alta de pedido desde un prompt</strong>, donde el usuario describe la necesidad de su negocio y un asesor con IA le devuelve una propuesta de compra optimizada, basada en sus ventas y las tendencias de la temporada. Se exploraron tres formas de integrarlo al sitio y se propuso una <strong>página dedicada</strong>, con resultados que reutilizan patrones que el usuario ya conoce y el checkout actual sin cambios.</p>
+    </section>
+
+    <section id="problema">
+      <h2>Problem statement</h2>
+      <p><strong>Dolor del usuario.</strong> El cliente B2B no navega por inspiración: repone. Armar un pedido voluminoso ítem por ítem (o preparar un archivo para importar) es una tarea lenta y repetitiva, que además exige saber de antemano qué conviene pedir.</p>
+      <p><strong>Dolor de negocio.</strong> Cada fricción en la carga del pedido es un pedido que se posterga o se achica. Y la empresa buscaba incorporar IA de forma que agregue valor real al comerciante, no como un gimmick.</p>
+      <blockquote class="pull-quote">El comerciante sabe qué necesita su negocio: "lo de siempre para la semana, y algo para el finde largo". El sistema debería poder trabajar con eso.</blockquote>
+    </section>
+
+    <section id="referencias">
+      <h2>Referencias y benchmark</h2>
+      <p>Se relevaron patrones de e-commerce B2B y food service para anclar la propuesta en convenciones probadas:</p>
+      <ul>
+        <li><strong>Compra por caja/bulto con reposición rápida</strong> (Food Service Direct): listados densos, precio por caja, add to cart directo desde el listado, el modelo mental del comprador mayorista.</li>
+        <li><strong>Manejo de productos sin stock</strong> (Office Depot): cuando un ítem no está disponible, mostrar alternativas y sustitutos junto al producto original, sin sacar al usuario del flujo. Este patrón se trasladó directo a la página de resultados.</li>
+      </ul>
+
+      <figure class="figure">
+        <div class="figure__placeholder">Imagen pendiente<code>assets/pedidos-ia-referencias.jpg (benchmark: Food Service Direct y patrón de sustitutos de Office Depot)</code></div>
+        <!-- <img src="assets/pedidos-ia-referencias.jpg" alt="Referencias de benchmark: listado B2B de Food Service Direct y patrón de alternativas y sustitutos de Office Depot"> -->
+        <figcaption>Referencias: compra mayorista por caja y patrón de alternativas ante falta de stock.</figcaption>
+      </figure>
+    </section>
+
+    <section id="exploracion">
+      <h2>Exploración: tres formas de entrar al flujo</h2>
+      <p>Antes de definir la propuesta se exploraron tres integraciones posibles, con sus trade-offs:</p>
+      <ul>
+        <li><strong>CTA + modal</strong>: descartada. Acceso rápido desde cualquier punto del sitio, pero el modal no tiene espacio para explicar la herramienta, mostrar ejemplos ni manejar resultados complejos (sustituciones, mínimos, cantidades).</li>
+        <li><strong>Integrada al buscador</strong>: descartada. Aprovechaba un punto de entrada existente, pero mezclaba dos modelos mentales distintos: buscar un producto puntual y delegar el armado de un pedido completo.</li>
+        <li><strong>Página dedicada</strong>: elegida. Un entorno controlado: todo el espacio para explicar cómo funciona la herramienta, mostrar ejemplos y manejar el proceso sin las distracciones del resto del sitio.</li>
+      </ul>
+
+      <figure class="figure">
+        <div class="figure__placeholder">Imagen pendiente<code>assets/pedidos-ia-descartadas.jpg (opciones descartadas: CTA + modal e integración al buscador)</code></div>
+        <!-- <img src="assets/pedidos-ia-descartadas.jpg" alt="Exploraciones descartadas: versión con CTA y modal, y versión integrada al buscador del sitio"> -->
+        <figcaption>Exploraciones descartadas: CTA + modal e integración al buscador.</figcaption>
+      </figure>
+
+      <div class="callout">
+        <strong>El punto de entrada</strong>
+        El acceso se propuso como CTA "Pedido rápido con IA" en el header, el lugar más prominente del sitio, con claridad total de propósito: el usuario sabe exactamente qué esperar al hacer clic. Se sumaron además íconos de referencia visual en los otros accesos del sitio.
+      </div>
+    </section>
+
+    <section id="solucion">
+      <h2>Solución propuesta</h2>
+
+      <h3>1 · La página: un prompt que habla el idioma del negocio</h3>
+      <p>La página "Pedidos rápidos con IA" recibe al usuario con una sola pregunta, <strong>"¿Qué querés pedir?"</strong>, y una explicación breve: describí la necesidad de tu negocio y el asesor inteligente te propone una compra optimizada, basada en tus ventas y las tendencias de la temporada. Estilo visual clásico, deliberadamente: la novedad está en la capacidad, no en la interfaz: el usuario tiene que encontrar familiaridad.</p>
+
+      <figure class="figure">
+        <div class="figure__placeholder">Imagen pendiente<code>assets/pedidos-ia-pagina.jpg: página dedicada con el prompt "¿Qué querés pedir?"</code></div>
+        <!-- <img src="assets/pedidos-ia-pagina.jpg" alt="Página dedicada de pedidos rápidos con IA, con campo de prompt '¿Qué querés pedir?' y ejemplos de uso"> -->
+        <figcaption>La página dedicada: un prompt, ejemplos y espacio para explicar cómo funciona.</figcaption>
+      </figure>
+
+      <h3>2 · Resultados: la IA propone, el usuario confirma</h3>
+      <p>El pedido generado se presenta con el mismo estilo que la confirmación de pedido cuando se sube por archivo, un flujo que el usuario B2B ya conoce. Cada ítem muestra cantidades editables, precios y disponibilidad; los productos no disponibles se identifican junto con su posible sustitución, y se señalan los que no cumplen la cantidad mínima de compra. El usuario puede agregar todo al carrito de una vez, o eliminar, editar y agregar uno por uno, y tiene accesos a promos y productos sugeridos para completar el pedido.</p>
+
+      <figure class="figure">
+        <div class="figure__placeholder">Imagen pendiente<code>assets/pedidos-ia-resultados.jpg: página de resultados con disponibilidad, sustituciones y mínimos</code></div>
+        <!-- <img src="assets/pedidos-ia-resultados.jpg" alt="Página de resultados del pedido generado por IA: cantidades editables, disponibilidad, sustituciones sugeridas y avisos de cantidad mínima"> -->
+        <figcaption>Resultados: pedido editable con disponibilidad, sustituciones y avisos de mínimos.</figcaption>
+      </figure>
+
+      <h3>3 · Checkout: sin cambios</h3>
+      <p>Confirmado el pedido, el usuario cae en el carrito y checkout actuales, tal como están. Una decisión doble: mantiene la familiaridad del cierre de compra y acota el alcance de desarrollo al tramo nuevo del flujo.</p>
+
+      <div class="callout">
+        <strong>Principio rector de la propuesta</strong>
+        La IA arma, el usuario decide. En un contexto B2B donde cada pedido es plata del negocio, el sistema nunca compra solo: propone un pedido completo y deja al comerciante el control total para ajustarlo antes de confirmar.
+      </div>
+    </section>
+
+    <section id="estado">
+      <h2>Estado y next steps</h2>
+      <p>La propuesta fue presentada al cliente y está pendiente de implementación. Los próximos pasos definidos para una eventual puesta en marcha:</p>
+      <ul>
+        <li><strong>Validación con comerciantes reales</strong>: testear la comprensión del prompt y la confianza en el pedido propuesto.</li>
+        <li><strong>Métricas de éxito</strong>: tiempo de alta de pedido contra el flujo actual (manual y por archivo), tasa de adopción del canal IA y valor promedio del pedido.</li>
+        <li><strong>Iteración del motor de propuesta</strong>: afinar las sugerencias con el historial de compra y estacionalidad de cada cliente.</li>
+      </ul>
+      <div class="callout">
+        <strong>Nota de transparencia</strong>
+        Al tratarse de una propuesta no implementada, este caso documenta decisiones de diseño y exploración, no resultados en producción.
+      </div>
+    </section>
+
+    <section id="aprendizajes">
+      <h2>Aprendizajes</h2>
+      <div class="learnings">
+        <article class="learning">
+          <span class="learning__num">01</span>
+          <div>
+            <h3>La IA se adopta cuando se apoya en lo conocido</h3>
+            <p>Reutilizar el patrón de confirmación del pedido por archivo hizo que un flujo nuevo se sintiera familiar desde el primer uso, y abarató el desarrollo.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">02</span>
+          <div>
+            <h3>Explorar para descartar también es avanzar</h3>
+            <p>Documentar por qué el modal y el buscador no eran el lugar correcto hizo más sólida la recomendación de la página dedicada frente al cliente.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">03</span>
+          <div>
+            <h3>El benchmark no es copiar pantallas, es importar patrones</h3>
+            <p>El manejo de sustitutos de Office Depot resolvió el problema más espinoso del flujo: qué pasa cuando la IA propone algo que no hay.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="case-nav-footer">
+      <a href="index.html">← Volver a todos los casos</a>
+      <a href="case-banca-poc.html">Ver el siguiente caso →</a>
+    </div>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <h2>Estoy buscando mi próximo equipo.</h2>
+    <div class="footer__links">
+      <a href="mailto:giselamramos@gmail.com">giselamramos@gmail.com</a>
+      <a href="https://linkedin.com/in/giselamr" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://behance.net/gmramos" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <div class="footer__bottom">
+      <span>Gisela Ramos · Product Designer</span>
+      <span>Buenos Aires, AR · Montevideo, UY</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('themeToggle');
+  function syncThemeToggle() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
+  }
+  syncThemeToggle();
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeToggle();
+  });
+
+  var links = document.querySelectorAll('.rail a');
+  var sections = Array.from(links).map(function(l) { return document.querySelector(l.getAttribute('href')); });
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var id = '#' + entry.target.id;
+      var link = document.querySelector('.rail a[href="' + id + '"]');
+      if (entry.isIntersecting) {
+        links.forEach(function(l) { l.classList.remove('active'); });
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+  sections.forEach(function(s) { if (s) observer.observe(s); });
+</script>
+
+<script src="lens.js"></script>
+</body>
+</html>

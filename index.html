@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gisela Ramos, Product Designer</title>
+<meta name="description" content="Product Designer con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en LatAm.">
+<script>
+  (function() {
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<nav class="nav">
+  <a href="index.html" class="nav__mark">Gisela Ramos</a>
+  <div class="nav__right">
+    <div class="nav__links">
+      <a href="#casos">Casos</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a href="sobre-mi.html">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro"><span class="theme-toggle__dot"></span></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero__grid">
+    <div class="hero__content">
+      <div class="eyebrow">Buenos Aires · Montevideo <span>(LatAm remoto · Montevideo remoto o híbrido)</span></div>
+      <h1 id="heroTitle">
+        <span class="type-ghost" aria-hidden="true">Diseño productos que resuelven problemas de <span class="accent">negocio</span>, no solo pantallas.</span>
+        <span class="type-live" aria-hidden="true"></span>
+        <span class="visually-hidden">Diseño productos que resuelven problemas de negocio, no solo pantallas.</span>
+      </h1>
+      <noscript><style>.type-ghost { visibility: visible !important; } #heroTitle .type-live { display: none; }</style></noscript>
+      <p class="hero__lede">Product Designer con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en distintos países de LatAm, desde research hasta el prototipo en producción.</p>
+      <div class="hero__actions">
+        <a href="case-te-corresponde.html" class="btn btn--solid">Ver caso: Te corresponde →</a>
+        <a href="#contacto" class="btn btn--outline">Contactame</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <div class="foto-focus">
+        <img class="foto-focus__trama foto-focus__trama--light" src="assets/foto-trama-amarillo.jpg" alt="" aria-hidden="true">
+        <img class="foto-focus__trama foto-focus__trama--dark" src="assets/foto-trama-negro.jpg" alt="" aria-hidden="true">
+        <img class="foto-focus__real" src="assets/foto.webp" alt="Retrato de Gisela Ramos">
+        <div class="foto-focus__frame" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__meta">
+    <div><strong>6+ años</strong>UX/UI &amp; Product Design</div>
+    <div><strong>1 producto 0→1</strong>De la idea a producción</div>
+    <div><strong>Retail · E-commerce · Banca</strong>Industrias en LatAm</div>
+    <div><strong>IA generativa</strong>Integrada a todo el proceso</div>
+  </div>
+</header>
+
+<main id="main">
+<div class="cases-band">
+<section class="section section--cases" id="casos">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Trabajo seleccionado</div>
+      <h2>Casos de estudio</h2>
+    </div>
+  </div>
+
+  <div class="case-carousel">
+    <div class="case-track" id="caseTrack">
+      <a href="case-te-corresponde.html" class="case-card">
+        <div class="case-card__media"><img src="assets/home-mvp.jpg" alt="Home de Te corresponde"></div>
+        <div class="case-card__body">
+          <span class="case-card__tag">0 → 1 · Legal-tech · Qubik</span>
+          <h3>Te corresponde</h3>
+          <p>Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina, de la oportunidad de mercado al producto en producción.</p>
+          <span class="case-card__link">Ver el caso completo
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="case-checkout-carrefour.html" class="case-card">
+        <div class="case-card__media"><img src="assets/checkout-cover.jpg" alt="Checkout rediseñado de Carrefour Argentina"></div>
+        <div class="case-card__body">
+          <span class="case-card__tag">Optimización · E-commerce · Carrefour</span>
+          <h3>Checkout, oportunidad de mejora</h3>
+          <p>Cómo bajamos 11% la fuga de usuarios en el pago de carrefour.com.ar: research con GetFeedback, fast fixes y rediseño de pantallas.</p>
+          <span class="case-card__link">Ver el caso completo
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="case-rediseno-b2b.html" class="case-card">
+        <div class="case-card__media"><img src="assets/rediseno-b2b-cover.jpg" alt="Home rediseñada del e-commerce B2B ferretero"></div>
+        <div class="case-card__body">
+          <span class="case-card__tag">Propuesta · Rediseño · B2B</span>
+          <h3>Rediseño e-commerce B2B</h3>
+          <p>De outlet online a socio estratégico: audit heurístico y rediseño de home, header, buscador y cuenta para una distribuidora ferretera líder en Ecuador.</p>
+          <span class="case-card__link">Ver el caso completo
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <div class="case-card case-card--soon">
+        <div class="case-card__media"><span>Imagen pendiente</span></div>
+        <!-- <div class="case-card__media"><img src="assets/pedidos-ia-cover.jpg" alt="Página de pedidos rápidos con IA para e-commerce B2B"></div> -->
+        <div class="case-card__body">
+          <span class="case-card__tag">Propuesta · B2B · IA aplicada</span>
+          <h3>Pedidos por IA para e-commerce B2B</h3>
+          <p>Del prompt al carrito: propuesta de alta de pedido en lenguaje natural para la tienda B2B de una empresa líder de alimentos en Argentina.</p>
+          <span class="case-card__soon">Próximamente</span>
+        </div>
+      </div>
+
+      <div class="case-card case-card--soon">
+        <div class="case-card__media"><span>Imagen pendiente</span></div>
+        <!-- <div class="case-card__media"><img src="assets/banca-cover.jpg" alt="Pool de trabajo de la plataforma interna de banca"></div> -->
+        <div class="case-card__body">
+          <span class="case-card__tag">PoC · Banca · Plataforma interna</span>
+          <h3>Banca: sacar el trabajo diario de SAP</h3>
+          <p>PoC de una plataforma interna para un banco de Centroamérica: login, alta de clientes y pool de trabajo, fuera de las pantallas de SAP CRM.</p>
+          <span class="case-card__soon">Próximamente</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-carousel__controls">
+      <button type="button" class="carousel-btn" id="casePrev" aria-label="Caso anterior">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" class="carousel-btn" id="caseNext" aria-label="Caso siguiente">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+</div>
+
+<section class="section" id="proceso">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Cómo trabajo</div>
+      <h2>De problema de negocio a producto en producción</h2>
+    </div>
+    <p class="section__intro">No diseño pantallas sueltas: tomo decisiones de producto, apoyadas en research real y trabajo codo a codo con desarrollo y negocio.</p>
+  </div>
+
+  <div class="work-grid">
+    <div class="work-item">
+      <div class="eyebrow">Product Thinking</div>
+      <h3>Ownership de punta a punta</h3>
+      <p>Me hago cargo del proceso completo (research, arquitectura de información, prototipado y validación en producción), no solo de la ejecución visual de un flujo ya definido.</p>
+    </div>
+    <div class="work-item">
+      <div class="eyebrow">Colaboración</div>
+      <h3>El punto de encuentro entre negocio y desarrollo</h3>
+      <p>Desarrollo y negocio recurren a mí cuando hay un problema de UX sin resolver. Diseño dentro de las restricciones reales del roadmap, no en un vacío.</p>
+    </div>
+    <div class="work-item">
+      <div class="eyebrow">IA aplicada</div>
+      <h3>IA generativa en todo el ciclo</h3>
+      <p>Uso IA generativa para research synthesis, ideación, prototipado funcional y documentación, para acelerar la entrega sin resignar rigor.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="contacto">
+  <div class="footer__inner">
+    <h2>Estoy buscando mi próximo equipo.</h2>
+    <div class="footer__links">
+      <a href="mailto:giselamramos@gmail.com">giselamramos@gmail.com</a>
+      <a href="https://linkedin.com/in/giselamr" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://behance.net/gmramos" target="_blank" rel="noopener">Behance</a>
+    </div>
+    <div class="footer__bottom">
+      <span>Gisela Ramos · Product Designer</span>
+      <span>Buenos Aires, AR · Montevideo, UY</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    var h1 = document.getElementById('heroTitle');
+    var live = h1.querySelector('.type-live');
+    var segments = [
+      { text: 'Diseño productos que resuelven problemas de ' },
+      { text: 'negocio', accent: true },
+      { text: ', no solo pantallas.' }
+    ];
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      live.innerHTML = 'Diseño productos que resuelven problemas de <span class="accent">negocio</span>, no solo pantallas.';
+      h1.classList.add('is-done');
+      return;
+    }
+
+    function startSegment(seg) {
+      if (seg.accent) {
+        var span = document.createElement('span');
+        span.className = 'accent';
+        live.appendChild(span);
+        return span;
+      }
+      var node = document.createTextNode('');
+      live.appendChild(node);
+      return node;
+    }
+
+    var si = 0, ci = 0, target = null;
+    function tick() {
+      if (ci === 0) target = startSegment(segments[si]);
+      target.textContent += segments[si].text.charAt(ci);
+      ci++;
+      if (ci >= segments[si].text.length) { si++; ci = 0; }
+      if (si < segments.length) {
+        setTimeout(tick, 24 + Math.random() * 38);
+      } else {
+        setTimeout(function() { h1.classList.add('is-done'); }, 300);
+      }
+    }
+    setTimeout(tick, 400);
+  })();
+
+  (function() {
+    var track = document.getElementById('caseTrack');
+    var prev = document.getElementById('casePrev');
+    var next = document.getElementById('caseNext');
+
+    function step() {
+      var card = track.querySelector('.case-card');
+      return card.getBoundingClientRect().width + 24;
+    }
+    prev.addEventListener('click', function() { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function() { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+
+    function update() {
+      var max = track.scrollWidth - track.clientWidth - 1;
+      prev.disabled = track.scrollLeft <= 0;
+      next.disabled = track.scrollLeft >= max;
+    }
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  (function() {
+    var ff = document.querySelector('.foto-focus');
+    if (!ff) return;
+    var w = 32, h = 50; // tamaño de la ventana en %, espejo de --ww/--wh
+
+    function moveTo(clientX, clientY) {
+      var r = ff.getBoundingClientRect();
+      var x = ((clientX - r.left) / r.width) * 100 - w / 2;
+      var y = ((clientY - r.top) / r.height) * 100 - h / 2;
+      x = Math.max(0, Math.min(100 - w, x));
+      y = Math.max(0, Math.min(100 - h, y));
+      ff.style.setProperty('--wx', x + '%');
+      ff.style.setProperty('--wy', y + '%');
+    }
+
+    // Desktop: la ventana sigue al cursor
+    ff.addEventListener('mousemove', function(e) { moveTo(e.clientX, e.clientY); });
+    ff.addEventListener('mouseleave', function() {
+      ff.style.removeProperty('--wx');
+      ff.style.removeProperty('--wy');
+    });
+    // Touch: la ventana se mueve hacia donde se toca la foto
+    ff.addEventListener('touchstart', function(e) {
+      if (e.touches.length) moveTo(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+  })();
+
+  var toggle = document.getElementById('themeToggle');
+  function syncThemeToggle() {
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
+  }
+  syncThemeToggle();
+  toggle.addEventListener('click', function() {
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeToggle();
+  });
+</script>
+
+</body>
+</html>
