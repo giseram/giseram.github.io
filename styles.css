@@ -596,7 +596,31 @@ html[data-theme="dark"] .btn--solid:hover { box-shadow: 0 0 0 1px var(--border-s
 
 .case-content { max-width: var(--content-w); padding: 30px 0 30px; }
 .case-content section { margin-bottom: 84px; scroll-margin-top: 90px; }
-.case-content h2 { font-family: var(--font-display); font-weight: 700; font-size: 25px; margin: 0 0 20px; letter-spacing: -0.01em; }
+.case-content h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 25px;
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+}
+/* Subrayado amarillo que se dibuja al entrar en pantalla (reveal.js agrega .is-visible) */
+.case-content h2::after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  bottom: -5px;
+  height: 3px;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width .6s cubic-bezier(.22,.61,.36,1);
+}
+.case-content h2.is-visible::after { width: calc(100% - 2px); }
+@media (prefers-reduced-motion: reduce) {
+  .case-content h2::after { transition: none; }
+}
 .case-content h3 { font-family: var(--font-display); font-weight: 700; font-size: 17px; margin: 30px 0 12px; }
 .case-content p { color: var(--text); margin: 0 0 18px; }
 .case-content ul, .case-content ol { color: var(--text); padding-left: 22px; margin: 0 0 18px; }
