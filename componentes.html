@@ -35,13 +35,13 @@
   .type-row:last-child { border-bottom: none; }
   .type-row__meta { font-size: 11.5px; color: var(--text-2); line-height: 1.6; }
   .type-row [class^="tp-"] { margin: 0; }
-  .tp-h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(38px, 4.6vw, 62px); line-height: 1.05; letter-spacing: -0.02em; }
-  .tp-h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 3.6vw, 42px); letter-spacing: -0.01em; }
-  .tp-h2-case { font-family: var(--font-display); font-weight: 700; font-size: 25px; letter-spacing: -0.01em; }
-  .tp-h3-card { font-family: var(--font-display); font-weight: 700; font-size: 23px; letter-spacing: -0.01em; }
-  .tp-h3-work { font-family: var(--font-display); font-weight: 700; font-size: 19px; }
-  .tp-h3-case { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
-  .tp-lede { font-size: 19px; color: var(--text-2); }
+  .tp-h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 4.32vw, 48px); line-height: 1.01; letter-spacing: -0.03em; }
+  .tp-h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 4vw, 40px); letter-spacing: -0.02em; }
+  .tp-h2-case { font-family: var(--font-display); font-weight: 400; font-size: 28px; letter-spacing: -0.02em; }
+  .tp-h3-card { font-family: var(--font-display); font-weight: 400; font-size: 23px; letter-spacing: -0.01em; }
+  .tp-h3-work { font-family: var(--font-display); font-weight: 400; font-size: 20px; letter-spacing: -0.01em; }
+  .tp-h3-case { font-family: var(--font-display); font-weight: 400; font-size: 17px; }
+  .tp-lede { font-size: 20px; line-height: 1.55; color: var(--text-2); }
   .tp-body { font-size: 17px; }
   .tp-small { font-size: 15px; color: var(--text-2); }
   .tp-caption { font-size: 12.5px; color: var(--text-2); }
@@ -81,9 +81,9 @@
   <p class="case-hero__sub">Inventario vivo del sistema del portfolio: tokens de color, tipografía, botones y componentes, con sus variables CSS. Cambiá el tema con el toggle de arriba para ver ambos modos.</p>
 
   <dl class="case-hero__specs">
-    <div><dt>Fuente display</dt><dd>Quicksand</dd></div>
+    <div><dt>Fuente display</dt><dd>Google Sans</dd></div>
     <div><dt>Fuente body</dt><dd>Google Sans</dd></div>
-    <div><dt>Acento</dt><dd>#EFFF5F</dd></div>
+    <div><dt>Acento</dt><dd>#9ED8FE</dd></div>
     <div><dt>Temas</dt><dd>Claro · Oscuro</dd></div>
   </dl>
 </header>
@@ -107,7 +107,7 @@
 
     <section id="color">
       <h2>Tokens de color</h2>
-      <p>Todos los colores viven como variables en <code>:root</code> y se redefinen en <code>html[data-theme="dark"]</code>. El acento amarillo es el mismo en ambos temas.</p>
+      <p>Todos los colores viven como variables en <code>:root</code> y se redefinen en <code>html[data-theme="dark"]</code>. El acento celeste es el mismo en ambos temas.</p>
       <div class="swatches">
         <div class="swatch">
           <div class="swatch__color" style="background: var(--bg); border-bottom: 1px solid var(--surface-2);"></div>
@@ -135,7 +135,11 @@
         </div>
         <div class="swatch">
           <div class="swatch__color" style="background: var(--accent);"></div>
-          <div class="swatch__info"><strong>--accent</strong><span>#EFFF5F (ambos temas)</span></div>
+          <div class="swatch__info"><strong>--accent</strong><span>#9ED8FE (ambos temas)</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--accent-gradient);"></div>
+          <div class="swatch__info"><strong>--accent-gradient</strong><span>#9ED8FE → #EFFF5F (ambos temas)</span></div>
         </div>
         <div class="swatch">
           <div class="swatch__color" style="background: var(--accent-ink);"></div>
@@ -149,40 +153,49 @@
           <div class="swatch__color" style="background: var(--accent-text);"></div>
           <div class="swatch__info"><strong>--accent-text</strong><span>Claro #5F5F5C</span><span>Oscuro #ABABA6</span></div>
         </div>
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--ink);"></div>
+          <div class="swatch__info"><strong>--ink</strong><span>#14181A (constante, no cambia con el tema)</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--ink-text); border: 1px solid var(--surface-2);"></div>
+          <div class="swatch__info"><strong>--ink-text</strong><span>#F5F5F0 (constante, texto sobre --ink)</span></div>
+        </div>
       </div>
+      <p class="spec">Los tokens <code>--ink</code> / <code>--ink-text</code> se usan en el footer y en <code>.pull-quote</code>: bandas de contraste que se ven siempre oscuras, en claro y oscuro.</p>
     </section>
 
     <section id="tipografia">
       <h2>Tipografía</h2>
-      <p><strong>Quicksand</strong> (peso 700 en headings, 500 en detalles display) para todo lo display via <code>--font-display</code>; <strong>Google Sans</strong> (400/500/600) para el cuerpo via <code>--font-body</code>. Ambas importadas de Google Fonts.</p>
+      <p><strong>Google Sans</strong> (400/500) para todo el sitio: headings y detalles display via <code>--font-display</code>, cuerpo de texto via <code>--font-body</code>. Ambas variables usan la misma familia, importada de Google Fonts.</p>
 
       <div class="type-row">
         <p class="tp-h1">Hero h1</p>
-        <div class="type-row__meta">Quicksand 700<br>clamp(38px, 4.6vw, 62px) · lh 1.05 · ls -0.02em</div>
+        <div class="type-row__meta">Google Sans 400<br>clamp(32px, 4.32vw, 48px) · lh 1.01 · ls -0.03em</div>
       </div>
       <div class="type-row">
         <p class="tp-h2">Título de sección h2</p>
-        <div class="type-row__meta">Quicksand 700<br>clamp(30px, 3.6vw, 42px) · ls -0.01em</div>
+        <div class="type-row__meta">Google Sans 400<br>clamp(32px, 4vw, 40px) · ls -0.02em</div>
       </div>
       <div class="type-row">
         <p class="tp-h2-case">h2 de caso de estudio</p>
-        <div class="type-row__meta">Quicksand 700 · 25px · ls -0.01em</div>
+        <div class="type-row__meta">Google Sans 400 · 28px · ls -0.02em</div>
       </div>
       <div class="type-row">
         <p class="tp-h3-card">h3 de tarjeta de caso</p>
-        <div class="type-row__meta">Quicksand 700 · 23px · ls -0.01em</div>
+        <div class="type-row__meta">Google Sans 400 · 23px · ls -0.01em</div>
       </div>
       <div class="type-row">
         <p class="tp-h3-work">h3 de work-item</p>
-        <div class="type-row__meta">Quicksand 700 · 19px</div>
+        <div class="type-row__meta">Google Sans 400 · 20px · ls -0.01em</div>
       </div>
       <div class="type-row">
         <p class="tp-h3-case">h3 de caso de estudio</p>
-        <div class="type-row__meta">Quicksand 700 · 17px</div>
+        <div class="type-row__meta">Google Sans 400 · 17px</div>
       </div>
       <div class="type-row">
         <p class="tp-lede">Lede del hero: párrafo introductorio en gris.</p>
-        <div class="type-row__meta">Google Sans 400 · 19px · --text-2</div>
+        <div class="type-row__meta">Google Sans 400 · 20px · lh 1.55 · --text-2</div>
       </div>
       <div class="type-row">
         <p class="tp-body">Cuerpo de texto base del sitio, para lectura larga en los casos de estudio.</p>
@@ -207,10 +220,11 @@
         <tbody>
           <tr><td><code>--max-w</code></td><td>1180px</td><td>Ancho máximo de nav, hero, secciones y footer</td></tr>
           <tr><td><code>--content-w</code></td><td>720px</td><td>Columna de lectura en casos de estudio</td></tr>
-          <tr><td><code>--r-card</code></td><td>14px</td><td>Radio de tarjetas, figuras, showcase y callouts</td></tr>
+          <tr><td><code>--r-card</code></td><td>26px</td><td>Radio de tarjetas, figuras, showcase y callouts</td></tr>
+          <tr><td><code>--r-card-lg</code></td><td>36px</td><td>Radio de foto del hero, footer y bloques grandes</td></tr>
           <tr><td><code>--r-pill</code></td><td>999px</td><td>Botones y theme toggle</td></tr>
           <tr><td>Padding lateral</td><td>48px / 24px</td><td>Desktop / mobile (breakpoint 900px)</td></tr>
-          <tr><td>Padding de sección</td><td>90px 48px</td><td>Vertical de cada sección de la home</td></tr>
+          <tr><td>Padding de sección</td><td>clamp(70px, 9vw, 130px) 48px</td><td>Vertical de cada sección de la home</td></tr>
         </tbody>
       </table>
     </section>
@@ -222,7 +236,7 @@
       <div class="demo">
         <a href="#botones" class="btn btn--solid">Ver caso: Te corresponde →</a>
       </div>
-      <p class="spec">Fondo <code>--accent</code>, texto <code>--accent-ink</code>, radio píldora, 14px/500, padding 14×26. Hover: invierte a fondo oscuro con texto blanco y sube 1px.</p>
+      <p class="spec">Fondo <code>--accent</code>, texto <code>--accent-ink</code>, radio píldora, 14.5px/500, padding 16×30. Hover: invierte a fondo oscuro con texto blanco y sube 1px.</p>
 
       <h3>Secundario · <code>.btn .btn--outline</code></h3>
       <div class="demo">
@@ -266,25 +280,25 @@
       <div class="demo demo--block">
         <div class="eyebrow" style="margin-bottom:0;">Trabajo seleccionado</div>
       </div>
-      <p class="spec">12.5px uppercase, tracking 0.08em, color <code>--text-2</code>. El <code>&lt;span&gt;</code> interior usa <code>--accent-text</code>.</p>
+      <p class="spec">12.5px uppercase, tracking 0.08em, color <code>--text</code> (negro sobre fondo claro, blanco sobre fondo oscuro). El <code>&lt;span&gt;</code> interior usa <code>--accent-text</code>.</p>
 
       <h3>Eyebrow de casos · <code>.section--cases .eyebrow</code></h3>
       <div class="demo demo--block">
-        <div class="section--cases" style="padding:0; max-width:none;"><div class="eyebrow" style="margin-bottom:0;">Trabajo seleccionado</div></div>
+        <div class="cases-band section--cases" style="padding:20px 24px; max-width:none; border-radius: var(--r-card);"><div class="eyebrow" style="margin-bottom:0;">Trabajo seleccionado</div></div>
       </div>
-      <p class="spec">Suma un cuadrado amarillo de 9px (radio 2px) antes del texto.</p>
+      <p class="spec">Suma un círculo celeste de 9px antes del texto. Vive sobre <code>.cases-band</code>: color <code>--ink-text</code> (blanco, fondo negro), título de la sección en <code>--ink-text</code>.</p>
 
       <h3>Eyebrow subrayado · <code>.work-item .eyebrow</code></h3>
       <div class="demo demo--block">
         <div class="work-item" style="padding:0; background:transparent; max-width:none;"><div class="eyebrow" style="margin-bottom:0;">Product Thinking</div></div>
       </div>
-      <p class="spec">Subrayado amarillo de 3px al ancho del texto, con gradiente <code>--accent</code> posicionado abajo.</p>
+      <p class="spec">Subrayado celeste de 3px al ancho del texto, con gradiente <code>--accent</code> posicionado abajo.</p>
 
       <h3>Resaltador · <code>.nav__mark</code> / <code>.accent</code></h3>
       <div class="demo">
         <span class="nav__mark" style="font-size:20px;">Gisela Ramos</span>
       </div>
-      <p class="spec">Texto pintado con un gradiente amarillo al 88% de la altura, centrado verticalmente (efecto marcador). En el hero, la palabra "negocio" se pinta con una transición de <code>background-size</code> al terminar el tipeo.</p>
+      <p class="spec">Texto pintado con un resaltador al 88% de la altura, centrado verticalmente (efecto marcador): <code>.nav__mark</code> usa <code>--accent</code> (celeste liso). En el hero, la palabra "negocio" usa <code>--accent-gradient</code> (celeste → amarillo) con una transición de <code>background-size</code> al terminar el tipeo.</p>
 
       <h3>Chip de skill · <code>.chip</code></h3>
       <div class="demo">
@@ -320,7 +334,7 @@
           </div>
         </a>
       </div>
-      <p class="spec">Vive sobre la banda <code>--surface</code>. Media 16:10 con zoom 1.03 al hover; en el carrusel ocupa 50% del ancho (100% en mobile) con scroll-snap.</p>
+      <p class="spec">Vive sobre la banda <code>--ink</code> (constante, oscura en los dos temas): la tarjeta fuerza sus propias variables (<code>--bg</code>, <code>--text</code>, <code>--text-2</code>, <code>--border-strong</code>, <code>--accent-text</code>) para quedar siempre "clara", con buen contraste en claro y oscuro. Media 16:10 con zoom 1.03 al hover; en el carrusel ocupa 50% del ancho (100% en mobile) con scroll-snap.</p>
 
       <h3>Work item · <code>.work-item</code></h3>
       <div class="demo demo--surface">
@@ -330,7 +344,7 @@
           <p>Me hago cargo del proceso completo, no solo de la ejecución visual de un flujo ya definido.</p>
         </div>
       </div>
-      <p class="spec">Fondo <code>--bg</code>, padding 36×32. En la home van tres en grilla, sin bordes ni divisores.</p>
+      <p class="spec">Sin fondo, borde 1px con <code>--accent-gradient</code> (celeste → amarillo), radio <code>--r-card</code>, padding 40×34. En la home van tres en grilla con gap de 20px.</p>
     </section>
 
     <section id="bloques">
@@ -338,12 +352,12 @@
 
       <h3>Pull quote · <code>.pull-quote</code></h3>
       <blockquote class="pull-quote">Las personas con un reclamo de consumo en Argentina no tenían un camino claro para resolverlo.</blockquote>
-      <p class="spec">Quicksand 500 · 21px, filete izquierdo de 2px en <code>--accent</code>.</p>
+      <p class="spec">Google Sans 500 · 23px, tarjeta de contraste: fondo <code>--ink</code> constante (no cambia con el tema), texto <code>--ink-text</code>, comilla de apertura en <code>--accent</code>.</p>
 
       <h3>Callout · <code>.callout</code></h3>
       <div class="callout">
         <strong>Colaboración con desarrollo</strong>
-        Borde de rayas irregulares en el amarillo del sitio, dibujado con un SVG inline (dasharray variable, imposible con border nativo).
+        Borde de rayas irregulares en el celeste del sitio, dibujado con un SVG inline (dasharray variable, esquinas redondeadas a juego con <code>--r-card</code>).
       </div>
       <p class="spec">Para decisiones y contexto de colaboración. Título en 12px uppercase <code>--accent-text</code>.</p>
 
@@ -353,7 +367,7 @@
           <span class="learning__num">01</span>
           <div>
             <h3>Título del aprendizaje</h3>
-            <p>Cuerpo del aprendizaje en 14.5px <code>--text-2</code>. El número usa Quicksand 700 · 20px con el subrayado amarillo del sitio.</p>
+            <p>Cuerpo del aprendizaje en 14.5px <code>--text-2</code>. El número usa Google Sans 400 · 20px con el subrayado celeste del sitio.</p>
           </div>
         </article>
         <article class="learning">
@@ -445,7 +459,7 @@
           <tr><th>Interacción</th><th>Dónde</th><th>Especificación</th></tr>
         </thead>
         <tbody>
-          <tr><td>Typewriter</td><td>h1 del hero</td><td>Tipeo carácter a carácter (24–62ms) con caret amarillo; al final pinta "negocio" con el resaltador</td></tr>
+          <tr><td>Typewriter</td><td>h1 del hero</td><td>Tipeo carácter a carácter (24–62ms) con caret celeste; al final pinta "negocio" con el resaltador</td></tr>
           <tr><td>Hero rise</td><td>Elementos del hero</td><td>Fade + 14px hacia arriba, escalonado de .08s a .34s</td></tr>
           <tr><td>Foto focus</td><td>Retrato del hero</td><td>Trama halftone con ventana de foco que sigue al cursor (clip-path animado)</td></tr>
           <tr><td>Lupa de zoom</td><td>Figuras de casos</td><td>Lente 300×210 con marcas de encuadre, zoom 2.5x (lens.js)</td></tr>
