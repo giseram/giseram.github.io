@@ -38,14 +38,14 @@
     <div class="hero__content">
       <div class="eyebrow">Buenos Aires · Montevideo <span>(LatAm remoto · Montevideo remoto o híbrido)</span></div>
       <h1 id="heroTitle">
-        <span class="type-ghost" aria-hidden="true">Diseño productos que resuelven problemas de <span class="accent">negocio</span>, no solo pantallas.</span>
+        <span class="type-ghost" aria-hidden="true">Diseño pensando en <span class="accent">negocio</span>, no solo en pantallas.</span>
         <span class="type-live" aria-hidden="true"></span>
-        <span class="visually-hidden">Diseño productos que resuelven problemas de negocio, no solo pantallas.</span>
+        <span class="visually-hidden">Diseño pensando en negocio, no solo en pantallas.</span>
       </h1>
       <noscript><style>.type-ghost { visibility: visible !important; } #heroTitle .type-live { display: none; }</style></noscript>
       <p class="hero__lede">Product Designer con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en distintos países de LatAm, desde research hasta el prototipo en producción.</p>
       <div class="hero__actions">
-        <a href="case-te-corresponde.html" class="btn btn--solid">Ver caso: Te corresponde →</a>
+        <a href="#casos" class="btn btn--solid">Ver casos →</a>
         <a href="#contacto" class="btn btn--outline">Contactame</a>
       </div>
     </div>
@@ -199,13 +199,13 @@
     var h1 = document.getElementById('heroTitle');
     var live = h1.querySelector('.type-live');
     var segments = [
-      { text: 'Diseño productos que resuelven problemas de ' },
+      { text: 'Diseño pensando en ' },
       { text: 'negocio', accent: true },
-      { text: ', no solo pantallas.' }
+      { text: ', no solo en pantallas.' }
     ];
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      live.innerHTML = 'Diseño productos que resuelven problemas de <span class="accent">negocio</span>, no solo pantallas.';
+      live.innerHTML = 'Diseño pensando en <span class="accent">negocio</span>, no solo en pantallas.';
       h1.classList.add('is-done');
       return;
     }
