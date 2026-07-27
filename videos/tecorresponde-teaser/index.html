@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #FFFFFF;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-9hlr" id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1920" data-height="1080">
+      <!-- hoisted hero video moved before el-01-hero in DOM order so the frame's own
+           headline/chip (rendered inside el-01-hero's sub-composition) stack above it;
+           data-track-index only governs temporal-overlap validation, not paint order —
+           paint order follows DOM order for same-stacking-context absolutely-positioned
+           siblings, and this video was originally last in DOM (painting over everything). -->
+      <video data-hf-id="hf-1i6m" id="el-01-hero-video-0" src="assets/home_header_section_video-desktop.webm" muted playsinline loop class="clip" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;object-fit:cover" data-start="0" data-duration="3.6" data-track-index="1000"></video>
+
+      <div data-hf-id="hf-uhbv" id="el-01-hero" class="scene" data-composition-id="01-hero" data-composition-src="compositions/frames/01-hero.html" data-start="0" data-duration="3.6" data-track-index="0"></div>
+
+      <div data-hf-id="hf-94sf" id="el-02-proceso" class="scene" data-composition-id="02-proceso" data-composition-src="compositions/frames/02-proceso.html" data-start="3.2" data-duration="4.6" data-track-index="1"></div>
+
+      <div data-hf-id="hf-ryw6" id="el-03-problemas" class="scene" data-composition-id="03-problemas" data-composition-src="compositions/frames/03-problemas.html" data-start="7.2" data-duration="3.2" data-track-index="0"></div>
+
+      <div data-hf-id="hf-7w9c" id="el-04-cierre" class="scene" data-composition-id="04-cierre" data-composition-src="compositions/frames/04-cierre.html" data-start="9.8" data-duration="2.2" data-track-index="1"></div>
+
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+      // ── frame transitions (injected by transitions.mjs) ──
+      (function () { var tl = window.__timelines["main"];
+        tl.to("#el-01-hero", { scale: 2.5, opacity: 0, filter: "blur(8px)", duration: 0.4, ease: "power3.in" }, 3.2);
+        tl.fromTo("#el-02-proceso", { scale: 0.5, opacity: 0, filter: "blur(8px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power3.out" }, 3.2);
+        tl.to("#el-02-proceso", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 7.2);
+        tl.fromTo("#el-03-problemas", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 7.2);
+        tl.to("#el-03-problemas", { filter: "blur(10px)", scale: 1.03, opacity: 0, duration: 0.6, ease: "power2.inOut" }, 9.8);
+        tl.fromTo("#el-04-cierre", { filter: "blur(10px)", scale: 0.97, opacity: 0 }, { filter: "blur(0px)", scale: 1, opacity: 1, duration: 0.6, ease: "power2.inOut" }, 9.8);
+        tl.to({}, { duration: 12 }, 0); // full-span anchor — main.duration() == composition total (Studio master duration)
+      })();
+    </script>
+  </body>
+</html>

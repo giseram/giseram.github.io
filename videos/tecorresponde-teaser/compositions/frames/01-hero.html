@@ -1,0 +1,124 @@
+<template>
+  <div data-hf-id="hf-gyxz" id="root" data-composition-id="01-hero" style="container-type: size; width: 100%; height: 100%; position: relative; overflow: hidden;" data-start="0" data-duration="3.6" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Inter-Regular.woff2") format("woff2");}
+
+      #root { font-family: "Inter", sans-serif; }
+      #root .clip { position: absolute; }
+
+      #root .hero01-headline {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 6px;
+      }
+      #root .hero01-word {
+        display: inline-block;
+        color: #FFFFFF;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+      }
+
+      #root .hero01-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 30px;
+        background: rgba(255, 255, 255, 0.10);
+        border: 1.5px solid rgba(255, 255, 255, 0.22);
+        border-radius: 100px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+      #root .hero01-chip-icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #005BC4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+      #root .hero01-chip-icon svg { width: 12px; height: 12px; }
+      #root .hero01-chip-group {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      #root .hero01-chip-word {
+        color: #FFFFFF;
+        font-size: 21px;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+      }
+      #root .hero01-chip-dot {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 21px;
+        font-weight: 500;
+      }
+    </style>
+
+    <!-- hero video, real footage: approved frame-local video, hoisted to host root at assembly -->
+    <!-- approved frame video hoisted by assemble-index -->
+
+    <!-- dark diagonal scrim so the headline reads over the video; fades in after the video establishes -->
+    <div data-hf-id="hf-19r3" id="hero-scrim" class="hero01-scrim clip" data-start="0" data-duration="3.6" data-track-index="1" style="inset: 0; background: linear-gradient(118deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.32) 42%, rgba(0,0,0,0) 72%); opacity: 0;"></div>
+
+    <!-- headline -->
+    <div data-hf-id="hf-9ghf" id="hero-headline" class="clip" data-start="0" data-duration="3.6" data-track-index="2" style="left: 96px; top: 380px; width: 900px;">
+      <div data-hf-id="hf-meu1" class="hero01-headline">
+        <span data-hf-id="hf-uqfc" class="hero01-word">Gestionamos</span><span data-hf-id="hf-tlq7" class="hero01-word">tus</span><span data-hf-id="hf-pvij" class="hero01-word">reclamos</span><span data-hf-id="hf-lmlm" class="hero01-word">por</span><span data-hf-id="hf-q033" class="hero01-word">vos</span>
+      </div>
+    </div>
+
+    <!-- trust chip -->
+    <div data-hf-id="hf-b2gw" id="hero-trust-chip" class="clip" data-start="0" data-duration="3.6" data-track-index="3" style="left: 96px; top: 616px;">
+      <div data-hf-id="hf-chip" class="hero01-chip">
+        <span data-hf-id="hf-dz7n" class="hero01-chip-icon">
+          <svg data-hf-id="hf-aq7j" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path data-hf-id="hf-y328" d="M5 13l4 4L19 7" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <span data-hf-id="hf-pbmx" class="hero01-chip-group"><span data-hf-id="hf-xmex" class="hero01-chip-word">Rápido</span><span data-hf-id="hf-exxr" class="hero01-chip-dot">·</span></span>
+        <span data-hf-id="hf-akgt" class="hero01-chip-group"><span data-hf-id="hf-u1fj" class="hero01-chip-word">Confiable</span><span data-hf-id="hf-dqpb" class="hero01-chip-dot">·</span></span>
+        <span data-hf-id="hf-brdw" class="hero01-chip-group"><span data-hf-id="hf-yk1d" class="hero01-chip-word">Online</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+
+    // Scene 1 (0.0–0.9s): footage establishes at full brightness, then the scrim fades in to prep legibility.
+    tl.fromTo("#root .hero01-scrim", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power1.out" }, 0.12);
+
+    // Scene 2 (0.9–2.0s): headline enters via per-word staggered reveal, smooth long-tail settle.
+    tl.fromTo(
+      "#root .hero01-word",
+      { opacity: 0, y: 34 },
+      { opacity: 1, y: 0, duration: 0.65, ease: "power3.out", stagger: 0.09 },
+      0.9,
+    );
+
+    // Scene 3 (2.0–3.2s): trust chip reveals beneath the headline, each word landing on its own short beat.
+    tl.fromTo(
+      "#root .hero01-chip",
+      { opacity: 0, scale: 0.92 },
+      { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" },
+      2.0,
+    );
+    tl.fromTo(
+      "#root .hero01-chip-word, #root .hero01-chip-dot",
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.4, ease: "power2.out", stagger: 0.11 },
+      2.08,
+    );
+    // holds still to the cut — no further motion after ~2.9s
+
+    window.__timelines["01-hero"] = tl;
+  </script>
+</template>

@@ -1,0 +1,170 @@
+<template>
+  <div data-hf-id="hf-9e71" id="root" data-composition-id="02-proceso" style="container-type: size; width: 100%; height: 100%; position: relative; overflow: hidden; font-family: 'Inter', sans-serif;" data-start="0" data-duration="4.6" data-width="1920" data-height="1080">
+    <style>
+      @font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:block;src:url("assets/fonts/Inter-Regular.woff2") format("woff2");}
+
+      #root .clip { position: absolute; }
+
+      /* single virtual camera — every station lives inside this one wrapper */
+      #root .p02-world {
+        position: absolute;
+        inset: 0;
+        transform-origin: 50% 50%;
+        will-change: transform;
+      }
+
+      #root .p02-station {
+        position: absolute;
+        top: 220px;
+      }
+
+      #root .p02-step-card {
+        width: 380px; height: 300px; padding: 32px;
+        background: rgba(0, 91, 196, 0.04);
+        border: 1.5px solid rgba(0, 91, 196, 0.2);
+        border-radius: 14px;
+        box-sizing: border-box;
+        transform-origin: 50% 50%;
+        will-change: transform, opacity;
+      }
+      #root .p02-step-num {
+        width: 56px; height: 56px; border-radius: 50%;
+        background: #005BC4; color: #FFFFFF;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 22px; font-weight: 700; margin-bottom: 24px;
+      }
+      #root .p02-step-title { color: #11181C; font-size: 26px; font-weight: 700; line-height: 1.25; }
+
+      #root .p02-eyebrow {
+        color: #005BC4; font-size: 20px; font-weight: 600;
+        letter-spacing: 0.08em; text-transform: uppercase;
+        transform-origin: 0% 50%;
+      }
+    </style>
+
+    <!-- canvas: full-bleed ground, on its own clip layer per the no-#root-background rule -->
+    <div data-hf-id="hf-j8fk" id="proceso-bg" class="clip" data-start="0" data-duration="4.6" data-track-index="0" style="inset: 0; background: #FFFFFF;"></div>
+
+    <!-- section eyebrow — fixed screen-space chrome, outside the camera world -->
+    <div data-hf-id="hf-rvhh" id="proceso-eyebrow" class="clip" data-start="0" data-duration="4.6" data-track-index="1" style="left: 96px; top: 96px;">
+      <span data-hf-id="hf-5pi3" id="p02-eyebrow" class="p02-eyebrow">Cómo funciona</span>
+    </div>
+
+    <!-- the pannable world: one wrapper, all 4 stations pre-placed in world space -->
+    <div data-hf-id="hf-world" id="proceso-world-layer" class="clip" data-start="0" data-duration="4.6" data-track-index="2" style="inset: 0;">
+      <div data-hf-id="hf-yw44" id="p02-world" class="p02-world">
+        <div data-hf-id="hf-v0hy" class="p02-station" style="left: 96px;">
+          <div data-hf-id="hf-ihs5" id="p02-card-1" class="p02-step-card">
+            <div data-hf-id="hf-3ftm" class="p02-step-num" style="opacity: 1;">1</div>
+            <div data-hf-id="hf-3l6m" class="p02-step-title">Contanos tu problema</div>
+          </div>
+        </div>
+        <div data-hf-id="hf-yybp" class="p02-station" style="left: 516px;">
+          <div data-hf-id="hf-onhy" id="p02-card-2" class="p02-step-card">
+            <div data-hf-id="hf-dacv" class="p02-step-num" style="opacity: 0.85;">2</div>
+            <div data-hf-id="hf-xojg" class="p02-step-title">Un experto te contacta</div>
+          </div>
+        </div>
+        <div data-hf-id="hf-ey8r" class="p02-station" style="left: 936px;">
+          <div data-hf-id="hf-sllz" id="p02-card-3" class="p02-step-card">
+            <div data-hf-id="hf-pqus" class="p02-step-num" style="opacity: 0.7;">3</div>
+            <div data-hf-id="hf-ew32" class="p02-step-title">Iniciamos la gestión</div>
+          </div>
+        </div>
+        <div data-hf-id="hf-h6ou" class="p02-station" style="left: 1356px;">
+          <div data-hf-id="hf-wjq0" id="p02-card-4" class="p02-step-card">
+            <div data-hf-id="hf-x152" class="p02-step-num" style="opacity: 0.55;">4</div>
+            <div data-hf-id="hf-atvy" class="p02-step-title">Obtené tu solución</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const W = 1920, H = 1080;
+
+      // Station centers in world space — derived from the pre-placed left/top
+      // values above (kept identical to the confirmed sketch's composition).
+      const CARD_W = 380, CARD_H = 300, CARD_TOP = 220;
+      const LEFTS = [96, 516, 936, 1356];
+      const stations = LEFTS.map((left) => ({
+        x: left + CARD_W / 2,
+        y: CARD_TOP + CARD_H / 2,
+      }));
+
+      // Single-wrapper virtual camera (viewport-change rule): translate(x,y) scale(S)
+      // on ONE element; T = -offset * S centers a station at viewport middle.
+      const S_TIGHT = 2.2;
+      function camFor(stationIndex, scale) {
+        const st = stations[stationIndex];
+        const offX = st.x - W / 2;
+        const offY = st.y - H / 2;
+        return { x: -offX * scale, y: -offY * scale, scale };
+      }
+
+      const world = document.getElementById("p02-world");
+      const cam = { scale: 1, x: 0, y: 0 };
+      function applyCamera() {
+        world.style.transform = `translate(${cam.x}px, ${cam.y}px) scale(${cam.scale})`;
+      }
+
+      // Seed at t=0: camera opens tight on station 1 (Scene 1).
+      Object.assign(cam, camFor(0, S_TIGHT));
+      applyCamera();
+
+      const tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0.0–0.9s): station 1 spring-pops into the already-tight frame.
+      tl.fromTo(
+        "#p02-card-1",
+        { scale: 0, opacity: 0, y: 20 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+        0.0,
+      );
+
+      // Pan → station 2, arrive inside Scene 2 (0.9–1.9s), pop on arrival.
+      tl.to(cam, Object.assign({ duration: 0.6, ease: "power3.inOut", onUpdate: applyCamera }, camFor(1, S_TIGHT)), 0.55);
+      tl.fromTo(
+        "#p02-card-2",
+        { scale: 0, opacity: 0, y: 20 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+        1.15,
+      );
+
+      // Pan → station 3, arrive inside Scene 3 (1.9–2.9s), pop on arrival.
+      tl.to(cam, Object.assign({ duration: 0.6, ease: "power3.inOut", onUpdate: applyCamera }, camFor(2, S_TIGHT)), 1.7);
+      tl.fromTo(
+        "#p02-card-3",
+        { scale: 0, opacity: 0, y: 20 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+        2.3,
+      );
+
+      // Pan → station 4, arrive inside Scene 4 (2.9–4.0s), pop on arrival.
+      tl.to(cam, Object.assign({ duration: 0.6, ease: "power3.inOut", onUpdate: applyCamera }, camFor(3, S_TIGHT)), 2.85);
+      tl.fromTo(
+        "#p02-card-4",
+        { scale: 0, opacity: 0, y: 20 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.45, ease: "power3.out" },
+        3.45,
+      );
+
+      // Camera pulls back to neutral (scale 1, no offset) so all 4 stations
+      // read together as one strip — lands exactly on the approved layout.
+      tl.to(cam, { scale: 1, x: 0, y: 0, duration: 0.4, ease: "power3.inOut", onUpdate: applyCamera }, 3.6);
+
+      // Tiny eyebrow settle — fixed chrome, unaffected by the camera.
+      tl.fromTo(
+        "#p02-eyebrow",
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" },
+        0.0,
+      );
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["02-proceso"] = tl;
+    })();
+  </script>
+</template>

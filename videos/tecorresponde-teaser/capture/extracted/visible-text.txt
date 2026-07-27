@@ -1,0 +1,69 @@
+[a] Servicios
+[a] Nosotros
+[a] Seguir reclamo
+[a] Reclamar ahora
+[h1] Gestionamos tus reclamos por vos.
+[p] Resolvemos tu problema con bancos, aerolíneas y empresas de servicios, sin la burocracia habitual.
+[button] Reclamar ahora
+[span] Rápido
+[span] Confiable
+[span] Online
+[span] Servicio de gestión privada
+[h2] Cómo iniciar tu reclamo
+[p] Antes de empezar, validá estos requisitos
+[h3] Domicilio en CABA
+[p] Vos o la empresa a reclamar deben tener domicilio legal en la Ciudad Autónoma de Buenos Aires.
+[h3] Reclamo de Consumo
+[p] Tu problema debe ser por un servicio, producto o de alquileres (no gestionamos reclamos laborales).
+[h3] No somos defensa al consumidor
+[p] Brindamos asesoramiento legal personalizado y ágil, independiente de organismos públicos de defensa al consumidor.
+[span] Si cumplís con los requisitos,
+[span] el proceso es simple:
+[h4] Contanos tu problema
+[p] Completás nuestro formulario online en 2 minutos.
+[h4] Un experto te contacta
+[p] Validamos tu caso y la documentación.
+[h4] Iniciamos la gestión
+[p] Preparamos el reclamo. El
+[strong] único costo inicial
+[p] es el envío de la Carta Documento para formalizarlo.
+[h4] Obtené tu solución
+[p] Nos encargamos de la mediación y el seguimiento hasta la resolución. Los honorarios de los abogados y mediadores de TeCorresponde los paga la parte reclamada.
+[h2] ¿Qué problemas podés solucionar?
+[p] Gestionamos una amplia variedad de reclamos para que no pierdas tiempo ni dinero.
+[h3] Bancos y Tarjetas
+[p] Cobros indebidos, seguros no solicitados, robo de identidad.
+[h3] Telefonía e Internet
+[p] Cortes de servicio, errores en facturación, falta de cumplimiento.
+[h3] Compras Online
+[p] Productos que no llegaron, defectuosos o distintos a lo comprado.
+[h3] Electrodomésticos
+[p] Problemas de garantía, service oficial que no responde.
+[h3] Servicios Públicos
+[p] Reclamos por luz, gas o agua (facturación excesiva o cortes).
+[h3] Vuelos
+[p] Cancelaciones, demoras, pérdida de equipaje.
+[h2] Servicios
+[a] Ver más
+[h3] Productos y Servicios
+[p] Si tuviste un problema con un producto defectuoso, un servicio que no cumplió con lo prometido o un cobro indebido, te ayudamos a resolverlo.
+[h3] Reclamos por vuelos
+[p] Si tu vuelo fue cancelado, sufrió una demora excesiva o perdiste tu equipaje, podés reclamar una compensación. Te asesoramos en todo el proceso para que recuperes lo que te corresponde.
+[h2] ¿Qué dicen de nosotros?
+[p] Personas que ya reclamaron con nosotros
+[p] Tuve un problema con mi tarjeta de crédito y en menos de 10 días lograron que me devolvieran un cobro indebido. ¡Súper recomendados!
+[h3] Sofía G.
+[p] Inicié mi reclamo por un vuelo cancelado y en pocas semanas me indemnizaron sin que tuviera que hacer trámites complicados. Excelente servicio.
+[h3] Martín R.
+[p] La rapidez y el seguimiento en tiempo real hicieron toda la diferencia. Siempre supe en qué estado estaba mi reclamo.
+[h3] Paula M.
+[h2] Recibí novedades y consejos para hacer valer tus derechos.
+[h3] Suscribite a nuestro newsletter.
+[button] Suscribirme
+[p] Más de 15 años asesorando y defendiendo a los consumidores. Somos la plataforma líder en reclamos en Argentina.
+[a] Preguntas frecuentes
+[a] Contacto
+[a] Reclamar ahora
+[p] ©2025 Powered by Qubik Commerce. Todos los derechos reservados.
+[a] Privacidad & Política
+[a] Términos & Condiciones

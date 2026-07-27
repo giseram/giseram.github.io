@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "portfolio case study (embed / social clip)",
+      "confirmed_in": [
+        "tecorresponde-teaser"
+      ],
+      "updated_at": "2026-07-24T21:29:51.384Z"
+    },
+    "aspect": {
+      "value": "1920x1080",
+      "confirmed_in": [
+        "tecorresponde-teaser"
+      ],
+      "updated_at": "2026-07-24T21:29:51.419Z"
+    },
+    "language": {
+      "value": "es",
+      "confirmed_in": [
+        "tecorresponde-teaser"
+      ],
+      "updated_at": "2026-07-24T21:29:51.451Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "tecorresponde-teaser"
+      ],
+      "updated_at": "2026-07-24T21:29:51.483Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "tecorresponde-teaser"
+      ],
+      "updated_at": "2026-07-24T21:29:51.513Z"
+    },
+    "style_preset.product-launch-video": {
+      "value": "blue-professional",
+      "confirmed_in": [
+        "tecorresponde-teaser"
+      ],
+      "updated_at": "2026-07-24T22:04:06.990Z"
+    }
+  },
+  "sightings": {}
+}

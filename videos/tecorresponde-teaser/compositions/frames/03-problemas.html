@@ -1,0 +1,165 @@
+<template>
+  <div data-hf-id="hf-g9eg" id="root" data-composition-id="03-problemas" style="container-type: size; width: 100%; height: 100%; position: relative; overflow: hidden; font-family: 'Inter', sans-serif;" data-start="0" data-duration="3.2" data-width="1920" data-height="1080">
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+        src: url("assets/fonts/Inter-Regular.woff2") format("woff2");
+      }
+
+      #root .clip { position: absolute; }
+
+      #root .p03-camera {
+        position: absolute;
+        inset: 0;
+        transform-origin: 36.8% 38.9%;
+        will-change: transform;
+      }
+
+      #root .p03-headline {
+        color: #FFFFFF;
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 1.16;
+        letter-spacing: -0.02em;
+      }
+      #root .p03-headline > div { will-change: transform, opacity; }
+
+      #root .p03-card {
+        width: 380px;
+        height: 160px;
+        padding: 32px;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.055);
+        border: 1.5px solid rgba(255, 255, 255, 0.16);
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+        will-change: transform, opacity;
+      }
+      #root .p03-card-tick {
+        width: 28px;
+        height: 3px;
+        border-radius: 2px;
+        background: #005BC4;
+      }
+      #root .p03-card-label {
+        color: #FFFFFF;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: -0.01em;
+      }
+    </style>
+
+    <!-- canvas: brand navy, stands in for the site's dark section -->
+    <div data-hf-id="hf-gvzz" id="problemas-bg" class="clip" data-start="0" data-duration="3.2" data-track-index="0" style="inset: 0; background: #002E62;"></div>
+
+    <!-- camera wrapper: slow push-in over the whole shot (Scene 3's "holds near-static with a slow push-in") -->
+    <div data-hf-id="hf-uz2f" class="p03-camera">
+
+      <!-- headline: fills in line-by-line -->
+      <div data-hf-id="hf-3mfn" id="problemas-headline" class="clip p03-headline" data-start="0" data-duration="3.2" data-track-index="1" style="left: 96px; top: 80px; width: 900px;">
+        <div data-hf-id="hf-oe40" class="p03-line1">¿Qué problemas</div>
+        <div data-hf-id="hf-bsi5" class="p03-line2">podés solucionar?</div>
+      </div>
+
+      <!-- 6-card grid, 3 x 2 — stagger-assembles in pairs, short slide toward the grid centroid on arrival -->
+      <div data-hf-id="hf-lncb" id="problemas-card-bancos-slot" class="clip" data-start="0.30" data-duration="2.9" data-track-index="2" style="left: 96px; top: 240px;">
+        <div data-hf-id="hf-lsh9" class="p03-card p03-card-bancos">
+          <div data-hf-id="hf-hhd2" class="p03-card-tick"></div>
+          <div data-hf-id="hf-o8mc" class="p03-card-label">Bancos y Tarjetas</div>
+        </div>
+      </div>
+      <div data-hf-id="hf-6l5u" id="problemas-card-telefonia-slot" class="clip" data-start="0.38" data-duration="2.82" data-track-index="3" style="left: 516px; top: 240px;">
+        <div data-hf-id="hf-ij9w" class="p03-card p03-card-telefonia">
+          <div data-hf-id="hf-rxka" class="p03-card-tick"></div>
+          <div data-hf-id="hf-3dym" class="p03-card-label">Telefonía e Internet</div>
+        </div>
+      </div>
+      <div data-hf-id="hf-1gi8" id="problemas-card-compras-slot" class="clip" data-start="1.15" data-duration="2.05" data-track-index="4" style="left: 936px; top: 240px;">
+        <div data-hf-id="hf-71aq" class="p03-card p03-card-compras">
+          <div data-hf-id="hf-sbvb" class="p03-card-tick"></div>
+          <div data-hf-id="hf-201r" class="p03-card-label">Compras Online</div>
+        </div>
+      </div>
+      <div data-hf-id="hf-e93n" id="problemas-card-electro-slot" class="clip" data-start="1.23" data-duration="1.97" data-track-index="5" style="left: 96px; top: 440px;">
+        <div data-hf-id="hf-5643" class="p03-card p03-card-electro">
+          <div data-hf-id="hf-sq6c" class="p03-card-tick"></div>
+          <div data-hf-id="hf-ijt1" class="p03-card-label">Electrodomésticos</div>
+        </div>
+      </div>
+      <div data-hf-id="hf-dree" id="problemas-card-servicios-slot" class="clip" data-start="1.85" data-duration="1.35" data-track-index="6" style="left: 516px; top: 440px;">
+        <div data-hf-id="hf-xrhc" class="p03-card p03-card-servicios">
+          <div data-hf-id="hf-t4hd" class="p03-card-tick"></div>
+          <div data-hf-id="hf-x4kg" class="p03-card-label">Servicios Públicos</div>
+        </div>
+      </div>
+      <div data-hf-id="hf-hojd" id="problemas-card-vuelos-slot" class="clip" data-start="1.93" data-duration="1.27" data-track-index="7" style="left: 936px; top: 440px;">
+        <div data-hf-id="hf-sfin" class="p03-card p03-card-vuelos">
+          <div data-hf-id="hf-tise" class="p03-card-tick"></div>
+          <div data-hf-id="hf-k9yb" class="p03-card-label">Vuelos</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl03problemas = gsap.timeline({ paused: true });
+
+    const root03problemas = document.querySelector('[data-composition-id="03-problemas"]');
+    const camera03problemas = root03problemas.querySelector(".p03-camera");
+
+    // slow continuous push-in — the assembled grid gently fills more of the frame by the hold (Scene 3)
+    tl03problemas.fromTo(
+      camera03problemas,
+      { scale: 1 },
+      { scale: 1.06, duration: 2.6, ease: "power1.inOut" },
+      0
+    );
+
+    // headline fills in line-by-line
+    tl03problemas.fromTo(
+      root03problemas.querySelector(".p03-line1"),
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.42, ease: "power3.out" },
+      0.0
+    );
+    tl03problemas.fromTo(
+      root03problemas.querySelector(".p03-line2"),
+      { opacity: 0, y: 16 },
+      { opacity: 1, y: 0, duration: 0.42, ease: "power3.out" },
+      0.18
+    );
+
+    // 6-card stagger-assemble — each card starts partially displaced toward the grid's
+    // centroid (center-outward-expansion, partially-spread-start variant) and slides the
+    // short remaining distance into its slot, in cascading pairs per Scene 1/2/3.
+    const cards03problemas = [
+      { sel: ".p03-card-bancos", dx: 67.2, dy: 16, at: 0.30 },
+      { sel: ".p03-card-telefonia", dx: 0, dy: 16, at: 0.38 },
+      { sel: ".p03-card-compras", dx: -67.2, dy: 16, at: 1.15 },
+      { sel: ".p03-card-electro", dx: 67.2, dy: -16, at: 1.23 },
+      { sel: ".p03-card-servicios", dx: 0, dy: -16, at: 1.85 },
+      { sel: ".p03-card-vuelos", dx: -67.2, dy: -16, at: 1.93 },
+    ];
+
+    cards03problemas.forEach((c) => {
+      const el = root03problemas.querySelector(c.sel);
+      tl03problemas.fromTo(
+        el,
+        { x: c.dx, y: c.dy, scale: 0.94, opacity: 0 },
+        { x: 0, y: 0, scale: 1, opacity: 1, duration: 0.42, ease: "power3.out" },
+        c.at
+      );
+    });
+
+    window.__timelines["03-problemas"] = tl03problemas;
+  </script>
+</template>

@@ -1,0 +1,16 @@
+[
+  {
+    "index": 0,
+    "url": "https://qbk-tecorresponde-prodassets.s3.us-east-1.amazonaws.com/videos/home_header_section_video-desktop.webm",
+    "filename": "home_header_section_video-desktop.webm",
+    "width": 1920,
+    "height": 590,
+    "sourceWidth": 1920,
+    "sourceHeight": 1080,
+    "heading": "Gestionamos tus reclamos por vos.",
+    "caption": "Resolvemos tu problema con bancos, aerolíneas y empresas de servicios, sin la burocracia habitual.",
+    "ariaLabel": "",
+    "preview": "assets/videos/previews/video-0-preview.png",
+    "localPath": "assets/videos/home_header_section_video-desktop.webm"
+  }
+]

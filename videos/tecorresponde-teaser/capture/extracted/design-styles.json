@@ -1,0 +1,323 @@
+{
+  "typography": [
+    {
+      "role": "display",
+      "fontFamily": "Inter",
+      "fontSize": "60px",
+      "fontWeight": "800",
+      "lineHeight": "60px",
+      "letterSpacing": "-1.5px",
+      "color": "#FFFFFF",
+      "sampleText": "Gestionamos tus reclamos por vos."
+    },
+    {
+      "role": "heading",
+      "fontFamily": "Inter",
+      "fontSize": "48px",
+      "fontWeight": "800",
+      "lineHeight": "48px",
+      "letterSpacing": "-1.2px",
+      "color": "#18181B",
+      "sampleText": "Cómo iniciar tu reclamo"
+    },
+    {
+      "role": "heading-2",
+      "fontFamily": "Inter",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "lineHeight": "36px",
+      "letterSpacing": "normal",
+      "color": "#FFFFFF",
+      "sampleText": "Recibí novedades y consejos para hacer valer tus derechos."
+    },
+    {
+      "role": "heading-3",
+      "fontFamily": "Inter",
+      "fontSize": "24px",
+      "fontWeight": "800",
+      "lineHeight": "32px",
+      "letterSpacing": "-0.6px",
+      "color": "#005BC4",
+      "sampleText": "No somos defensa al consumidor"
+    },
+    {
+      "role": "heading-3",
+      "fontFamily": "Inter",
+      "fontSize": "20px",
+      "fontWeight": "700",
+      "lineHeight": "28px",
+      "letterSpacing": "-0.5px",
+      "color": "#18181B",
+      "sampleText": "Domicilio en CABA"
+    },
+    {
+      "role": "body",
+      "fontFamily": "Inter",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "lineHeight": "32.5px",
+      "letterSpacing": "normal",
+      "color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.9)",
+      "sampleText": "Resolvemos tu problema con bancos, aerolíneas y empresas de "
+    },
+    {
+      "role": "heading-3",
+      "fontFamily": "Inter",
+      "fontSize": "18px",
+      "fontWeight": "700",
+      "lineHeight": "28px",
+      "letterSpacing": "-0.45px",
+      "color": "#18181B",
+      "sampleText": "Bancos y Tarjetas"
+    },
+    {
+      "role": "link",
+      "fontFamily": "Inter",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "color": "#FFFFFF",
+      "sampleText": "Inicio"
+    }
+  ],
+  "spacing": {
+    "observed": [
+      8,
+      12,
+      16,
+      20,
+      24,
+      32,
+      40,
+      48,
+      64,
+      96
+    ],
+    "baseUnit": 8
+  },
+  "radius": [
+    "14px",
+    "3.35544e+07px"
+  ],
+  "shadows": [
+    {
+      "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+      "count": 2
+    }
+  ],
+  "buttons": [
+    {
+      "label": "Seguir reclamo",
+      "background": "#FFFFFF",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#F31260",
+      "padding": "0px 20px",
+      "borderRadius": "3.35544e+07px",
+      "border": "2px solid oklab(0.619255 0.237197 0.0475346 / 0.5)",
+      "boxShadow": "none",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "height": "40px"
+    },
+    {
+      "label": "Reclamar ahora",
+      "background": "#F31260",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#FFFFFF",
+      "padding": "0px 20px",
+      "borderRadius": "3.35544e+07px",
+      "border": "0px solid rgb(255, 255, 255)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "height": "40px"
+    },
+    {
+      "label": "Gestionamos tus reclamos por vos.Resolve",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#11181C",
+      "padding": "0px",
+      "borderRadius": "0px",
+      "border": "0px solid rgb(17, 24, 28)",
+      "boxShadow": "none",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "590px"
+    },
+    {
+      "label": "button",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#000000",
+      "padding": "0px",
+      "borderRadius": "12px",
+      "border": "0px solid rgb(0, 0, 0)",
+      "boxShadow": "none",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "height": "495px"
+    }
+  ],
+  "cards": [
+    {
+      "label": "card",
+      "background": "#FFFFFF",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#11181C",
+      "padding": "0px",
+      "borderRadius": "14px",
+      "border": "1px solid rgb(244, 244, 245)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 5px 0px, rgba(0, 0, 0, 0.06) 0px 2px 10px 0px, rgba(0, 0, 0, 0.3) 0px 0px 1px 0px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "211.5px"
+    },
+    {
+      "label": "card",
+      "background": "#FFFFFF",
+      "backgroundImage": "linear-gradient(to right bottom in oklab, rgb(230, 241, 254) 0%, rgb(255, 255, 255) 100%)",
+      "backdropFilter": "",
+      "color": "#11181C",
+      "padding": "0px",
+      "borderRadius": "14px",
+      "border": "1px solid rgb(153, 199, 251)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.02) 0px 0px 5px 0px, rgba(0, 0, 0, 0.06) 0px 2px 10px 0px, rgba(0, 0, 0, 0.3) 0px 0px 1px 0px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "211.5px"
+    },
+    {
+      "label": "card",
+      "background": "transparent",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#000000",
+      "padding": "0px",
+      "borderRadius": "12px",
+      "border": "0px solid rgb(0, 0, 0)",
+      "boxShadow": "none",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "height": "495px"
+    },
+    {
+      "label": "card",
+      "background": "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+      "backgroundImage": "",
+      "backdropFilter": "",
+      "color": "#11181C",
+      "padding": "0px",
+      "borderRadius": "14px",
+      "border": "1px solid rgb(244, 244, 245)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "height": "276px"
+    }
+  ],
+  "nav": {
+    "label": "navigation",
+    "background": "transparent",
+    "backgroundImage": "",
+    "backdropFilter": "",
+    "color": "#FFFFFF",
+    "padding": "12px 32px",
+    "borderRadius": "0px",
+    "border": "0px solid rgb(255, 255, 255)",
+    "boxShadow": "none",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "height": "64px"
+  },
+  "chips": [
+    {
+      "label": "Seguir reclamo",
+      "background": "#FFFFFF",
+      "color": "#F31260",
+      "padding": "0px 20px",
+      "borderRadius": "3.35544e+07px",
+      "border": "2px solid oklab(0.619255 0.237197 0.0475346 / 0.5)",
+      "boxShadow": "none",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "height": "40px"
+    },
+    {
+      "label": "Reclamar ahora",
+      "background": "#F31260",
+      "color": "#FFFFFF",
+      "padding": "0px 20px",
+      "borderRadius": "3.35544e+07px",
+      "border": "0px solid rgb(255, 255, 255)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "height": "40px"
+    },
+    {
+      "label": "1",
+      "background": "#005BC4",
+      "color": "#FFFFFF",
+      "padding": "0px",
+      "borderRadius": "3.35544e+07px",
+      "border": "0px solid rgb(255, 255, 255)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.815941 -0.0273693 -0.0841211) 0px 10px 15px -3px, oklab(0.815941 -0.0273693 -0.0841211) 0px 4px 6px -4px",
+      "fontSize": "18px",
+      "fontWeight": "900",
+      "height": "40px"
+    },
+    {
+      "label": "2",
+      "background": "lab(96.286 -0.852436 -2.46847)",
+      "color": "lab(48.0876 -2.03595 -16.5814)",
+      "padding": "0px",
+      "borderRadius": "3.35544e+07px",
+      "border": "0px solid lab(48.0876 -2.03595 -16.5814)",
+      "boxShadow": "none",
+      "fontSize": "18px",
+      "fontWeight": "900",
+      "height": "40px"
+    }
+  ],
+  "statCells": [],
+  "tabs": [],
+  "backgrounds": [
+    {
+      "value": "linear-gradient(to right bottom in oklab, rgb(0, 91, 196) 0%, rgb(0, 68, 147) 50%, rgb(0, 46, 98) 100%)",
+      "area": 564480
+    },
+    {
+      "value": "linear-gradient(to top, oklab(0 0 0 / 0.9) 0%, oklab(0 0 0 / 0.4) 50%, rgba(0, 0, 0, 0) 100%)",
+      "area": 347200
+    },
+    {
+      "value": "linear-gradient(to right bottom in oklab, rgb(230, 241, 254) 0%, rgb(255, 255, 255) 100%)",
+      "area": 92921
+    }
+  ],
+  "glass": [
+    {
+      "backdropFilter": "blur(12px)",
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(244, 244, 245)",
+      "borderRadius": "14px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+      "area": 398081
+    },
+    {
+      "backdropFilter": "blur(12px)",
+      "background": "oklab(0 0 0 / 0.1)",
+      "border": "",
+      "borderRadius": "0px",
+      "boxShadow": "",
+      "area": 94080
+    }
+  ]
+}
