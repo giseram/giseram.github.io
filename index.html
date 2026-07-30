@@ -48,15 +48,18 @@
         <a href="#casos" class="btn btn--solid">Ver casos
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="#contacto" class="btn btn--outline">Contactame</a>
       </div>
     </div>
     <div class="hero__media">
-      <div class="foto-focus">
-        <img class="foto-focus__trama foto-focus__trama--light" src="assets/foto-trama-claro.jpg" alt="" aria-hidden="true">
-        <img class="foto-focus__trama foto-focus__trama--dark" src="assets/foto-trama-oscuro.jpg" alt="" aria-hidden="true">
-        <img class="foto-focus__real" src="assets/foto-bw.webp" alt="Retrato de Gisela Ramos">
-        <div class="foto-focus__frame" aria-hidden="true"></div>
+      <div class="photo-card">
+        <img class="photo-card__img" src="assets/foto-bw.webp" alt="Retrato de Gisela Ramos">
+        <div class="photo-card__header">
+          <span class="photo-card__status"><span class="photo-card__spinner" aria-hidden="true"></span>Conectando</span>
+        </div>
+        <div class="photo-card__footer">
+          <a href="https://www.linkedin.com/in/giselamr/" target="_blank" rel="noopener" class="photo-card__name photo-card__name--sm">@giselamr</a>
+          <a href="#contacto" class="photo-card__cta">Contactame</a>
+        </div>
       </div>
     </div>
   </div>
@@ -150,7 +153,7 @@
 
   <div class="cases-more">
     <p>Antes del UX/UI hice piezas de campaña, key visuals y gráfica digital para retail y moda.</p>
-    <a href="https://behance.net/gmramos" target="_blank" rel="noopener" class="btn btn--outline">Ver diseño gráfico en Behance →</a>
+    <a href="https://behance.net/gmramos" target="_blank" rel="noopener" class="btn btn--outline">Ver diseño gráfico en Behance <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
   </div>
 </section>
 </div>
@@ -262,33 +265,6 @@
     track.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
     update();
-  })();
-
-  (function() {
-    var ff = document.querySelector('.foto-focus');
-    if (!ff) return;
-    var w = 32, h = 50; // tamaño de la ventana en %, espejo de --ww/--wh
-
-    function moveTo(clientX, clientY) {
-      var r = ff.getBoundingClientRect();
-      var x = ((clientX - r.left) / r.width) * 100 - w / 2;
-      var y = ((clientY - r.top) / r.height) * 100 - h / 2;
-      x = Math.max(0, Math.min(100 - w, x));
-      y = Math.max(0, Math.min(100 - h, y));
-      ff.style.setProperty('--wx', x + '%');
-      ff.style.setProperty('--wy', y + '%');
-    }
-
-    // Desktop: la ventana sigue al cursor
-    ff.addEventListener('mousemove', function(e) { moveTo(e.clientX, e.clientY); });
-    ff.addEventListener('mouseleave', function() {
-      ff.style.removeProperty('--wx');
-      ff.style.removeProperty('--wy');
-    });
-    // Touch: la ventana se mueve hacia donde se toca la foto
-    ff.addEventListener('touchstart', function(e) {
-      if (e.touches.length) moveTo(e.touches[0].clientX, e.touches[0].clientY);
-    }, { passive: true });
   })();
 
   var toggle = document.getElementById('themeToggle');

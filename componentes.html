@@ -75,7 +75,7 @@
 </nav>
 
 <header class="case-hero">
-  <a href="index.html" class="case-hero__back">← Volver al inicio</a>
+  <a href="index.html" class="case-hero__back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Volver al inicio</a>
   <div class="eyebrow">Sistema de diseño · Documentación interna</div>
   <h1>Componentes &amp; Tokens</h1>
   <p class="case-hero__sub">Inventario vivo del sistema del portfolio: tokens de color, tipografía, botones y componentes, con sus variables CSS. Cambiá el tema con el toggle de arriba para ver ambos modos.</p>
@@ -242,7 +242,7 @@
 
       <h3>Primario · <code>.btn .btn--solid</code></h3>
       <div class="demo">
-        <a href="#botones" class="btn btn--solid">Ver caso: Te corresponde →</a>
+        <a href="#botones" class="btn btn--solid">Ver caso: Te corresponde <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <p class="spec">Fondo <code>--accent-strong</code>, texto <code>--accent-ink</code> (5.7:1 de contraste, cumple WCAG AA), radio píldora, 14.5px/500, padding 16×30. Hover: invierte a fondo oscuro con texto blanco y sube 1px.</p>
 
@@ -258,7 +258,19 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </span>
       </div>
-      <p class="spec">Misma anatomía que el secundario. Dentro de <code>.case-card</code> vive oculto (<code>opacity:0</code>, posición absoluta) y aparece recién con el hover de la tarjeta, junto con el crecimiento del panel; acá se fuerza visible para poder mostrarlo suelto. Hover: fondo y borde <code>--accent-ink</code>, texto y flecha en blanco.</p>
+      <p class="spec">Mismo estilo que <code>.btn--outline</code> (transparente, borde sutil, hover fondo+borde <code>--accent</code> con texto <code>--accent-ink</code>), pero con el tamaño propio de la tarjeta (14px, padding 13×24). Dentro de <code>.case-card</code> vive oculto (<code>opacity:0</code>, posición absoluta) y aparece recién con el hover de la tarjeta, junto con el crecimiento del panel; acá se fuerza visible para poder mostrarlo suelto.</p>
+
+      <h3>Link de navegación de caso · <code>.case-hero__back</code> / <code>.case-nav-footer</code></h3>
+      <div class="demo demo--block">
+        <a href="#botones" class="case-hero__back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Volver a casos</a>
+      </div>
+      <div class="demo demo--surface demo--block">
+        <div class="case-nav-footer" style="border-top:none; margin-top:0; padding-top:0;">
+          <a href="#botones"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Volver a todos los casos</a>
+          <a href="#botones">Ver el siguiente caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <p class="spec">Link de texto 13px con ícono de 14px (sin fondo ni borde, sin la anatomía de <code>.btn</code>), mismo estilo default/hover en las dos ubicaciones: color <code>--text</code> → hover <code>--accent-text</code>. <code>.case-hero__back</code> vive en el header de cada página de caso. <code>.case-nav-footer</code> cierra el contenido con un filete <code>--border</code> arriba: back a la izquierda, siguiente caso a la derecha. En los tres, el ícono se desplaza en la dirección de la flecha al hacer hover, igual que <code>.case-card__link</code> y <code>.carousel-btn</code>.</p>
 
       <h3>Flechas de carrusel · <code>.carousel-btn</code></h3>
       <div class="demo">
@@ -350,23 +362,23 @@
         <div class="case-card case-card--soon">
           <div class="case-card__panel">
             <div class="case-card__body">
-              <h3>Pedidos por IA para e-commerce B2B</h3>
+              <h3>Pedidos por IA en B2B</h3>
               <p>Del prompt al carrito: propuesta de alta de pedido en lenguaje natural para la tienda B2B.</p>
               <span class="case-card__soon">Próximamente</span>
             </div>
           </div>
         </div>
       </div>
-      <p class="spec">Igual anatomía que <code>.case-card</code>, sin <code>&lt;img&gt;</code> ni link: <code>cursor: default</code>, <code>opacity: .85</code>. La píldora <code>.case-card__soon</code> (borde punteado, punto <code>--accent-ink</code>) queda siempre visible, empujada al fondo con <code>margin-top: auto</code>, sin depender del hover.</p>
+      <p class="spec">Igual anatomía que <code>.case-card</code>, sin <code>&lt;img&gt;</code> ni link: <code>cursor: default</code>, <code>opacity: .85</code>. La píldora <code>.case-card__soon</code> (borde punteado, punto <code>--accent-ink</code>) sigue el mismo patrón hover-reveal que <code>.case-card__link</code>: oculta por default, aparece con fade + <code>translateY</code> al hacer hover en la card.</p>
 
       <h3>CTA de Behance · <code>.cases-more</code></h3>
       <div class="demo demo--surface">
         <div class="cases-more" style="margin-top:0;">
-          <p>¿Buscás diseño gráfico? Antes del UX/UI hice piezas de campaña, key visuals y gráfica digital para retail y moda.</p>
-          <a href="#tarjetas" class="btn btn--outline">Ver diseño gráfico en Behance →</a>
+          <p>Antes del UX/UI hice piezas de campaña, key visuals y gráfica digital para retail y moda.</p>
+          <a href="#tarjetas" class="btn btn--outline">Ver diseño gráfico en Behance <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
       </div>
-      <p class="spec">Cierra el carrusel de casos en la home: texto en <code>--text-2</code>, separado por un filete <code>--border</code>, con el <code>.btn--outline</code> estándar. Enlaza a Behance para mostrar trabajo de diseño gráfico previo al UX/UI.</p>
+      <p class="spec">Cierra el carrusel de casos en la home: texto en <code>--text</code>, sin filete divisorio, con el <code>.btn--outline</code> estándar. Enlaza a Behance para mostrar trabajo de diseño gráfico previo al UX/UI.</p>
 
       <h3>Work item · <code>.work-item</code></h3>
       <div class="demo demo--surface">
@@ -482,6 +494,21 @@
         </div>
       </div>
       <p class="spec">Recorrido animado de pantallas (<code>showcase.js</code>). Fondo blanco fijo en ambos temas para que la transición entre capturas no se note. Con <code>prefers-reduced-motion</code> no avanza solo.</p>
+
+      <h3>Foto de perfil · <code>.photo-card</code></h3>
+      <div class="demo demo--surface">
+        <div class="photo-card" style="max-width:240px;">
+          <img class="photo-card__img" src="assets/foto-bw.webp" alt="Retrato de Gisela Ramos">
+          <div class="photo-card__header">
+            <span class="photo-card__status"><span class="photo-card__spinner" aria-hidden="true"></span>Conectando</span>
+          </div>
+          <div class="photo-card__footer">
+            <a href="https://www.linkedin.com/in/giselamr/" target="_blank" rel="noopener" class="photo-card__name photo-card__name--sm">@giselamr</a>
+            <a href="#media" class="photo-card__cta">Contactame</a>
+          </div>
+        </div>
+      </div>
+      <p class="spec">Retrato del hero, aspect-ratio 4:5, radio <code>--r-card-lg</code>. Header superior con degradado <code>rgba(13,15,16,.55)→transparente</code>: estado con spinner animado (<code>border-top-color</code> girando). Footer inferior en efecto glass Apple (<code>rgba(255,255,255,.55)</code> + <code>backdrop-filter: blur(24px) saturate(180%)</code>, sin borde): handle de LinkedIn en <code>--accent-ink</code> a la izquierda, <code>.photo-card__cta</code> (píldora oscura, texto blanco) a la derecha.</p>
     </section>
 
     <section id="motion">
