@@ -83,7 +83,7 @@
   <dl class="case-hero__specs">
     <div><dt>Fuente display</dt><dd>Google Sans</dd></div>
     <div><dt>Fuente body</dt><dd>Google Sans</dd></div>
-    <div><dt>Acento</dt><dd>#9ED8FE</dd></div>
+    <div><dt>Acento</dt><dd>#DBE5FE</dd></div>
     <div><dt>Temas</dt><dd>Claro · Oscuro</dd></div>
   </dl>
 </header>
@@ -135,11 +135,19 @@
         </div>
         <div class="swatch">
           <div class="swatch__color" style="background: var(--accent);"></div>
-          <div class="swatch__info"><strong>--accent</strong><span>#9ED8FE (ambos temas)</span></div>
+          <div class="swatch__info"><strong>--accent</strong><span>#DBE5FE (ambos temas)</span></div>
         </div>
         <div class="swatch">
-          <div class="swatch__color" style="background: var(--accent-gradient);"></div>
-          <div class="swatch__info"><strong>--accent-gradient</strong><span>#9ED8FE → #EFFF5F (ambos temas)</span></div>
+          <div class="swatch__color" style="background: var(--gradient-warm);"></div>
+          <div class="swatch__info"><strong>--gradient-warm</strong><span>#FFC689 → #FF9C7E → #4A7FF8 (ambos temas)</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--gradient-soft); border: 1px solid var(--surface-2);"></div>
+          <div class="swatch__info"><strong>--gradient-soft</strong><span>#FFFFFF → #FFC689 (50%) → #FF9C7E (75%)</span></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__color" style="background: var(--accent-strong);"></div>
+          <div class="swatch__info"><strong>--accent-strong</strong><span>Claro #4A7FF8</span><span>Oscuro #DBE5FE (= --accent)</span></div>
         </div>
         <div class="swatch">
           <div class="swatch__color" style="background: var(--accent-ink);"></div>
@@ -162,7 +170,7 @@
           <div class="swatch__info"><strong>--ink-text</strong><span>#F5F5F0 (constante, texto sobre --ink)</span></div>
         </div>
       </div>
-      <p class="spec">Los tokens <code>--ink</code> / <code>--ink-text</code> se usan en el footer y en <code>.pull-quote</code>: bandas de contraste que se ven siempre oscuras, en claro y oscuro.</p>
+      <p class="spec">Los tokens <code>--ink</code> / <code>--ink-text</code> se usan en el footer y en <code>.pull-quote</code>: bandas de contraste que se ven siempre oscuras, en claro y oscuro. <code>--accent-strong</code> es una variante oscurecida de <code>--accent</code> (3.7:1 de contraste sobre blanco: cumple WCAG AA para texto grande/UI, no para texto normal) para texto que necesita verse "de color acento" sin perder legibilidad; en oscuro no hace falta oscurecer nada, así que vale lo mismo que <code>--accent</code>.</p>
     </section>
 
     <section id="tipografia">
@@ -236,7 +244,7 @@
       <div class="demo">
         <a href="#botones" class="btn btn--solid">Ver caso: Te corresponde →</a>
       </div>
-      <p class="spec">Fondo <code>--accent</code>, texto <code>--accent-ink</code>, radio píldora, 14.5px/500, padding 16×30. Hover: invierte a fondo oscuro con texto blanco y sube 1px.</p>
+      <p class="spec">Fondo <code>--accent-strong</code>, texto <code>--accent-ink</code> (5.7:1 de contraste, cumple WCAG AA), radio píldora, 14.5px/500, padding 16×30. Hover: invierte a fondo oscuro con texto blanco y sube 1px.</p>
 
       <h3>Secundario · <code>.btn .btn--outline</code></h3>
       <div class="demo">
@@ -246,22 +254,22 @@
 
       <h3>Link de tarjeta · <code>.case-card__link</code></h3>
       <div class="demo">
-        <span class="case-card__link">Ver el caso completo
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="case-card__link" style="position:static; opacity:1; transform:none; pointer-events:auto;">Ver el caso completo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </span>
       </div>
-      <p class="spec">Misma anatomía que el secundario, con flecha de 16px que se desplaza 3px al hover de la tarjeta.</p>
+      <p class="spec">Misma anatomía que el secundario. Dentro de <code>.case-card</code> vive oculto (<code>opacity:0</code>, posición absoluta) y aparece recién con el hover de la tarjeta, junto con el crecimiento del panel; acá se fuerza visible para poder mostrarlo suelto. Hover: fondo y borde <code>--accent-ink</code>, texto y flecha en blanco.</p>
 
       <h3>Flechas de carrusel · <code>.carousel-btn</code></h3>
       <div class="demo">
         <button type="button" class="carousel-btn" aria-label="Anterior">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
         </button>
         <button type="button" class="carousel-btn" aria-label="Siguiente">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </button>
         <button type="button" class="carousel-btn" disabled aria-label="Deshabilitado">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </button>
       </div>
       <p class="spec">Círculo 44×44 con borde. Hover: fondo y borde <code>--accent</code>. Deshabilitado: opacidad .35 (tercer ejemplo).</p>
@@ -280,25 +288,31 @@
       <div class="demo demo--block">
         <div class="eyebrow" style="margin-bottom:0;">Trabajo seleccionado</div>
       </div>
-      <p class="spec">12.5px uppercase, tracking 0.08em, color <code>--text</code> (negro sobre fondo claro, blanco sobre fondo oscuro). El <code>&lt;span&gt;</code> interior usa <code>--accent-text</code>.</p>
+      <p class="spec">12.5px uppercase, tracking 0.08em, color <code>--accent-strong</code>. El <code>&lt;span&gt;</code> interior usa <code>--accent-text</code>.</p>
 
       <h3>Eyebrow de casos · <code>.section--cases .eyebrow</code></h3>
       <div class="demo demo--block">
-        <div class="cases-band section--cases" style="padding:20px 24px; max-width:none; border-radius: var(--r-card);"><div class="eyebrow" style="margin-bottom:0;">Trabajo seleccionado</div></div>
+        <div class="eyebrow" style="margin-bottom:0;">Trabajo seleccionado</div>
       </div>
-      <p class="spec">Suma un círculo celeste de 9px antes del texto. Vive sobre <code>.cases-band</code>: color <code>--ink-text</code> (blanco, fondo negro), título de la sección en <code>--ink-text</code>.</p>
+      <p class="spec">Suma un círculo <code>--accent</code> de 9px antes del texto. <code>.cases-band</code> ya no tiene fondo negro fijo: la sección de casos usa los mismos tokens de texto/borde que el resto del sitio (<code>--text</code>, <code>--border</code>), tanto en claro como en oscuro.</p>
+
+      <h3>Eyebrow de caso de estudio · <code>.case-hero .eyebrow</code></h3>
+      <div class="demo demo--block">
+        <div class="eyebrow" style="margin-bottom:0; color: var(--accent-strong);">0 → 1 · Legal-tech · Qubik</div>
+      </div>
+      <p class="spec">Mismo <code>.eyebrow</code> base — ya usa <code>--accent-strong</code> por defecto, así que esta regla queda como refuerzo explícito en <code>.case-hero</code>.</p>
 
       <h3>Eyebrow subrayado · <code>.work-item .eyebrow</code></h3>
       <div class="demo demo--block">
         <div class="work-item" style="padding:0; background:transparent; max-width:none;"><div class="eyebrow" style="margin-bottom:0;">Product Thinking</div></div>
       </div>
-      <p class="spec">Subrayado celeste de 3px al ancho del texto, con gradiente <code>--accent</code> posicionado abajo.</p>
+      <p class="spec">Subrayado de 3px al ancho del texto, color <code>--accent-strong</code> posicionado abajo.</p>
 
-      <h3>Resaltador · <code>.nav__mark</code> / <code>.accent</code></h3>
+      <h3>Marca del nav · <code>.nav__mark</code></h3>
       <div class="demo">
-        <span class="nav__mark" style="font-size:20px;">Gisela Ramos</span>
+        <span class="nav__mark">Gisela Ramos</span>
       </div>
-      <p class="spec">Texto pintado con un resaltador al 88% de la altura, centrado verticalmente (efecto marcador): <code>.nav__mark</code> usa <code>--accent</code> (celeste liso). En el hero, la palabra "negocio" usa <code>--accent-gradient</code> (celeste → amarillo) con una transición de <code>background-size</code> al terminar el tipeo.</p>
+      <p class="spec">Google Sans 400 · 20px, color <code>--text</code>, sin fondo. En el hero, la palabra "negocio" usa el resaltador con <code>--gradient-warm</code> (naranja → coral → azul) y una transición de <code>background-size</code> al terminar el tipeo.</p>
 
       <h3>Chip de skill · <code>.chip</code></h3>
       <div class="demo">
@@ -309,12 +323,6 @@
         </div>
       </div>
       <p class="spec">Píldora con fondo <code>--surface</code>, 12.5px, padding 5×12. Usado en los skills de "Sobre mí"; se agrupa con <code>.chip-list</code> (gap 8px, wrap).</p>
-
-      <h3>Tag de tarjeta · <code>.case-card__tag</code></h3>
-      <div class="demo demo--block">
-        <span class="case-card__tag" style="margin-bottom:0;">0 → 1 · Legal-tech · Qubik</span>
-      </div>
-      <p class="spec">12.5px uppercase, tracking 0.06em, color <code>--accent-text</code>. Separador de conceptos: punto medio (·).</p>
     </section>
 
     <section id="tarjetas">
@@ -323,18 +331,42 @@
       <h3>Tarjeta de caso · <code>.case-card</code></h3>
       <div class="demo demo--surface">
         <a href="case-te-corresponde.html" class="case-card">
-          <div class="case-card__media"><img src="assets/home-mvp-bw.jpg" alt="Home de Te corresponde"></div>
-          <div class="case-card__body">
-            <span class="case-card__tag">0 → 1 · Legal-tech · Qubik</span>
-            <h3>Te corresponde</h3>
-            <p>Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina.</p>
-            <span class="case-card__link">Ver el caso completo
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
+          <img class="case-card__media" src="assets/home-mvp-bw.jpg" alt="" loading="lazy">
+          <div class="case-card__panel">
+            <div class="case-card__body">
+              <h3>Te corresponde</h3>
+              <p>Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina.</p>
+              <span class="case-card__link">Ver el caso completo
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
           </div>
         </a>
       </div>
-      <p class="spec">Vive sobre la banda <code>--ink</code> (constante, oscura en los dos temas): la tarjeta fuerza sus propias variables (<code>--bg</code>, <code>--text</code>, <code>--text-2</code>, <code>--border-strong</code>, <code>--accent-text</code>) para quedar siempre "clara", con buen contraste en claro y oscuro. Media 16:10 con zoom 1.03 al hover; en el carrusel ocupa 50% del ancho (100% en mobile) con scroll-snap.</p>
+      <p class="spec">Imagen de fondo (<code>.case-card__media</code>, <code>object-fit: cover</code>) con <code>.case-card__panel</code> encima en efecto glass (<code>rgba(255,255,255,.55)</code> + <code>backdrop-filter: blur(24px) saturate(180%)</code>, borde superior blanco sutil), texto en <code>--accent-ink</code>, esquina superior izquierda con radio de 46px. Por default solo se ve el <code>h3</code>; al hover el panel crece (<code>top</code> de 76% a 26%) y recién ahí aparecen el párrafo (clamp de 3 líneas, <code>-webkit-line-clamp</code>) y <code>.case-card__link</code>, con sombra <code>0 8px 20px</code> y <code>translateY(-3px)</code>. Proporción 4:4.05; en el carrusel ocupa <code>calc(33.333% - 24px)</code> del ancho (100% en mobile) con scroll-snap. El <code>-24px</code> (en vez del <code>-16px</code> que usaría el cálculo estándar de 3 columnas con gap) deja ~24px de colchón visible al final de cada posición de scroll, más <code>scroll-padding-left: 16px</code> en <code>.case-track</code>: así la sombra del hover nunca queda cortada por el <code>overflow-x: auto</code>, sea cual sea la card que quede al borde.</p>
+
+      <h3>Tarjeta "Próximamente" · <code>.case-card--soon</code></h3>
+      <div class="demo demo--surface">
+        <div class="case-card case-card--soon">
+          <div class="case-card__panel">
+            <div class="case-card__body">
+              <h3>Pedidos por IA para e-commerce B2B</h3>
+              <p>Del prompt al carrito: propuesta de alta de pedido en lenguaje natural para la tienda B2B.</p>
+              <span class="case-card__soon">Próximamente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="spec">Igual anatomía que <code>.case-card</code>, sin <code>&lt;img&gt;</code> ni link: <code>cursor: default</code>, <code>opacity: .85</code>. La píldora <code>.case-card__soon</code> (borde punteado, punto <code>--accent-ink</code>) queda siempre visible, empujada al fondo con <code>margin-top: auto</code>, sin depender del hover.</p>
+
+      <h3>CTA de Behance · <code>.cases-more</code></h3>
+      <div class="demo demo--surface">
+        <div class="cases-more" style="margin-top:0;">
+          <p>¿Buscás diseño gráfico? Antes del UX/UI hice piezas de campaña, key visuals y gráfica digital para retail y moda.</p>
+          <a href="#tarjetas" class="btn btn--outline">Ver diseño gráfico en Behance →</a>
+        </div>
+      </div>
+      <p class="spec">Cierra el carrusel de casos en la home: texto en <code>--text-2</code>, separado por un filete <code>--border</code>, con el <code>.btn--outline</code> estándar. Enlaza a Behance para mostrar trabajo de diseño gráfico previo al UX/UI.</p>
 
       <h3>Work item · <code>.work-item</code></h3>
       <div class="demo demo--surface">
@@ -344,7 +376,7 @@
           <p>Me hago cargo del proceso completo, no solo de la ejecución visual de un flujo ya definido.</p>
         </div>
       </div>
-      <p class="spec">Sin fondo, borde 1px con <code>--accent-gradient</code> (celeste → amarillo), radio <code>--r-card</code>, padding 40×34. En la home van tres en grilla con gap de 20px.</p>
+      <p class="spec">Fondo <code>--surface</code>, sin borde ni radio, padding 40×34. En la home van tres en grilla con gap de 20px.</p>
     </section>
 
     <section id="bloques">
@@ -367,7 +399,7 @@
           <span class="learning__num">01</span>
           <div>
             <h3>Título del aprendizaje</h3>
-            <p>Cuerpo del aprendizaje en 14.5px <code>--text-2</code>. El número usa Google Sans 400 · 20px con el subrayado celeste del sitio.</p>
+            <p>Cuerpo del aprendizaje en 14.5px <code>--text-2</code>. El número usa Google Sans 400 · 20px con el subrayado <code>--accent-strong</code> del sitio.</p>
           </div>
         </article>
         <article class="learning">
@@ -398,7 +430,7 @@
             <div class="stage-note">Su solicitud de reembolso fue rechazada.</div>
           </div>
           <div class="emotion-strip__arrow" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.25 8A.75.75 0 0 1 2 7.25h10.19L9.47 4.53a.75.75 0 0 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 1 1-1.06-1.06l2.72-2.72H2A.75.75 0 0 1 1.25 8" clip-rule="evenodd"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </div>
           <div class="emotion-strip__stage">
             <div class="stage-label">Discovery</div>
@@ -406,7 +438,7 @@
             <div class="stage-note">Encuentra el sitio en redes sociales.</div>
           </div>
           <div class="emotion-strip__arrow" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M1.25 8A.75.75 0 0 1 2 7.25h10.19L9.47 4.53a.75.75 0 0 1 1.06-1.06l4 4a.75.75 0 0 1 0 1.06l-4 4a.75.75 0 1 1-1.06-1.06l2.72-2.72H2A.75.75 0 0 1 1.25 8" clip-rule="evenodd"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </div>
           <div class="emotion-strip__stage">
             <div class="stage-label">Goal</div>
@@ -514,6 +546,7 @@
 
 <script src="showcase.js"></script>
 <script src="lens.js"></script>
+<script src="page-transition.js"></script>
 
 </body>
 </html>

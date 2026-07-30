@@ -45,7 +45,9 @@
       <noscript><style>.type-ghost { visibility: visible !important; } #heroTitle .type-live { display: none; }</style></noscript>
       <p class="hero__lede">UX/UI Designer Senior con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en distintos países de LatAm, desde research hasta el prototipo en producción.</p>
       <div class="hero__actions">
-        <a href="#casos" class="btn btn--solid">Ver casos →</a>
+        <a href="#casos" class="btn btn--solid">Ver casos
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
         <a href="#contacto" class="btn btn--outline">Contactame</a>
       </div>
     </div>
@@ -60,10 +62,9 @@
   </div>
 
   <div class="hero__meta">
-    <div><strong>6+ años</strong>UX/UI &amp; Product Design</div>
-    <div><strong>1 producto 0→1</strong>De la idea a producción</div>
-    <div><strong>Retail · E-commerce · Banca</strong>Industrias en LatAm</div>
-    <div><strong>IA generativa</strong>Integrada a todo el proceso</div>
+    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></svg>6+ años</strong>UX/UI &amp; Product Design</div>
+    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>Retail · E-commerce · Banca</strong>Industrias en LatAm</div>
+    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>IA generativa</strong>Integrada a todo el proceso</div>
   </div>
 </header>
 
@@ -72,80 +73,84 @@
 <section class="section section--cases" id="casos">
   <div class="section-head">
     <div>
-      <div class="eyebrow">Trabajo seleccionado</div>
       <h2>Casos de estudio</h2>
+    </div>
+    <div class="case-carousel__controls">
+      <button type="button" class="carousel-btn" id="casePrev" aria-label="Caso anterior">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      </button>
+      <button type="button" class="carousel-btn" id="caseNext" aria-label="Caso siguiente">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
     </div>
   </div>
 
   <div class="case-carousel">
     <div class="case-track" id="caseTrack">
       <a href="case-te-corresponde.html" class="case-card">
-        <div class="case-card__media"><img src="assets/home-mvp-bw.jpg" alt="Home de Te corresponde"></div>
-        <div class="case-card__body">
-          <span class="case-card__tag">0 → 1 · Legal-tech · Qubik</span>
-          <h3>Te corresponde</h3>
-          <p>Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina, de la oportunidad de mercado al producto en producción.</p>
-          <span class="case-card__link">Ver el caso completo
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+        <img class="case-card__media" src="assets/home-mvp.gif" alt="" loading="lazy">
+        <div class="case-card__panel">
+          <div class="case-card__body">
+            <h3>Te corresponde</h3>
+            <p>Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina, de la oportunidad de mercado al producto en producción.</p>
+            <span class="case-card__link">Ver el caso completo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
         </div>
       </a>
 
       <a href="case-checkout-carrefour.html" class="case-card">
-        <div class="case-card__media"><img src="assets/checkout-cover-bw.jpg" alt="Checkout rediseñado de Carrefour Argentina"></div>
-        <div class="case-card__body">
-          <span class="case-card__tag">Optimización · E-commerce · Carrefour</span>
-          <h3>Checkout, oportunidad de mejora</h3>
-          <p>Cómo bajamos 11% la fuga de usuarios en el pago de carrefour.com.ar: research con GetFeedback, fast fixes y rediseño de pantallas.</p>
-          <span class="case-card__link">Ver el caso completo
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+        <img class="case-card__media" src="assets/checkout-cover.gif" alt="" loading="lazy">
+        <div class="case-card__panel">
+          <div class="case-card__body">
+            <h3>Checkout Carrefour</h3>
+            <p>Cómo bajamos 11% la fuga de usuarios en el pago de carrefour.com.ar: research con GetFeedback, fast fixes y rediseño de pantallas.</p>
+            <span class="case-card__link">Ver el caso completo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
         </div>
       </a>
 
       <a href="case-rediseno-b2b.html" class="case-card">
-        <div class="case-card__media"><img src="assets/rediseno-b2b-cover-bw.jpg" alt="Home rediseñada del e-commerce B2B ferretero"></div>
-        <div class="case-card__body">
-          <span class="case-card__tag">Propuesta · Rediseño · B2B</span>
-          <h3>Rediseño e-commerce B2B</h3>
-          <p>De outlet online a socio estratégico: audit heurístico y rediseño de home, header, buscador y cuenta para una distribuidora ferretera líder en Ecuador.</p>
-          <span class="case-card__link">Ver el caso completo
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+        <img class="case-card__media" src="assets/rediseno-b2b-cover-bw.jpg" alt="" loading="lazy">
+        <div class="case-card__panel">
+          <div class="case-card__body">
+            <h3>Rediseño e-commerce B2B</h3>
+            <p>De outlet online a socio estratégico: audit heurístico y rediseño de home, header, buscador y cuenta para una distribuidora ferretera líder en Ecuador.</p>
+            <span class="case-card__link">Ver el caso completo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
         </div>
       </a>
 
       <div class="case-card case-card--soon">
-        <div class="case-card__media"><span>Imagen pendiente</span></div>
-        <!-- <div class="case-card__media"><img src="assets/pedidos-ia-cover.jpg" alt="Página de pedidos rápidos con IA para e-commerce B2B"></div> -->
-        <div class="case-card__body">
-          <span class="case-card__tag">Propuesta · B2B · IA aplicada</span>
-          <h3>Pedidos por IA para e-commerce B2B</h3>
-          <p>Del prompt al carrito: propuesta de alta de pedido en lenguaje natural para la tienda B2B de una empresa líder de alimentos en Argentina.</p>
-          <span class="case-card__soon">Próximamente</span>
+        <div class="case-card__panel">
+          <div class="case-card__body">
+            <h3>Pedidos por IA en B2B</h3>
+            <p>Del prompt al carrito: propuesta de alta de pedido en lenguaje natural para la tienda B2B de una empresa líder de alimentos en Argentina.</p>
+            <span class="case-card__soon">Próximamente</span>
+          </div>
         </div>
       </div>
 
       <div class="case-card case-card--soon">
-        <div class="case-card__media"><span>Imagen pendiente</span></div>
-        <!-- <div class="case-card__media"><img src="assets/banca-cover.jpg" alt="Pool de trabajo de la plataforma interna de banca"></div> -->
-        <div class="case-card__body">
-          <span class="case-card__tag">PoC · Banca · Plataforma interna</span>
-          <h3>Banca: sacar el trabajo diario de SAP</h3>
-          <p>PoC de una plataforma interna para un banco de Centroamérica: login, alta de clientes y pool de trabajo, fuera de las pantallas de SAP CRM.</p>
-          <span class="case-card__soon">Próximamente</span>
+        <div class="case-card__panel">
+          <div class="case-card__body">
+            <h3>Banca: fuera de SAP</h3>
+            <p>PoC de una plataforma interna para un banco de Centroamérica: login, alta de clientes y pool de trabajo, fuera de las pantallas de SAP CRM.</p>
+            <span class="case-card__soon">Próximamente</span>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="case-carousel__controls">
-      <button type="button" class="carousel-btn" id="casePrev" aria-label="Caso anterior">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M3 8L7 4M3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <button type="button" class="carousel-btn" id="caseNext" aria-label="Caso siguiente">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>
+  <div class="cases-more">
+    <p>Antes del UX/UI hice piezas de campaña, key visuals y gráfica digital para retail y moda.</p>
+    <a href="https://behance.net/gmramos" target="_blank" rel="noopener" class="btn btn--outline">Ver diseño gráfico en Behance →</a>
   </div>
 </section>
 </div>
@@ -300,6 +305,8 @@
     syncThemeToggle();
   });
 </script>
+
+<script src="page-transition.js"></script>
 
 </body>
 </html>
