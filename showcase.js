@@ -7,6 +7,18 @@
   var ICON_PAUSE = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 1.5V10.5M8.5 1.5V10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
   var ICON_PLAY = '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.8V10.2C2.5 10.9 3.3 11.3 3.9 10.9L10.3 6.7C10.8 6.4 10.8 5.6 10.3 5.3L3.9 1.1C3.3 0.7 2.5 1.1 2.5 1.8Z" fill="currentColor"/></svg>';
 
+  function lang() {
+    return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
+  }
+
+  function captionFor(slide) {
+    if (lang() === 'en') {
+      var en = slide.getAttribute('data-caption-en');
+      if (en) return en;
+    }
+    return slide.getAttribute('data-caption') || '';
+  }
+
   document.querySelectorAll('.showcase').forEach(function (sc) {
     var slides = Array.prototype.slice.call(sc.querySelectorAll('.showcase__slide'));
     if (!slides.length) return;
@@ -23,7 +35,7 @@
       var b = document.createElement('button');
       b.className = 'showcase__dot';
       b.type = 'button';
-      b.setAttribute('aria-label', 'Ver pantalla ' + (i + 1) + ' de ' + slides.length);
+      b.setAttribute('aria-label', (lang() === 'en' ? 'View screen ' + (i + 1) + ' of ' + slides.length : 'Ver pantalla ' + (i + 1) + ' de ' + slides.length));
       b.addEventListener('click', function () { go(i); play(); });
       if (dotsWrap) dotsWrap.appendChild(b);
       return b;
@@ -47,7 +59,7 @@
     function updatePauseBtn() {
       if (!pauseBtn) return;
       pauseBtn.innerHTML = paused ? ICON_PLAY : ICON_PAUSE;
-      pauseBtn.setAttribute('aria-label', paused ? 'Reproducir recorrido' : 'Pausar recorrido');
+      pauseBtn.setAttribute('aria-label', paused ? (lang() === 'en' ? 'Play tour' : 'Reproducir recorrido') : (lang() === 'en' ? 'Pause tour' : 'Pausar recorrido'));
       pauseBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
     }
 
@@ -58,8 +70,16 @@
         s.setAttribute('aria-hidden', j === i ? 'false' : 'true');
       });
       dots.forEach(function (d, j) { d.classList.toggle('is-active', j === i); });
-      if (caption) caption.textContent = slides[i].getAttribute('data-caption') || '';
+      if (caption) caption.textContent = captionFor(slides[i]);
     }
+
+    document.addEventListener('langchange', function () {
+      dots.forEach(function (d, i) {
+        d.setAttribute('aria-label', (lang() === 'en' ? 'View screen ' + (i + 1) + ' of ' + slides.length : 'Ver pantalla ' + (i + 1) + ' de ' + slides.length));
+      });
+      updatePauseBtn();
+      go(idx);
+    });
 
     function next() { go((idx + 1) % slides.length); }
 

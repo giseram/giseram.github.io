@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gisela Ramos, UX/UI Designer Senior</title>
-<meta name="description" content="UX/UI Designer Senior con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en LatAm.">
+<title data-en="Gisela Ramos, Senior UX/UI Designer">Gisela Ramos, UX/UI Designer Senior</title>
+<meta name="description" data-en="Senior UX/UI Designer with 6+ years designing end-to-end digital products for retail, e-commerce and banking across LatAm." content="UX/UI Designer Senior con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en LatAm.">
 <script>
   (function() {
     try {
-      var t = localStorage.getItem('theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var t = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', t);
+      var l = localStorage.getItem('lang');
+      l = l === 'en' ? 'en' : 'es';
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l);
     } catch (e) {}
   })();
 </script>
@@ -18,56 +21,62 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Saltar al contenido</a>
+<a class="skip-link" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
 
 <nav class="nav">
   <a href="index.html" class="nav__mark">Gisela Ramos</a>
   <div class="nav__right">
-    <div class="nav__links">
-      <a href="#casos">Casos</a>
-      <a href="#proceso">Cómo trabajo</a>
-      <a href="sobre-mi.html">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
+    <div class="nav__links" id="navLinks">
+      <a href="#casos"><span lang="es">Casos</span><span lang="en">Work</span></a>
+      <a href="#proceso"><span lang="es">Cómo trabajo</span><span lang="en">How I work</span></a>
+      <a href="sobre-mi.html"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+      <a href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
     </div>
-    <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro"><span class="theme-toggle__dot"></span></button>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" id="langEs" aria-pressed="true">ES</button>
+      <button type="button" id="langEn" aria-pressed="false">EN</button>
+    </div>
+    <button type="button" class="nav__burger" id="navBurger" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú de navegación"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <header class="hero">
   <div class="hero__grid">
     <div class="hero__content">
-      <div class="eyebrow">Buenos Aires · Montevideo <span>(LatAm remoto · Montevideo remoto o híbrido)</span></div>
+      <div class="eyebrow"><span lang="es">Buenos Aires · Montevideo <span>(LatAm remoto · Montevideo remoto o híbrido)</span></span><span lang="en">Buenos Aires · Montevideo <span>(Remote across LatAm · Montevideo remote or hybrid)</span></span></div>
       <h1 id="heroTitle">
-        <span class="type-ghost" aria-hidden="true">Diseño pensando en <span class="accent">negocio</span>, no solo en pantallas.</span>
+        <span class="type-ghost" lang="es" aria-hidden="true">Diseño pensando en <span class="accent">negocio</span>, no solo en pantallas.</span>
+        <span class="type-ghost" lang="en" aria-hidden="true">Design that thinks in <span class="accent">business</span>, not just screens.</span>
         <span class="type-live" aria-hidden="true"></span>
-        <span class="visually-hidden">Diseño pensando en negocio, no solo en pantallas.</span>
+        <span class="visually-hidden" lang="es">Diseño pensando en negocio, no solo en pantallas.</span>
+        <span class="visually-hidden" lang="en">Design that thinks in business, not just screens.</span>
       </h1>
       <noscript><style>.type-ghost { visibility: visible !important; } #heroTitle .type-live { display: none; }</style></noscript>
-      <p class="hero__lede">UX/UI Designer Senior con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en distintos países de LatAm, desde research hasta el prototipo en producción.</p>
+      <p class="hero__lede"><span lang="es">UX/UI Designer Senior con más de 6 años diseñando productos digitales end-to-end para retail, e-commerce y banca en distintos países de LatAm, desde research hasta el prototipo en producción.</span><span lang="en">Senior UX/UI Designer with 6+ years designing end-to-end digital products for retail, e-commerce and banking across LatAm, from research through to production.</span></p>
       <div class="hero__actions">
-        <a href="#casos" class="btn btn--solid">Ver casos
+        <a href="#casos" class="btn btn--solid"><span lang="es">Ver casos</span><span lang="en">View work</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
     </div>
     <div class="hero__media">
       <div class="photo-card">
-        <img class="photo-card__img" src="assets/foto-bw.webp" alt="Retrato de Gisela Ramos">
+        <img class="photo-card__img" src="assets/foto-bw.webp" alt="Retrato de Gisela Ramos" data-alt-en="Portrait of Gisela Ramos">
         <div class="photo-card__header">
-          <span class="photo-card__status"><span class="photo-card__spinner" aria-hidden="true"></span>Conectando</span>
+          <span class="photo-card__status"><span class="photo-card__spinner" aria-hidden="true"></span><span lang="es">Conectando</span><span lang="en">Connecting</span></span>
         </div>
         <div class="photo-card__footer">
           <a href="https://www.linkedin.com/in/giselamr/" target="_blank" rel="noopener" class="photo-card__name photo-card__name--sm">@giselamr</a>
-          <a href="#contacto" class="photo-card__cta">Contactame</a>
+          <a href="#contacto" class="photo-card__cta"><span lang="es">Contactame</span><span lang="en">Get in touch</span></a>
         </div>
       </div>
     </div>
   </div>
 
   <div class="hero__meta">
-    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></svg>6+ años</strong>UX/UI &amp; Product Design</div>
-    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>Retail · E-commerce · Banca</strong>Industrias en LatAm</div>
-    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>IA generativa</strong>Integrada a todo el proceso</div>
+    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></svg><span lang="es">6+ años</span><span lang="en">6+ years</span></strong><span lang="es">UX/UI &amp; Product Design</span><span lang="en">UX/UI &amp; Product Design</span></div>
+    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>Retail · E-commerce · <span lang="es">Banca</span><span lang="en">Banking</span></strong><span lang="es">Industrias en LatAm</span><span lang="en">Industries across LatAm</span></div>
+    <div><strong><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" fill="currentColor" fill-opacity="0.35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg><span lang="es">IA generativa</span><span lang="en">Generative AI</span></strong><span lang="es">Integrada a todo el proceso</span><span lang="en">Woven through the whole process</span></div>
   </div>
 </header>
 
@@ -76,7 +85,7 @@
 <section class="section section--cases" id="casos">
   <div class="section-head">
     <div>
-      <h2>Casos de estudio</h2>
+      <h2><span lang="es">Casos de estudio</span><span lang="en">Case studies</span></h2>
     </div>
     <div class="case-carousel__controls">
       <button type="button" class="carousel-btn" id="casePrev" aria-label="Caso anterior">
@@ -95,8 +104,8 @@
         <div class="case-card__panel">
           <div class="case-card__body">
             <h3>Te corresponde</h3>
-            <p>Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina, de la oportunidad de mercado al producto en producción.</p>
-            <span class="case-card__link">Ver el caso completo
+            <p><span lang="es">Diseño 0→1 de una plataforma de gestión de reclamos de consumo en Argentina, de la oportunidad de mercado al producto en producción.</span><span lang="en">0→1 design of a consumer-claims management platform in Argentina, from market opportunity to a live product in production.</span></p>
+            <span class="case-card__link"><span lang="es">Ver el caso completo</span><span lang="en">View full case study</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </span>
           </div>
@@ -107,9 +116,9 @@
         <img class="case-card__media" src="assets/checkout-cover.gif" alt="" loading="lazy">
         <div class="case-card__panel">
           <div class="case-card__body">
-            <h3>Checkout Carrefour</h3>
-            <p>Cómo bajamos 11% la fuga de usuarios en el pago de carrefour.com.ar: research con GetFeedback, fast fixes y rediseño de pantallas.</p>
-            <span class="case-card__link">Ver el caso completo
+            <h3><span lang="es">Checkout Carrefour</span><span lang="en">Carrefour Checkout</span></h3>
+            <p><span lang="es">Cómo bajamos 11% la fuga de usuarios en el pago de carrefour.com.ar: research con GetFeedback, fast fixes y rediseño de pantallas.</span><span lang="en">How we cut checkout drop-off by 11% on carrefour.com.ar: GetFeedback research, fast fixes and a screen redesign.</span></p>
+            <span class="case-card__link"><span lang="es">Ver el caso completo</span><span lang="en">View full case study</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </span>
           </div>
@@ -120,9 +129,22 @@
         <img class="case-card__media" src="assets/rediseno-b2b-cover-bw.jpg" alt="" loading="lazy">
         <div class="case-card__panel">
           <div class="case-card__body">
-            <h3>Rediseño e-commerce B2B</h3>
-            <p>De outlet online a socio estratégico: audit heurístico y rediseño de home, header, buscador y cuenta para una distribuidora ferretera líder en Ecuador.</p>
-            <span class="case-card__link">Ver el caso completo
+            <h3><span lang="es">Rediseño e-commerce B2B</span><span lang="en">B2B E-commerce Redesign</span></h3>
+            <p><span lang="es">De outlet online a socio estratégico: audit heurístico y rediseño de home, header, buscador y cuenta para una distribuidora ferretera líder en Ecuador.</span><span lang="en">From online outlet to strategic partner: heuristic audit and redesign of home, header, search and account for a leading hardware distributor in Ecuador.</span></p>
+            <span class="case-card__link"><span lang="es">Ver el caso completo</span><span lang="en">View full case study</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="case-pedidos-ia.html" class="case-card">
+        <img class="case-card__media" src="assets/pedidos-ia-cover.gif" alt="" loading="lazy">
+        <div class="case-card__panel">
+          <div class="case-card__body">
+            <h3><span lang="es">Pedidos por IA en B2B</span><span lang="en">AI Ordering for B2B</span></h3>
+            <p><span lang="es">Del prompt al carrito: propuesta de alta de pedido en lenguaje natural para la tienda B2B de una empresa líder de alimentos en Argentina.</span><span lang="en">From prompt to cart: a natural-language order proposal for the B2B store of a leading food company in Argentina.</span></p>
+            <span class="case-card__link"><span lang="es">Ver el caso completo</span><span lang="en">View full case study</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </span>
           </div>
@@ -132,19 +154,9 @@
       <div class="case-card case-card--soon">
         <div class="case-card__panel">
           <div class="case-card__body">
-            <h3>Pedidos por IA en B2B</h3>
-            <p>Del prompt al carrito: propuesta de alta de pedido en lenguaje natural para la tienda B2B de una empresa líder de alimentos en Argentina.</p>
-            <span class="case-card__soon">Próximamente</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card case-card--soon">
-        <div class="case-card__panel">
-          <div class="case-card__body">
-            <h3>Banca: fuera de SAP</h3>
-            <p>PoC de una plataforma interna para un banco de Centroamérica: login, alta de clientes y pool de trabajo, fuera de las pantallas de SAP CRM.</p>
-            <span class="case-card__soon">Próximamente</span>
+            <h3><span lang="es">Banca: fuera de SAP</span><span lang="en">Banking: beyond SAP</span></h3>
+            <p><span lang="es">PoC de una plataforma interna para un banco de Centroamérica: login, alta de clientes y pool de trabajo, fuera de las pantallas de SAP CRM.</span><span lang="en">PoC of an internal platform for a Central American bank: login, customer onboarding and work queue, off SAP CRM's screens.</span></p>
+            <span class="case-card__soon"><span lang="es">Próximamente</span><span lang="en">Coming soon</span></span>
           </div>
         </div>
       </div>
@@ -152,8 +164,8 @@
   </div>
 
   <div class="cases-more">
-    <p>Antes del UX/UI hice piezas de campaña, key visuals y gráfica digital para retail y moda.</p>
-    <a href="https://behance.net/gmramos" target="_blank" rel="noopener" class="btn btn--outline">Ver diseño gráfico en Behance <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    <p><span lang="es">Antes del UX/UI hice piezas de campaña, key visuals y gráfica digital para retail y moda.</span><span lang="en">Before UX/UI I made campaign pieces, key visuals and digital graphics for retail and fashion.</span></p>
+    <a href="https://behance.net/gmramos" target="_blank" rel="noopener" class="btn btn--outline"><span lang="es">Ver diseño gráfico en Behance</span><span lang="en">View graphic design on Behance</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
   </div>
 </section>
 </div>
@@ -161,27 +173,27 @@
 <section class="section" id="proceso">
   <div class="section-head">
     <div>
-      <div class="eyebrow">Cómo trabajo</div>
-      <h2>De problema de negocio a producto en producción</h2>
+      <div class="eyebrow"><span lang="es">Cómo trabajo</span><span lang="en">How I work</span></div>
+      <h2><span lang="es">De problema de negocio a producto en producción</span><span lang="en">From business problem to product in production</span></h2>
     </div>
-    <p class="section__intro">No diseño pantallas sueltas: tomo decisiones de producto, apoyadas en research real y trabajo codo a codo con desarrollo y negocio.</p>
+    <p class="section__intro"><span lang="es">No diseño pantallas sueltas: tomo decisiones de producto, apoyadas en research real y trabajo codo a codo con desarrollo y negocio.</span><span lang="en">I don't design standalone screens: I make product decisions backed by real research, working shoulder to shoulder with development and business.</span></p>
   </div>
 
   <div class="work-grid">
     <div class="work-item">
       <div class="eyebrow">Product Thinking</div>
-      <h3>Ownership de punta a punta</h3>
-      <p>Me hago cargo del proceso completo (research, arquitectura de información, prototipado y validación en producción), no solo de la ejecución visual de un flujo ya definido.</p>
+      <h3><span lang="es">Ownership de punta a punta</span><span lang="en">End-to-end ownership</span></h3>
+      <p><span lang="es">Me hago cargo del proceso completo (research, arquitectura de información, prototipado y validación en producción), no solo de la ejecución visual de un flujo ya definido.</span><span lang="en">I own the full process (research, information architecture, prototyping and validation in production), not just the visual execution of an already-defined flow.</span></p>
     </div>
     <div class="work-item">
-      <div class="eyebrow">Colaboración</div>
-      <h3>El punto de encuentro entre negocio y desarrollo</h3>
-      <p>Desarrollo y negocio recurren a mí cuando hay un problema de UX sin resolver. Diseño dentro de las restricciones reales del roadmap, no en un vacío.</p>
+      <div class="eyebrow"><span lang="es">Colaboración</span><span lang="en">Collaboration</span></div>
+      <h3><span lang="es">El punto de encuentro entre negocio y desarrollo</span><span lang="en">The meeting point between business and development</span></h3>
+      <p><span lang="es">Desarrollo y negocio recurren a mí cuando hay un problema de UX sin resolver. Diseño dentro de las restricciones reales del roadmap, no en un vacío.</span><span lang="en">Development and business come to me when there's an unresolved UX problem. I design within the real constraints of the roadmap, not in a vacuum.</span></p>
     </div>
     <div class="work-item">
-      <div class="eyebrow">IA aplicada</div>
-      <h3>IA generativa en todo el ciclo</h3>
-      <p>Uso IA generativa para research synthesis, ideación, prototipado funcional y documentación, para acelerar la entrega sin resignar rigor.</p>
+      <div class="eyebrow"><span lang="es">IA aplicada</span><span lang="en">Applied AI</span></div>
+      <h3><span lang="es">IA generativa en todo el ciclo</span><span lang="en">Generative AI across the whole cycle</span></h3>
+      <p><span lang="es">Uso IA generativa para research synthesis, ideación, prototipado funcional y documentación, para acelerar la entrega sin resignar rigor.</span><span lang="en">I use generative AI for research synthesis, ideation, functional prototyping and documentation, to speed up delivery without giving up rigor.</span></p>
     </div>
   </div>
 </section>
@@ -189,14 +201,14 @@
 
 <footer class="footer" id="contacto">
   <div class="footer__inner">
-    <h2>¿Charlamos?</h2>
+    <h2><span lang="es">¿Charlamos?</span><span lang="en">Let's talk?</span></h2>
     <div class="footer__links">
       <a href="mailto:giselamramos@gmail.com">giselamramos@gmail.com</a>
       <a href="https://linkedin.com/in/giselamr" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://behance.net/gmramos" target="_blank" rel="noopener">Behance</a>
     </div>
     <div class="footer__bottom">
-      <span>Gisela Ramos · UX/UI Designer Senior</span>
+      <span><span lang="es">Gisela Ramos · UX/UI Designer Senior</span><span lang="en">Gisela Ramos · Senior UX/UI Designer</span></span>
       <span>Buenos Aires, AR · Montevideo, UY</span>
     </div>
   </div>
@@ -206,14 +218,34 @@
   (function() {
     var h1 = document.getElementById('heroTitle');
     var live = h1.querySelector('.type-live');
-    var segments = [
-      { text: 'Diseño pensando en ' },
-      { text: 'negocio', accent: true },
-      { text: ', no solo en pantallas.' }
-    ];
+    var segmentsByLang = {
+      es: [
+        { text: 'Diseño pensando en ' },
+        { text: 'negocio', accent: true },
+        { text: ', no solo en pantallas.' }
+      ],
+      en: [
+        { text: 'Design that thinks in ' },
+        { text: 'business', accent: true },
+        { text: ', not just screens.' }
+      ]
+    };
+    var lang = document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
+    var segments = segmentsByLang[lang];
+
+    function staticHtml(segs) {
+      return segs.map(function(s) {
+        return s.accent ? '<span class="accent">' + s.text + '</span>' : s.text;
+      }).join('');
+    }
+
+    document.addEventListener('langchange', function(e) {
+      live.innerHTML = staticHtml(segmentsByLang[e.detail.lang]);
+      h1.classList.add('is-done');
+    });
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      live.innerHTML = 'Diseño pensando en <span class="accent">negocio</span>, no solo en pantallas.';
+      live.innerHTML = staticHtml(segments);
       h1.classList.add('is-done');
       return;
     }
@@ -267,21 +299,10 @@
     update();
   })();
 
-  var toggle = document.getElementById('themeToggle');
-  function syncThemeToggle() {
-    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
-  }
-  syncThemeToggle();
-  toggle.addEventListener('click', function() {
-    var current = document.documentElement.getAttribute('data-theme');
-    var next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    syncThemeToggle();
-  });
 </script>
 
+<script src="nav-menu.js"></script>
+<script src="i18n.js"></script>
 <script src="page-transition.js"></script>
 
 </body>

@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plataforma interna de banca · Case Study · Gisela Ramos</title>
-<meta name="description" content="PoC de una plataforma interna para un banco líder de Centroamérica: sacar los procesos críticos de SAP CRM y darles una experiencia moderna (login, alta de clientes y pool de trabajo).">
+<title data-en="Internal Banking Platform · Case Study · Gisela Ramos">Plataforma interna de banca · Case Study · Gisela Ramos</title>
+<meta name="description" data-en="PoC of an internal platform for a leading Central American bank: taking critical processes out of SAP CRM and giving them a modern experience (login, customer onboarding and work queue)." content="PoC de una plataforma interna para un banco líder de Centroamérica: sacar los procesos críticos de SAP CRM y darles una experiencia moderna (login, alta de clientes y pool de trabajo).">
 <script>
   (function() {
     try {
-      var t = localStorage.getItem('theme');
-      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      var t = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', t);
+      var l = localStorage.getItem('lang');
+      l = l === 'en' ? 'en' : 'es';
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l);
     } catch (e) {}
   })();
 </script>
@@ -18,128 +21,161 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Saltar al contenido</a>
+<a class="skip-link" href="#main"><span lang="es">Saltar al contenido</span><span lang="en">Skip to content</span></a>
 
 <nav class="nav">
   <a href="index.html" class="nav__mark">Gisela Ramos</a>
   <div class="nav__right">
-    <div class="nav__links">
-      <a href="index.html#casos">Casos</a>
-      <a href="index.html#proceso">Cómo trabajo</a>
-      <a href="sobre-mi.html">Sobre mí</a>
-      <a href="index.html#contacto">Contacto</a>
+    <div class="nav__links" id="navLinks">
+      <a href="index.html#casos"><span lang="es">Casos</span><span lang="en">Work</span></a>
+      <a href="index.html#proceso"><span lang="es">Cómo trabajo</span><span lang="en">How I work</span></a>
+      <a href="sobre-mi.html"><span lang="es">Sobre mí</span><span lang="en">About</span></a>
+      <a href="index.html#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
     </div>
-    <button class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Modo oscuro"><span class="theme-toggle__dot"></span></button>
+    <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+      <button type="button" id="langEs" aria-pressed="true">ES</button>
+      <button type="button" id="langEn" aria-pressed="false">EN</button>
+    </div>
+    <button type="button" class="nav__burger" id="navBurger" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú de navegación"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <header class="case-hero">
-  <a href="index.html" class="case-hero__back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Volver a casos</a>
-  <div class="eyebrow">PoC · Banca · Plataforma interna · Qubik</div>
-  <h1>Banca: sacar el trabajo diario de SAP sin tocar el core</h1>
-  <p class="case-hero__sub">PoC de una plataforma web interna para un banco líder de Centroamérica: unificar en una experiencia moderna los procesos que sus operadores manejaban dentro de SAP CRM (login, alta de clientes y pool de trabajo). El proyecto se interrumpió a mitad de camino; el proceso de diseño quedó documentado.</p>
+  <a href="index.html" class="case-hero__back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span lang="es">Volver a casos</span><span lang="en">Back to work</span></a>
+  <div class="eyebrow"><span lang="es">PoC · Banca · Plataforma interna · Qubik</span><span lang="en">PoC · Banking · Internal Platform · Qubik</span></div>
+  <h1><span lang="es">Banca: sacar el trabajo diario de SAP sin tocar el core</span><span lang="en">Banking: taking daily work out of SAP without touching the core</span></h1>
+  <p class="case-hero__sub"><span lang="es">PoC de una plataforma web interna para un banco líder de Centroamérica: unificar en una experiencia moderna los procesos que sus operadores manejaban dentro de SAP CRM (login, alta de clientes y pool de trabajo). El proyecto se interrumpió a mitad de camino; el proceso de diseño quedó documentado.</span><span lang="en">PoC of an internal web platform for a leading Central American bank: unifying, in a modern experience, the processes its operators handled inside SAP CRM (login, customer onboarding and work queue). The project was discontinued midway through; the design process remains documented.</span></p>
 
   <dl class="case-hero__specs">
-    <div><dt>Rol</dt><dd>UX/UI Designer Senior (PoC end-to-end)</dd></div>
-    <div><dt>Alcance</dt><dd>Flujos, UI y componentes de los 3 módulos</dd></div>
-    <div><dt>Cliente</dt><dd>Confidencial (banca, Centroamérica) · vía Qubik</dd></div>
-    <div><dt>Estado</dt><dd>Proyecto interrumpido por el cliente</dd></div>
+    <div><dt><span lang="es">Rol</span><span lang="en">Role</span></dt><dd><span lang="es">UX/UI Designer Senior (PoC end-to-end)</span><span lang="en">Senior UX/UI Designer (end-to-end PoC)</span></dd></div>
+    <div><dt><span lang="es">Alcance</span><span lang="en">Scope</span></dt><dd><span lang="es">Flujos, UI y componentes de los 3 módulos</span><span lang="en">Flows, UI and components for the 3 modules</span></dd></div>
+    <div><dt><span lang="es">Cliente</span><span lang="en">Client</span></dt><dd><span lang="es">Confidencial (banca, Centroamérica) · vía Qubik</span><span lang="en">Confidential (banking, Central America) · via Qubik</span></dd></div>
+    <div><dt><span lang="es">Estado</span><span lang="en">Status</span></dt><dd><span lang="es">Proyecto interrumpido por el cliente</span><span lang="en">Project discontinued by the client</span></dd></div>
   </dl>
 </header>
 
 <div class="case-body">
   <aside class="rail">
     <div class="rail__line">
-      <a href="#resumen">Resumen</a>
-      <a href="#problema">Problema</a>
-      <a href="#alcance">La PoC</a>
-      <a href="#componentes">Componentes</a>
-      <a href="#estado">Estado del proyecto</a>
-      <a href="#aprendizajes">Aprendizajes</a>
+      <a href="#resumen"><span lang="es">Resumen</span><span lang="en">Summary</span></a>
+      <a href="#problema"><span lang="es">Problema</span><span lang="en">Problem</span></a>
+      <a href="#alcance"><span lang="es">La PoC</span><span lang="en">The PoC</span></a>
+      <a href="#componentes"><span lang="es">Componentes</span><span lang="en">Components</span></a>
+      <a href="#estado"><span lang="es">Estado del proyecto</span><span lang="en">Project status</span></a>
+      <a href="#aprendizajes"><span lang="es">Aprendizajes</span><span lang="en">Learnings</span></a>
     </div>
   </aside>
 
   <main class="case-content" id="main">
 
     <section id="resumen">
-      <h2>Resumen</h2>
-      <p>Los equipos administrativos del banco operaban su día a día dentro de SAP CRM: procesos críticos como el alta de un cliente nuevo eran wizards enormes con una UI hostil, y las alternativas del propio ecosistema SAP (Neptune, Fiori) ya habían sido evaluadas sin éxito. La apuesta: construir una <strong>capa de experiencia propia</strong> (una app web conectada a SAP por web services) que liberara la UX de las limitaciones técnicas del core. Diseñé la PoC completa de esa plataforma: <strong>login, alta de cliente y pool de trabajo</strong>, con su primera librería de componentes.</p>
+      <h2><span lang="es">Resumen</span><span lang="en">Summary</span></h2>
+      <p lang="es">Los equipos administrativos del banco operaban su día a día dentro de SAP CRM: procesos críticos como el alta de un cliente nuevo eran wizards enormes con una UI hostil, y las alternativas del propio ecosistema SAP (Neptune, Fiori) ya habían sido evaluadas sin éxito. La apuesta: construir una <strong>capa de experiencia propia</strong> (una app web conectada a SAP por web services) que liberara la UX de las limitaciones técnicas del core. Diseñé la PoC completa de esa plataforma: <strong>login, alta de cliente y pool de trabajo</strong>, con su primera librería de componentes.</p>
+      <p lang="en">The bank's administrative teams ran their day-to-day inside SAP CRM: critical processes like onboarding a new customer were massive wizards with a hostile UI, and SAP's own ecosystem alternatives (Neptune, Fiori) had already been evaluated without success. The bet: build a <strong>proprietary experience layer</strong> (a web app connected to SAP via web services) that would free the UX from the core's technical limitations. I designed the platform's full PoC: <strong>login, customer onboarding and work queue</strong>, along with its first component library.</p>
     </section>
 
     <section id="problema">
       <h2>Problem statement</h2>
-      <p><strong>User pain.</strong> El operador de front office trabajaba entre pantallas densas y formularios interminables pensados desde la estructura de datos de SAP, no desde su tarea. Cada gestión implicaba navegar un laberinto que exigía meses de entrenamiento.</p>
-      <p><strong>Business pain.</strong> Esa fricción se traducía en operaciones más lentas, errores de carga y costos de capacitación altos, y modificar la UI dentro del ecosistema SAP tenía límites técnicos que el banco ya había comprobado.</p>
-      <blockquote class="pull-quote">La pregunta dejó de ser cómo mejorar las pantallas de SAP y pasó a ser cómo dejar de pedirle a la gente que trabaje adentro de SAP.</blockquote>
-      <p>La decisión de arquitectura habilitó la de diseño: una aplicación web a medida en la nube, comunicada con el core por web services, donde la experiencia se podía pensar sin restricciones, e incluso conectarse a futuro con sistemas fuera de SAP.</p>
+      <p lang="es"><strong>User pain.</strong> El operador de front office trabajaba entre pantallas densas y formularios interminables pensados desde la estructura de datos de SAP, no desde su tarea. Cada gestión implicaba navegar un laberinto que exigía meses de entrenamiento.</p>
+      <p lang="en"><strong>User pain.</strong> The front-office operator worked across dense screens and endless forms designed around SAP's data structure, not around their task. Every transaction meant navigating a maze that demanded months of training.</p>
+      <p lang="es"><strong>Business pain.</strong> Esa fricción se traducía en operaciones más lentas, errores de carga y costos de capacitación altos, y modificar la UI dentro del ecosistema SAP tenía límites técnicos que el banco ya había comprobado.</p>
+      <p lang="en"><strong>Business pain.</strong> That friction translated into slower operations, data-entry errors and high training costs, and modifying the UI within the SAP ecosystem had technical limits the bank had already run into.</p>
+      <blockquote class="pull-quote" lang="es">La pregunta dejó de ser cómo mejorar las pantallas de SAP y pasó a ser cómo dejar de pedirle a la gente que trabaje adentro de SAP.</blockquote>
+      <blockquote class="pull-quote" lang="en">The question stopped being how to improve SAP's screens and became how to stop asking people to work inside SAP at all.</blockquote>
+      <p lang="es">La decisión de arquitectura habilitó la de diseño: una aplicación web a medida en la nube, comunicada con el core por web services, donde la experiencia se podía pensar sin restricciones, e incluso conectarse a futuro con sistemas fuera de SAP.</p>
+      <p lang="en">The architecture decision unlocked the design one: a custom cloud web app, talking to the core via web services, where the experience could be designed without constraints, and could even connect to non-SAP systems down the line.</p>
     </section>
 
     <section id="alcance">
-      <h2>La PoC: tres módulos verticales</h2>
-      <p>En lugar de maquetar pantallas sueltas, la PoC recorrió tres módulos completos (de la puerta de entrada a la gestión diaria) para demostrar el valor de la plataforma de punta a punta, siempre para el rol de operador de front office.</p>
+      <h2><span lang="es">La PoC: tres módulos verticales</span><span lang="en">The PoC: three vertical modules</span></h2>
+      <p lang="es">En lugar de maquetar pantallas sueltas, la PoC recorrió tres módulos completos (de la puerta de entrada a la gestión diaria) para demostrar el valor de la plataforma de punta a punta, siempre para el rol de operador de front office.</p>
+      <p lang="en">Rather than mocking up standalone screens, the PoC walked through three complete modules (from the front door to daily management) to demonstrate the platform's value end-to-end, always for the front-office operator role.</p>
 
-      <h3>1 · Login</h3>
-      <p>La entrada a la plataforma, diseñada con todos sus estados: vacío, completado, errores de validación y credenciales, y recuperación de contraseña. Simple a propósito: la primera pantalla que comunica que esto ya no es SAP.</p>
+      <h3><span lang="es">1 · Login</span><span lang="en">1 · Login</span></h3>
+      <p lang="es">La entrada a la plataforma, diseñada con todos sus estados: vacío, completado, errores de validación y credenciales, y recuperación de contraseña. Simple a propósito: la primera pantalla que comunica que esto ya no es SAP.</p>
+      <p lang="en">The entry point to the platform, designed with all its states: empty, completed, validation and credential errors, and password recovery. Deliberately simple: the first screen that signals this is no longer SAP.</p>
 
       <figure class="figure">
-        <div class="figure__placeholder">Imagen pendiente<code>assets/banca-login.jpg: pantalla de login con sus estados</code></div>
+        <div class="figure__placeholder" lang="es">Imagen pendiente<code>assets/banca-login.jpg: pantalla de login con sus estados</code></div>
+        <div class="figure__placeholder" lang="en">Image pending<code>assets/banca-login.jpg: login screen with its states</code></div>
         <!-- <img src="assets/banca-login.jpg" alt="Login de la plataforma interna con estados de error y validación"> -->
-        <figcaption>Login con todos los estados contemplados: vacío, completado, errores y recuperación.</figcaption>
+        <figcaption lang="es">Login con todos los estados contemplados: vacío, completado, errores y recuperación.</figcaption>
+        <figcaption lang="en">Login with every state accounted for: empty, completed, errors and recovery.</figcaption>
       </figure>
 
-      <h3>2 · Alta de cliente</h3>
-      <p>El proceso que motivó todo el proyecto: el gran wizard de SAP rediseñado como un flujo por pasos, mapeado de punta a punta: decenas de pantallas cubriendo variantes (persona / empresa), validaciones y estados de error, no solo el happy path.</p>
+      <h3><span lang="es">2 · Alta de cliente</span><span lang="en">2 · Customer onboarding</span></h3>
+      <p lang="es">El proceso que motivó todo el proyecto: el gran wizard de SAP rediseñado como un flujo por pasos, mapeado de punta a punta: decenas de pantallas cubriendo variantes (persona / empresa), validaciones y estados de error, no solo el happy path.</p>
+      <p lang="en">The process that drove the whole project: SAP's massive wizard redesigned as a step-by-step flow, mapped end-to-end: dozens of screens covering variants (individual / business), validations and error states, not just the happy path.</p>
 
       <figure class="figure">
-        <div class="figure__placeholder">Imagen pendiente<code>assets/banca-alta-flujo.jpg: mapa del flujo completo de alta de cliente</code></div>
+        <div class="figure__placeholder" lang="es">Imagen pendiente<code>assets/banca-alta-flujo.jpg: mapa del flujo completo de alta de cliente</code></div>
+        <div class="figure__placeholder" lang="en">Image pending<code>assets/banca-alta-flujo.jpg: full customer onboarding flow map</code></div>
         <!-- <img src="assets/banca-alta-flujo.jpg" alt="Mapa del flujo completo de alta de cliente: decenas de pantallas con variantes, validaciones y estados de error"> -->
-        <figcaption>Alta de cliente: el flujo completo con variantes y estados, el proceso más doloroso del sistema anterior.</figcaption>
+        <figcaption lang="es">Alta de cliente: el flujo completo con variantes y estados, el proceso más doloroso del sistema anterior.</figcaption>
+        <figcaption lang="en">Customer onboarding: the full flow with variants and states, the most painful process in the previous system.</figcaption>
       </figure>
 
-      <h3>3 · Pool de trabajo</h3>
-      <p>La bandeja donde el operador vive: solicitudes de servicio con tabla configurable (columnas, densidad, vistas de lista y kanban), filtros, búsqueda, asignación de tareas y paginación. Cada solicitud abre su detalle con un <strong>pipeline visual de estados</strong> (rechazado, regestión, reabierto, cancelado) y paneles de información agrupados: datos generales, productos, anexos, historial, tareas.</p>
+      <h3><span lang="es">3 · Pool de trabajo</span><span lang="en">3 · Work queue</span></h3>
+      <p lang="es">La bandeja donde el operador vive: solicitudes de servicio con tabla configurable (columnas, densidad, vistas de lista y kanban), filtros, búsqueda, asignación de tareas y paginación. Cada solicitud abre su detalle con un <strong>pipeline visual de estados</strong> (rechazado, regestión, reabierto, cancelado) y paneles de información agrupados: datos generales, productos, anexos, historial, tareas.</p>
+      <p lang="en">The inbox where the operator lives: service requests in a configurable table (columns, density, list and kanban views), filters, search, task assignment and pagination. Each request opens its detail view with a <strong>visual status pipeline</strong> (rejected, reprocessing, reopened, cancelled) and grouped information panels: general data, products, attachments, history, tasks.</p>
 
       <figure class="figure">
-        <div class="figure__placeholder">Imagen pendiente<code>assets/banca-pool.jpg (pool de trabajo: tabla, filtros y vistas)</code></div>
+        <div class="figure__placeholder" lang="es">Imagen pendiente<code>assets/banca-pool.jpg (pool de trabajo: tabla, filtros y vistas)</code></div>
+        <div class="figure__placeholder" lang="en">Image pending<code>assets/banca-pool.jpg (work queue: table, filters and views)</code></div>
         <!-- <img src="assets/banca-pool.jpg" alt="Pool de trabajo: tabla de solicitudes con filtros, vistas configurables y asignación"> -->
-        <figcaption>Pool de trabajo: la bandeja de solicitudes con filtros, vistas configurables y asignación.</figcaption>
+        <figcaption lang="es">Pool de trabajo: la bandeja de solicitudes con filtros, vistas configurables y asignación.</figcaption>
+        <figcaption lang="en">Work queue: the request inbox with filters, configurable views and assignment.</figcaption>
       </figure>
 
       <figure class="figure">
-        <div class="figure__placeholder">Imagen pendiente<code>assets/banca-detalle.jpg: detalle de solicitud con pipeline de estados</code></div>
+        <div class="figure__placeholder" lang="es">Imagen pendiente<code>assets/banca-detalle.jpg: detalle de solicitud con pipeline de estados</code></div>
+        <div class="figure__placeholder" lang="en">Image pending<code>assets/banca-detalle.jpg: request detail with status pipeline</code></div>
         <!-- <img src="assets/banca-detalle.jpg" alt="Detalle de una solicitud de servicio con pipeline de estados y paneles de información"> -->
-        <figcaption>Detalle de solicitud: pipeline de estados y la información de la gestión organizada por paneles.</figcaption>
+        <figcaption lang="es">Detalle de solicitud: pipeline de estados y la información de la gestión organizada por paneles.</figcaption>
+        <figcaption lang="en">Request detail: status pipeline and the transaction's information organized into panels.</figcaption>
       </figure>
     </section>
 
     <section id="componentes">
-      <h2>Sistema de componentes</h2>
-      <p>Los tres módulos se construyeron sobre una librería inicial de componentes (formularios, tablas, chips de estado, navegación, modales) pensada para que el resto de los procesos del banco pudiera montarse sobre la misma base sin rediseñar desde cero. La librería se definió en diálogo con el stack del equipo de desarrollo (Next.js + Tailwind, con primitivas de Radix), para que cada componente diseñado tuviera un equivalente directo implementable.</p>
+      <h2><span lang="es">Sistema de componentes</span><span lang="en">Component system</span></h2>
+      <p lang="es">Los tres módulos se construyeron sobre una librería inicial de componentes (formularios, tablas, chips de estado, navegación, modales) pensada para que el resto de los procesos del banco pudiera montarse sobre la misma base sin rediseñar desde cero. La librería se definió en diálogo con el stack del equipo de desarrollo (Next.js + Tailwind, con primitivas de Radix), para que cada componente diseñado tuviera un equivalente directo implementable.</p>
+      <p lang="en">The three modules were built on an initial component library (forms, tables, status chips, navigation, modals) designed so the rest of the bank's processes could be built on the same foundation without redesigning from scratch. The library was defined in dialogue with the development team's stack (Next.js + Tailwind, with Radix primitives), so every designed component had a directly implementable equivalent.</p>
 
       <figure class="figure">
-        <div class="figure__placeholder">Imagen pendiente<code>assets/banca-componentes.jpg: librería de componentes de la PoC</code></div>
+        <div class="figure__placeholder" lang="es">Imagen pendiente<code>assets/banca-componentes.jpg: librería de componentes de la PoC</code></div>
+        <div class="figure__placeholder" lang="en">Image pending<code>assets/banca-componentes.jpg: PoC component library</code></div>
         <!-- <img src="assets/banca-componentes.jpg" alt="Librería de componentes de la plataforma: formularios, tablas, chips de estado y navegación"> -->
-        <figcaption>La librería de componentes: la base para escalar del PoC al resto de los procesos del banco.</figcaption>
+        <figcaption lang="es">La librería de componentes: la base para escalar del PoC al resto de los procesos del banco.</figcaption>
+        <figcaption lang="en">The component library: the foundation for scaling from the PoC to the rest of the bank's processes.</figcaption>
       </figure>
 
-      <div class="callout">
+      <div class="callout" lang="es">
         <strong>Diseño y arquitectura, una misma decisión</strong>
         La plataforma propia no fue solo una elección técnica: fue lo que hizo posible diseñar para la tarea del operador en lugar de para la estructura de datos del core. La UX moderna era el argumento de negocio de la arquitectura, y viceversa.
+      </div>
+      <div class="callout" lang="en">
+        <strong>Design and architecture, a single decision</strong>
+        The proprietary platform wasn't just a technical choice: it was what made it possible to design for the operator's task instead of the core's data structure. Modern UX was the architecture's business case, and vice versa.
       </div>
     </section>
 
     <section id="estado">
-      <h2>Estado del proyecto</h2>
-      <p>El cliente discontinuó el proyecto durante el desarrollo, por decisión propia y ajena al equipo de diseño. La PoC quedó completa a nivel de flujos, pantallas y componentes, pero no llegó a producción ni a instancias de medición con usuarios reales.</p>
-      <div class="callout">
+      <h2><span lang="es">Estado del proyecto</span><span lang="en">Project status</span></h2>
+      <p lang="es">El cliente discontinuó el proyecto durante el desarrollo, por decisión propia y ajena al equipo de diseño. La PoC quedó completa a nivel de flujos, pantallas y componentes, pero no llegó a producción ni a instancias de medición con usuarios reales.</p>
+      <p lang="en">The client discontinued the project during development, by their own decision and unrelated to the design team. The PoC was completed at the level of flows, screens and components, but never reached production or measurement with real users.</p>
+      <div class="callout" lang="es">
         <strong>Nota de transparencia</strong>
         Este caso documenta el problema, las decisiones de diseño y el alcance de la PoC, no resultados en producción. Lo publico igual porque el proceso (y lo que enseña) vale por sí mismo.
+      </div>
+      <div class="callout" lang="en">
+        <strong>Transparency note</strong>
+        This case documents the problem, the design decisions and the scope of the PoC, not production results. I'm publishing it anyway because the process (and what it teaches) stands on its own.
       </div>
     </section>
 
     <section id="aprendizajes">
-      <h2>Aprendizajes</h2>
-      <div class="learnings">
+      <h2><span lang="es">Aprendizajes</span><span lang="en">Learnings</span></h2>
+      <div class="learnings" lang="es">
         <article class="learning">
           <span class="learning__num">01</span>
           <div>
@@ -162,11 +198,34 @@
           </div>
         </article>
       </div>
+      <div class="learnings" lang="en">
+        <article class="learning">
+          <span class="learning__num">01</span>
+          <div>
+            <h3>Internal systems deserve product design</h3>
+            <p>The user of a banking back office doesn't choose their tool: all the more reason to design it with a consumer product's rigor — states, errors, information density and hierarchy.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">02</span>
+          <div>
+            <h3>Complete vertical modules convince more than standalone screens</h3>
+            <p>Walking through login → onboarding → management end-to-end made the platform's value tangible for business and development, not only for design.</p>
+          </div>
+        </article>
+        <article class="learning">
+          <span class="learning__num">03</span>
+          <div>
+            <h3>Document even when the project falls through</h3>
+            <p>An interrupted project isn't a lost process: the flows, components and decisions remain as assets, and as a case study.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <div class="case-nav-footer">
-      <a href="index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Volver a todos los casos</a>
-      <a href="case-te-corresponde.html">Ver el siguiente caso <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a href="index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg><span lang="es">Volver a todos los casos</span><span lang="en">Back to all cases</span></a>
+      <a href="case-te-corresponde.html"><span lang="es">Ver el siguiente caso</span><span lang="en">View next case</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
 
   </main>
@@ -174,34 +233,20 @@
 
 <footer class="footer">
   <div class="footer__inner">
-    <h2>¿Charlamos?</h2>
+    <h2><span lang="es">¿Charlamos?</span><span lang="en">Let's talk?</span></h2>
     <div class="footer__links">
       <a href="mailto:giselamramos@gmail.com">giselamramos@gmail.com</a>
       <a href="https://linkedin.com/in/giselamr" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://behance.net/gmramos" target="_blank" rel="noopener">Behance</a>
     </div>
     <div class="footer__bottom">
-      <span>Gisela Ramos · UX/UI Designer Senior</span>
+      <span><span lang="es">Gisela Ramos · UX/UI Designer Senior</span><span lang="en">Gisela Ramos · Senior UX/UI Designer</span></span>
       <span>Buenos Aires, AR · Montevideo, UY</span>
     </div>
   </div>
 </footer>
 
 <script>
-  var toggle = document.getElementById('themeToggle');
-  function syncThemeToggle() {
-    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
-    toggle.setAttribute('aria-checked', dark ? 'true' : 'false');
-  }
-  syncThemeToggle();
-  toggle.addEventListener('click', function() {
-    var current = document.documentElement.getAttribute('data-theme');
-    var next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    syncThemeToggle();
-  });
-
   var links = document.querySelectorAll('.rail a');
   var sections = Array.from(links).map(function(l) { return document.querySelector(l.getAttribute('href')); });
   var observer = new IntersectionObserver(function(entries) {
@@ -218,7 +263,10 @@
 </script>
 
 <script src="lens.js"></script>
+<script src="lightbox.js"></script>
 <script src="reveal.js"></script>
+<script src="nav-menu.js"></script>
+<script src="i18n.js"></script>
 <script src="page-transition.js"></script>
 </body>
 </html>
